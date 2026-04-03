@@ -6,7 +6,7 @@
 <i>Instructions:</i></div>
 
 - [Video Overview] - YouTube Overview of Project
-- [Firmware] - installation, configuration and use
+- [Firmware] - Installation, configuration and use
 - [Build Info](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html) - Parts, wiring, assembly
 
 ### Features
