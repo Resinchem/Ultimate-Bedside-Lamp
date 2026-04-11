@@ -32,3 +32,17 @@
     display: inline-block;
     margin-right: 4px;
 }
+
+/* 5. Increase content width on Desktop to reduce "Unused Space" */
+/* This targets larger screens while leaving mobile/tablet views untouched */
+@media (min-width: 66.5rem) {
+  .main-content-wrap {
+    max-width: 85rem !important; /* Default is ~60rem; adjusted for better layout on Chrome */
+  }
+}
+
+/* 6. Standardize Sidebar Width */
+/* Ensures the navigation menu has a consistent, professional presence */
+.side-bar {
+  width: 300px !important;
+}
