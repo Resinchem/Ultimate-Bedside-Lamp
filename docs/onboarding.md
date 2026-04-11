@@ -1,82 +1,101 @@
-<div style="font-size: 24px;">Onboarding and First Time Setup</div>
-<hr>
-<div align="center">
+---
+layout: default
+title: Onboarding and First Time Setup
+parent: Getting Started
+nav_order: 2
+---
 
-![04Onboard_1_Header](images/04Onboard_01a_Header.jpg)
-</div>
-Once you have flashed the firmware to the primary and display controllers, you now need to add these and the RGBW bulb to your WIFI network.
+# Onboarding and First Time Setup
+{: .no_toc }
 
-### Kauf RGBW WIFI Bulb
-Follow the instructions provided with the bulb to complete the onboarding/WIFI process.  This is very similar to how the other controllers will be onboarded below.  I won't detail those steps here, but there is one important piece of information you will need after joining the bulb to your WIFI.
+---
 
-#### ESPHome Device Name
-When you get to the point of configuruing your system so that the controllers can "speak" to one another, you will need to know the bulb's ESPHome API name.  If you are a Home Assistant/ESPHome user, you can import the ESPHome node and change the name (see the bulb documentation and [Kauf web site](https://kaufha.com/blf10/) for information on changing the name).
+<p align="center">
+  <img src="images/04Onboard_01a_Header.jpg" alt="Onboarding Header">
+</p>
 
-If you are not a Home Assistant/ESPHome user, then after onboarding to your WIFI, locate the IP address assigned by your router and enter it in a browser.  This will display the bulb's native interface.
+Once you have successfully flashed the firmware to your Primary and Display controllers, the next step is to connect them—along with your RGBW bulb—to your local Wi-Fi network. 
 
-![04Onboard_2_bulb](images/04Onboard_02_Header.jpg)
+> ### 🌐 Local Network Reminder
+> While these devices require a Wi-Fi connection to communicate with each other, they **do not** require active internet access for core functionality. External services (like Home Assistant or OpenWeatherMap) are entirely optional.
+{: .note }
 
-The above screenshot shows the entity name _after_ I renamed the light entity in ESPHome/Home Assistant.  The default name will likely be something like "Kauf Bulb 8a37db" (the last six character are the last six of the MAC address).  If you want to change this name, you will need to import the node into ESPHome, adopt in Home Assistant and change the name of the created ```light``` entity.
+---
 
-_If you plan on renaming the device using Home Assistant, complete that step now and before configuring the lamp/clock interface settings (covered in a later section).  After renaming, check the bulb's interface again to assure the name change occurred._
+## 1. Kauf RGBW Wi-Fi Bulb
+Follow the instructions provided with your bulb to complete its initial Wi-Fi setup. While the process is similar to the controllers below, there is one specific detail you must capture for the system to function: the **ESPHome Device Name**.
 
-Regardless of whether using a custom or default name, you must convert this name to the Home Assistant standard entity naming format.  In essence, change all letter to lower case and substitute any spaces with the underscore.  For example, using both my renamed example and the ficticious default name, the device name that will be used later for configuration would look like:
+### Finding the Device Name
+If you are not using Home Assistant, locate the IP address assigned to the bulb by your router and enter it into a web browser. This opens the bulb’s native interface.
 
-<u>_Examples_</u>: (original name --> HA entity name)<br>
-Bedside Lamp Bulb --> bedside_lamp_bulb<br>
-Kauf Bulb 8a37db --> kauf_bulb_8a37db
+![04Onboard_02_Header](images/04Onboard_02_Header.jpg)
 
-_While you can interact directly with the bulb through its web interface, this won't be used for the overall project.  And the device name is only used for seting up the interfaces between controllers.  The name won't be used anyplace else and if you eventually import the lamp/clock project into Home Assistant, you will be able to specify the device name._
+The default name is typically something like `Kauf Bulb 8a37db`. If you choose to rename the bulb (via Home Assistant or the ESPHome dashboard), ensure you do so **before** configuring the lamp's interface settings.
 
-Just make a note of both the bulb's IP address (see note below) and device name.
+### Converting to the "HA Standard"
+Later in the setup, you will need to provide the bulb's name in the **Home Assistant entity format**. 
+* **The Rule:** Convert all letters to lowercase and replace all spaces with underscores (`_`).
 
-### Primary and Display Controllers
-The process for both controllers is identical... but you need to complete the process twice... once for each controller.
+| Original Name | HA Entity Format |
+| :--- | :--- |
+| Bedside Lamp Bulb | `bedside_lamp_bulb` |
+| Kauf Bulb 8a37db | `kauf_bulb_8a37db` |
 
-![04Onboard_3_APs](images/04Onboard_03_AP.jpg)
+*Note: Write down both the bulb's **IP Address** and this **Entity Name**.*
 
-If you successfully flashed both controllers, they will both be broadcasting a WIFI hotspot.  Note that they are using different names, so you know with which controller you are working.  If you do not see one of the hotspots, trying power cycling that controller.  If the hotspot doesn't appear in a few moments, then you may not have successfully flashed the project.  Try the flashing again, as covered under [Initial Firmware Installation](/installation.md).
+---
 
-_Note: If you have reset a controller that was previously used, then hotspot may reflect the device name you initially assigned instead of the original defaults shown above._
+## 2. Primary and Display Controllers
+You must perform this process twice—once for each controller. 
 
-Using a phone, tablet or laptop, join the controller's WIFI hotspot.  Depending upon your phone and OS, you may be given a warning that the device has no Internet connectivity.  This is fine and expected.  Just tell your device to remain connected anyway.
+### Step 1: Join the Hotspot
+When powered on, each flashed controller will broadcast its own Wi-Fi hotspot:
+* **Primary:** `BedsideLamp01_AP`
+* **Display:** `BL_Display01_AP`
 
-Once connected, you may be prompted to "log in" which will open a browser.  If you aren't prompted, then open up a web browser on your device and enter in the IP Address:  ```192.168.4.1```
+![04Onboard_03_AP](images/04Onboard_03_AP.jpg)
+
+Use a phone or laptop to join the hotspot. If your device warns you that there is "No Internet Connection," select **Stay Connected**.
+
+### Step 2: Access the Onboarding Form
+Open a web browser and enter the IP address: **`192.168.4.1`**. The onboarding form will appear:
 
 ![04Onboard_04_Forms](images/04Onboard_04_Forms.jpg)
 
-As you can see, both controller's onboarding forms are the same.  Only the name at the top will remind you of which controller you are onboarding.  The display controller will always include "DISPLAY" in the top title.  The entries for both are the same (except you'll use _different_ device names as described below).
+Fill out the following fields:
+* **SSID:** Your Wi-Fi network name (must be the same for all three devices).
+* **Password:** Your Wi-Fi password.
+* **Device Name:** A unique, short name (up to 16 alphnumeric characters plus the underscore (_), no spaces). 
+    * *Example:* `lamp_primary` and `lamp_display`. 
+    * Each controller on your network **must** have a unique name.
 
-**_SSID_**: Enter in the name of your WIFI network.  Use the same name for both controllers as they must be on the same wireless network to communicate.
+### Step 3: Submit and Verify
+Click **Submit**. The controller will reboot and attempt to join your network. If successful, the hotspot will disappear. You should now be able to see the device and its new IP address in your router’s client list.
 
-**_Password_**: Enter in your WIFI password.  Again, this will be the same for both controllers.
+![04Onboard_05_Router](images/04Onboard_05_Router.jpg)
 
-**_Device Name_**: This is the one place where the entered value will be DIFFERENT for the primary and display controller.  In fact, each device (including the bulb) **must** have a different device name. The device name is used both internally (wifi client name, mDNS, MQTT client, etc.) but is also used and displayed within the web application for the few situations where you need to know which controller is active.  If you end up with more than one lamp build, the device names are also used to differentiate between multiple lamps, both on your network and in the web applications.
+---
 
-Use a short, but descriptive name of up to 16 characters.  You can only use letters and numbers, no spaces.  If you wish to simulate a space in your device name, use the underscore (_) character.  I recommend using 'display' as part of the display controller's device name, but this isn't required.
+## 3. Assign Static or Reserved IP Addresses
+**This step is strongly recommended for system stability.**
+{: .label .label-yellow }
 
-**_Submit and Save_**<br>
-After completing all three fields, click the 'Submit' button.  The controller will reboot and attempt to connect to your WIFI.  If successful, the hotspot should disappear and not return.  You should also be able to now find the device in your router.  If your router supports it, the entry will be listed with the device names you just assigned.
+The controllers communicate with each other using IP addresses. If your router reassigns a new IP to one of the devices (due to a power failure or lease expiration), the system will stop functioning.
 
-![04Onboard_05_router](images/04Onboard_05_Router.jpg)
+1. Open your router's configuration page.
+2. Create a **Static Reservation** for the Bulb, Primary Controller, and Display Controller.
+3. Power cycle each device to ensure they are using the newly assigned static IPs.
 
-As you can see from my example, both the bulb and display controller are listed with the assigned IP address.  For each of the devices, you will need to know its IP address when setting up the interfaces in the web application.  But before doing so, see the following section.
+---
 
-### Using Reserved or Static IP Addresses
+## 4. Final Hardware Integration
+At this point, you should move your controllers from your computer to their final positions (either on a breadboard or inside the lamp housing). 
 
-It is <u><b>strongly</b></u> recommended that you give all three devices (bulb, primary and display controllers) a static or reserved IP address immediately after onboarding.
+**It is critical to connect all peripherals** (touch sensors, LED strips, DFPlayer, etc.) before proceeding. The firmware looks for these components during the boot process; if they are missing, the system may not initialize correctly.
 
-Internally, the devices communicate with one another by IP address.  Once configured, if a device's IP address changes, which could be the result of a power failure or a simple lease expiration, then the overall lamp/clock will also quit functioning because the controllers will no longer know how to find each other.
+### Build Resources
+If you haven't completed the physical build yet, refer to these guides:
+* **[YouTube Overview]()**
+* **[Written Build Guide](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
 
-Use your router to assign a reserved or static IP address for the bulb, primary controller and display controller.  Be sure to power cycle each device after changing to assure it gets the new IP address.
-
-Note the IP addresses of all three devices.  You'll also need the bulb's "Home Assistant-compatible" name as described above.  
-
-### Connect Controllers to peripherals or install in the final project build
-
-At this point, you can power down the controllers and move them to the build (breadboard or final version).  It is recommended that you install or connect the controllers to the various peripherals (touch sensors, LED strip, DFPlayer, etc.) before proceeding any further as the configuration and initial boot processes will look for certain components during the start up routine.  Unexpected results can occur if trying to complete a normal boot and configuration if any of the expected components are missing.
-
-If you haven't yet built the project or a breadboard version, you can find an overview and full build details (including the specific required parts) at the following:
-
-[YouTube Overview]()<br>
-[Complete Written Blog How-To Build Article](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)
+Once your hardware is connected and powered, proceed to the [System Interfaces]({{ '/interfaces' | relative_url }}) section.

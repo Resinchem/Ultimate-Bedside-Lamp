@@ -1,0 +1,40 @@
+# Site info
+title: Ultimate Bedside Lamp
+description: Documentation for the Ultimate Bedside Lamp Project
+remote_theme: just-the-docs/just-the-docs
+
+# Theme Settings
+color_scheme: dark
+nav_fold: true
+search_enabled: true
+search:
+  rel_url: true
+
+# Callout definitions (Note, Warning, Important)
+callouts:
+  note:
+    title: Note
+    color: blue
+  warning:
+    title: Warning
+    color: red
+  important:
+    title: Important
+    color: yellow
+
+# Navigation and UI Extras
+# Navigation & UI Extras
+back_to_top: true
+back_to_top_label: "Back to top"
+
+# External links (header)
+aux_links:
+  "YouTube Channel":
+    - https://www.youtube.com/@ResinChemTech
+  "Blog":
+    - https://resinchemtech.blogspot.com/
+
+# Footer
+footer_content: "Copyright © 2026 Resinchem Tech. Firmware documentation for personal use."
+last_edit_enabled: true
+last_edit_last_updated_label: "Last updated"

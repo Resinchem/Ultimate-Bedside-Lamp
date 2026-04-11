@@ -1,69 +1,100 @@
-<div style="font-size: 24px;">Initial Firmware Installation</div>
-<hr>
-<div align="center">
+---
+layout: default
+title: Initial Firmware Installation
+parent: Getting Started
+nav_order: 1
+---
 
-![03_01_Flashing](images/03Flashing_1_TopImage.jpg)<br>
-</div>
-The first preparation step you need to complete is the installation of the firmware onto the controllers.  This process is called flashing and it previously was one of the steps that caused folks a lot of problems.  This was due to the need to download one of a number of different utilities, figure out the necessary settings and then trying the flash.  Some utilities worked better with some firmware.
+# Initial Firmware Installation
+{: .no_toc }
 
-For the installation of the firmware onto the primary and display controllers, we are now going to use a relative new web-based tool called ESPConnect.
+---
+
+<p align="center">
+  <img src="images/03Flashing_1_TopImage.jpg" alt="Initial Firmware Installation"  width="300">
+</p>
+
+The first preparation step you need to complete is the installation of the firmware onto the controllers. This process is called **flashing**. Historically, this was one of the steps that caused the most frustration due to the need for specific desktop utilities and complex settings.
+
+To make this process as simple as possible, we now use a modern, browser-based tool called **ESPConnect**.
 
 ![03_02_ESPConnLogo](images/03Flashing_2_ESPConnectLogo.jpg)
 
-ESPConnect is a free open-source, browser-based web tool for interacting with ESP32-based microcontrollers.  One of its features is to flash firmware.  It is based on the same technology as other web flashers like those for WLED, Tasmota and ESPHome.
+ESPConnect is a free, open-source web tool for interacting with ESP32-based microcontrollers. It allows you to flash firmware directly from your browser using the same technology found in tools for WLED, Tasmota, and ESPHome.
+
+---
 
 ## Prerequisites
 
-- Computer or laptop with an available USB port
-- A microUSB _data_ cable.  Note that a cable only designed for power will not work
-- Chrome, Edge, Brave, Arc or other Chromium browser based on version 89 or newer*
-- A copy of the firmware .bin file (avaliable in the 'Releases' area of the repo)
+To complete the installation, you will need:
+* **Hardware:** A computer with an available USB port and a **microUSB Data Cable**. (Note: "Power-only" cables will not work).
+* **Firmware:** A copy of the firmware `.bin` files (available in the [Releases](https://github.com/Resinchem/Ultimate-Bedside-Lamp/releases) area of the repository).
+* **Software:** A Chromium-based browser (Chrome, Edge, Brave, or Arc) version 89 or newer.
 
-*_If you don't have a Chromium-based browser installed and/or don't want to use one, then you will need to use one of the older desktop utilities methods.  If you are unfamiliar with this method, I cover the process in this video: [Beginner's Guide to Flashing Custom Firmware](https://youtu.be/74NGHj-cOls) (jump to the 8:08 mark to see use of desktop utilities)._
+> ### 🖥️ Browser Alternatives
+> If you do not wish to use a Chromium-based browser, you must use traditional desktop flashing utilities. For guidance on that method, you can refer to my [Beginner's Guide to Flashing Custom Firmware](https://youtu.be/74NGHj-cOls) video (skip to the **8:08** mark).
+{: .note }
 
-### Kauf RGBW WIFI Bulb
-No installation necessary!  The bulb comes with ESPHome pre-installed.  If an updated version of the firmware is available, the instructions included with the bulb will provide the steps needed.  **Do not install any firmware from this or any other source than the official Kauf ESPHome firmware.**  The device will not work in this project if you replace the firmware.  If you want to modify or make minor changes to the bulb (e.g. device name), this should be done using the supplied official ESPHome code.
+---
 
-### Primary and Display Controllers
-The process for both controllers is identical.  The only difference is the firmware .bin file used.<br>  
-For the primary controller, use the firmware ```Primary_Ctrl_vx.xx.bin```<br>
-For the display controller, use the firmware ```Display_Ctrl_vx.xx.bin```<br><br>
-_(vx.xx represents the firmware version number, such as v0.87, but note that the current version number will likely be different for the two different controllers. The most current versions can always be found in the assets section of the latest release)._
+## Kauf RGBW Wi-Fi Bulb
 
-Open a Chromium based browser and navigate to https://thelastoutpostworkshop.github.io/ESPConnect/
+**No installation is necessary for the bulb!** The device comes pre-installed with the required firmware. 
 
-<div align="center">
+**Do not attempt to flash any other firmware to the bulb.** Replacing the official Kauf ESPHome firmware will cause the device to fail within this project. If you wish to make minor changes (such as the device name), use the official ESPHome code provided by the manufacturer.
+{: .label .label-yellow }
 
-![03_03_ESPConnLogo](images/03Flashing_3_ESPConnect.jpg)
-</div>
-If you haven't done so yet, connect the controller (the ESP32 for primary, the Cheap Yellow Display for display) and click the 'Connect' button in the upper left corner.<br><br>
+---
+
+## Primary and Display Controllers
+
+The process for both controllers is identical. The only difference is the firmware `.bin` file used:
+
+* **Primary Controller:** Use `Primary_Ctrl_vx.xx.bin`
+* **Display Controller:** Use `Display_Ctrl_vx.xx.bin`
+
+*(Note: `vx.xx` represents the version number. Always use the most recent versions found in the assets section of the latest release.)*
+
+### Step 1: Connect to ESPConnect
+Open a Chromium-based browser and navigate to the [ESPConnect Tool](https://thelastoutpostworkshop.github.io/ESPConnect/).
+
+<p>
+  <img src="images/03Flashing_3_ESPConnect.jpg" alt="ESPConnect Tool Interface" width=600>
+</p>
+
+If you haven't done so yet, connect the controller (the ESP32 for primary, or the Cheap Yellow Display for display) and click the **Connect** button in the upper-left corner.
 
 ![03_04_ESPConnect](images/03Flashing_4_ESPConnect.jpg)
 
-Select the COM port for your controller.  If you are unsure of which COM port it is, simply cancel the dialog, disconnect the ESP32 and try to connect again.  One of the COM ports disappeared.  Close the dialog, reconnect the ESP32 and now connect again, choosing the new COM port that appears.  If you do not see a new COM port when connecting the ESP32, or the tool refuses to connect, you may be missing a USB-to-Serial driver.  This is normally a CP2102 but could also be a CH340.  Locate the necessary drivers and install them on your local machine.
+Select the appropriate **COM Port**. 
 
-Once connected, (1) use the left sidebar menu to select the Flash Tools option.
+> ### 🔍 Troubleshooting COM Ports
+> If you aren't sure which port to pick, disconnect the ESP32 and check the list; the port that disappears is your device. If no ports appear, you may need to install the **CP2102** or **CH340** USB-to-Serial drivers for your specific hardware.
+{: .note }
+
+### Step 2: Configure Flash Settings
+Once connected, select **Flash Tools** from the left sidebar menu.
 
 ![03_05_ESPConnect](images/03Flashing_5_ESPConnect.jpg)
 
-2. Click in the Firmware Binary box and use the file browser to select the firmware file.
-    - Be sure to select the proper firmware here!
-      - Primary_Ctrl_vx.xx is the firmware for the standalone ESP32 board
-      - Display_Ctrl_vx.xx is the firmware for the CYD Display
+1. **Select Flash Tools**: Select the Flash Tools option from the sidebar menu.
+2. **Select Firmware:** Click the Firmware Binary box and select the proper `.bin` file for the controller you are flashing.
+3. **Flash Offset:** Leave this at the default **0x0**.
+4. **Erase Flash:** Check the **Erase entire flash** checkbox to ensure a clean installation.
+5. **Install:** Click the large blue "Flash Firmware" button to start the upload process.
 
-3. Leave the flashware offset at the default 0x0
-4. Be sure to check the 'Erase entire flash' check box.  If your board had previous firmware, you can optionally use the section right above the Flash Firmware to create a backup of any existing firmware.
-
+### Step 3: Flash and Verify
 ESPConnect will show a progress bar during the flashing process:
 
 ![!03_06_ESPConnect](images/03Flashing_6_ESPConnect.jpg)
 
-Once the flashing is complete, power cycle the ESP32 (unplug then reconnect to USB port).  Wait a few moments, then use your phone, tablet or laptop to display all available WIFI networks:
+Once the flashing is complete, power cycle the ESP32 by unplugging and reconnecting it to the USB port. Wait a few moments, then use your phone or computer to scan for available Wi-Fi networks:
 
 ![03_07_ESPConnect](images/03Flashing_7_ESPConnect.jpg)
 
-If you see a WIFI hotspot called BedsideLamp01_AP (or ```BL_Display01_AP``` if flashing the display firmware), then the flash was successful.
+**Success Criteria:** If you see a Wi-Fi hotspot named `BedsideLamp01_AP` (or `BL_Display01_AP` for the display), the flash was successful.
 
-_Note: If you do a full reset of a controller, which requires onboarding again, the broadcasting hotspot may use the initial device name you assigned instead of the defaults specified above.  The onboarding process is the same regardless of the hotspot name._
+---
 
-Repeat the above steps for the other controller.  The process is the same for both the primary and display controllers.  The only difference is the name of the AP hotspot that gets created.  Once both controllers have been flashed and are broadcasting their respecting hotspot, you are ready to join the controllers to your WIFI.  This is covered in the next section, [Onboarding and First Time Setup](/onboarding.md).
+### Next Steps
+Repeat the above steps for the second controller. Once both are flashed and broadcasting their respective hotspots, you are ready to join them to your Wi-Fi network. This is covered in the next section, [Onboarding and First Time Setup]({{ '/onboarding' | relative_url }}).

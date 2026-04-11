@@ -1,20 +1,45 @@
+---
+layout: default
+title: Getting Started
+nav_order: 3
+has_children: true
+---
+
 # Getting Started
-<div align="center">
+{: .no_toc }
 
-![startingmain_01](images/startingmain_01.jpg)
-</div>
+---
 
-Recall that this guide only covers the installation configuration and use of the firmware for the controllers.  It assumes you have already built at least a test or breadboard version of the project.  If you are looking for wiring diagrams, build instructions or parts lists, please refer to the following sources:
-- [YouTube Overview Video]
-- [Written Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html) - parts list, wiring diagrams, assembly instructions, etc.
+<p align="center">
+  <img src="images/startingmain_01.jpg" alt="Project Overview">
+</p>
 
-However, if you have built your system and are installing the firmware for the first time you will need to, at a minimum, complete the steps in the following sections, in the _listed order_:
+This guide focuses strictly on the installation, configuration, and operation of the custom firmware. It assumes you have already assembled your hardware, whether as a completed build or a breadboard prototype.
 
-- [Installation](/installation.md) - Flashing the firmware to your ESP32 controllers
-- [Onboarding](/onboarding.md) - Covers adding the controllers to your WIFI network
-- [System Interfaces](/interfaces.md) - Basic setup info to establish controller communications
-- [Boot Process](/booting.md) - Covers the default boot process to assure proper setup has been completed.
+> ### 🛠️ Hardware & Build Reference
+> If you are looking for wiring diagrams, assembly instructions, or a complete parts list, please refer to the following external resources:
+> * **[YouTube Overview Video]**
+> * **[Written Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html)**
+{: .note }
 
-The system will not be fully functional until you've completed the above.
+---
 
-Once you've got the system up and running, you can then refer to other sections for additional configuration options and general use of the system.
+## Setup Roadmap
+To achieve a fully functional system, you must complete the following steps in the specific order listed below. Each section builds upon the previous one.
+
+### 1. [Firmware Installation]({{ '/installation' | relative_url }})
+The first step is flashing the custom C++ firmware to your Primary and Display (CYD) controllers using the Arduino IDE or a compatible flashing utility.
+
+### 2. [Network Onboarding]({{ '/onboarding' | relative_url }})
+Once flashed, you will connect each controller to your local Wi-Fi network. Remember: this system is designed for local-first operation and does not require an active internet connection for core functionality.
+
+### 3. [System Interfaces]({{ '/interfaces' | relative_url }})
+Establish the internal communication paths between the controllers and configure the API settings to ensure the "Triumvirate" works as a single unified device.
+
+### 4. [Boot Process]({{ '/booting' | relative_url }})
+Verify your setup by observing the default boot sequence. This section explains how to confirm that all services (Wi-Fi, MQTT, and Internal API) have initialized correctly.
+
+---
+
+## What's Next?
+The system will not be fully functional until all four steps above are completed. Once finished, you can proceed to the **General Use** and **Advanced Configuration** sections to customize your alarms, lighting modes, and _optional_ Home Assistant integrations.
