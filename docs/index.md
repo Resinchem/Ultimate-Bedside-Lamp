@@ -15,10 +15,9 @@ has_toc: false
 This site contains information regarding the installation, configuration and use of the firmware for this project. It <u>does not</u> contain build instructions, parts lists or anything related to the wiring or physical build.  For information on how to build the system, please see the following:<br><br>
 
 **⚠️ Build Instruction Notice**<br> This documentation **does not** contain build instructions, parts lists, or wiring diagrams. For the physical build details, please refer to the following resources:
-{: .note }
-
 * **YouTube Overview: [{{site.substitutions.youtube_title}}]({{site.links.youtube_video}})**
 * **Written guide, with parts list, wiring diagrams and more: [Building the Ultimate Bedside Lamp](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
+{: .note }
 
 ### How this document is organized
 The documentation follows a logical setup flow, grouped into the sections seen in the sidebar:

@@ -29,7 +29,7 @@ links:
   main_repo: "https://github.com/Resinchem/Ultimate-Bedside-Lamp"
   
 substitutions:
-  youtube_title: "Coming Soon!"
+  youtube_title: "Video Coming Soon!"
 
 # Navigation & UI Extras
 back_to_top: true
