@@ -17,8 +17,7 @@ has_toc: false
 
 Once you have successfully flashed the firmware to your Primary and Display controllers, the next step is to connect them—along with your RGBW bulb—to your local Wi-Fi network. 
 
-> ### 🌐 Local Network Reminder
-> While these devices require a Wi-Fi connection to communicate with each other, they **do not** require active internet access for core functionality. External services (like Home Assistant or OpenWeatherMap) are entirely optional.
+**🌐 Local Network Reminder**<br>While these devices require a Wi-Fi connection to communicate with each other, they **do not** require active internet access for core functionality. External services (like Home Assistant or OpenWeatherMap) are entirely optional.
 {: .note }
 
 ---
@@ -100,8 +99,6 @@ If you haven't completed the physical build yet, refer to these guides:
 * **[Written Build Guide](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
 
 Once your hardware is connected and powered, proceed to the [System Interfaces]({{ '/interfaces' | relative_url }}) section.
-
-| [<- Previous: Installation]({{ '/installation' | relative_url }}){: .btn .btn-outline } | [Next: System Interfaces ->]({{ '/interfaces' | relative_url }}){: .btn .btn-purple } |
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/installation' | relative_url }}" class="btn btn-outline"><- Previous: Installation</a>

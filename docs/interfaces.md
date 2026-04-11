@@ -21,8 +21,7 @@ As discussed in the [Concepts and Terminology]({{ '/concepts' | relative_url }})
 
 Because these controllers are not physically wired together, they must communicate wirelessly over your local network using a custom internal API. For this to succeed, each controller must be configured with the IP addresses of its counterparts.
 
-> ### 📋 Pre-Flight Check
-> Before proceeding, ensure you have completed the [Onboarding]({{ '/onboarding' | relative_url }}) for all three devices (Bulb, Primary, and Display) and that you have assigned them **Static or Reserved IP addresses** in your router.
+**📋 Pre-Flight Check**<br>Before proceeding, ensure you have completed the [Onboarding]({{ '/onboarding' | relative_url }}) for all three devices (Bulb, Primary, and Display) and that you have assigned them **Static or Reserved IP addresses** in your router.
 {: .note }
 
 ---
@@ -70,8 +69,7 @@ For the initial setup, you must complete the following three sections:
     * Enter the **Bulb Name** in "Home Assistant Entity" format (lowercase, underscores instead of spaces).
 3.  **Touch Panel Display:** Enter the **IP Address** of the Display (Secondary) Controller.
 
-> ### 🌐 Optional Features
-> Other settings on this page, such as **MQTT** and **Weather Integrations**, require external connections or internet access. These are entirely optional and should only be configured after you have confirmed the core "triumvirate" is working.
+**🌐 Optional Features**<br>Other settings on this page, such as **MQTT** and **Weather Integrations**, require external connections or internet access. These are entirely optional and should only be configured after you have confirmed the core "triumvirate" is working.
 {: .note }
 
 ### Save and Reboot
@@ -81,9 +79,9 @@ Once the three sections above are filled, scroll to the bottom and click **Save 
 
 The system will restart. You may notice "boot indicators" such as the LED strip or bulb flashing RGB colors. This is normal and is detailed in [The Boot Process]({{ '/booting' | relative_url }}) documentation.
 
->Depending upon the specific operation, a reboot of the primary controller may also require a reboot of the display controller.  The system handles this automatically when needed.
+**🔍 Dual Rebooting**<br>Depending upon the specific operation, a reboot of the primary controller may also require a reboot of the display controller.  The system handles this automatically when needed.
 {: .important }
----
+
 
 ## Display Controller Configuration
 

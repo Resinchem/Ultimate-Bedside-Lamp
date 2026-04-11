@@ -31,9 +31,8 @@ To complete the installation, you will need:
 * **Hardware:** A computer with an available USB port and a **microUSB Data Cable**. (Note: "Power-only" cables will not work).
 * **Firmware:** A copy of the firmware `.bin` files (available in the [Releases](https://github.com/Resinchem/Ultimate-Bedside-Lamp/releases) area of the repository).
 * **Software:** A Chromium-based browser (Chrome, Edge, Brave, or Arc) version 89 or newer.
-
-> ### 🖥️ Browser Alternatives
-> If you do not wish to use a Chromium-based browser, you must use traditional desktop flashing utilities. For guidance on that method, you can refer to my [Beginner's Guide to Flashing Custom Firmware](https://youtu.be/74NGHj-cOls) video (skip to the **8:08** mark).
+ 
+**🖥️ Browser Alternatives**<br>If you do not wish to use a Chromium-based browser, you must use traditional desktop flashing utilities. For guidance on that method, you can refer to my [Beginner's Guide to Flashing Custom Firmware](https://youtu.be/74NGHj-cOls) video (skip to the **8:08** mark).
 {: .note }
 
 ---
@@ -69,8 +68,7 @@ If you haven't done so yet, connect the controller (the ESP32 for primary, or th
 
 Select the appropriate **COM Port**. 
 
-> ### 🔍 Troubleshooting COM Ports
-> If you aren't sure which port to pick, disconnect the ESP32 and check the list; the port that disappears is your device. If no ports appear, you may need to install the **CP2102** or **CH340** USB-to-Serial drivers for your specific hardware.
+**🔍 Troubleshooting COM Ports**<br>If you aren't sure which port to pick, disconnect the ESP32 and check the list; the port that disappears is your device. If no ports appear, you may need to install the **CP2102** or **CH340** USB-to-Serial drivers for your specific hardware.
 {: .note }
 
 ### Step 2: Configure Flash Settings

@@ -17,8 +17,7 @@ has_toc: false
 
 As covered in the [Concepts]({{ '/concepts' | relative_url }}) section, this project consists of three independent controllers communicating via a wireless API. Because they must share configuration parameters at startup, the system uses the display and lights to indicate its progress.
 
-> ### ⚠️ Mandatory Configuration
-> The boot process **cannot complete** until you have configured the initial system settings in the web app. The controllers find each other by IP address; if this information is missing, the system will halt. Ensure you have completed the [System Interfaces]({{ '/interfaces' | relative_url }}) setup first.
+**⚠️ Mandatory Configuration**<br>The boot process **cannot complete** until you have configured the initial system settings in the web app. The controllers find each other by IP address; if this information is missing, the system will halt. Ensure you have completed the [System Interfaces]({{ '/interfaces' | relative_url }}) setup first.
 {: .important }
 
 ---
@@ -48,8 +47,7 @@ When you power on the system (assuming the "Triumvirate" is linked), the devices
 | **Alarms** | Confirms the alarm schedule file was found and processed. |
 | **SD Card** | Confirms the audio hardware for alarm tracks is ready. |
 
-> ### 💡 Initial Setup Note
-> It is **perfectly normal** for several items (Clock, MQTT, Alarms, etc.) to show as **DISABLED** or **FAILED** during your first boot. These will become active once you configure them in the web application.
+**💡 Initial Setup Note**<br>It is **perfectly normal** for several items (Clock, MQTT, Alarms, etc.) to show as **DISABLED** or **FAILED** during your first boot. These will become active once you configure them in the web application.
 {: .note }
 
 ---

@@ -17,10 +17,10 @@ has_toc: false
 
 This guide focuses strictly on the installation, configuration, and operation of the custom firmware. It assumes you have already assembled your hardware, whether as a completed build or a breadboard prototype.
 
-> ### 🛠️ Hardware & Build Reference
-> If you are looking for wiring diagrams, assembly instructions, or a complete parts list, please refer to the following external resources:
-> * **[{{site.substitutions.youtube_title}}]({{ site.links.youtube_video }})**
-> * **[Written Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html)**
+> ### 
+**🛠️ Hardware & Build Reference**<br>If you are looking for wiring diagrams, assembly instructions, or a complete parts list, please refer to the following external resources:
+* **[{{site.substitutions.youtube_title}}]({{ site.links.youtube_video }})**
+* **[Written Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html)**
 {: .note }
 
 ---
@@ -47,5 +47,5 @@ The system will not be fully functional until all four steps above are completed
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/concepts' | relative_url }}" class="btn btn-outline"><- Previous: Concepts & Terminology</a>
-  <a href="{{ '/booting' | relative_url }}" class="btn btn-purple">Next: The Boot Process -></a>
+  <a href="{{ '/installation' | relative_url }}" class="btn btn-purple">Next: Firmware Installation -></a>
 </div>
