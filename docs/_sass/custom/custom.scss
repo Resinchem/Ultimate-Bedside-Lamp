@@ -1,0 +1,24 @@
+/* Remove the "ghost" space from empty callout titles */
+.callout-title {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+}
+
+/* Tighten the padding of the note boxes */
+.callout {
+    padding: 0.8rem 1rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Remove extra margin from the first paragraph in a note */
+.callout p:first-child {
+    margin-top: 0 !important;
+}
+
+/* Ensure the last paragraph in a note doesn't add extra bottom space */
+.callout p:last-child {
+    margin-bottom: 0 !important;
+}

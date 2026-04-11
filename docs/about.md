@@ -57,4 +57,7 @@ The [written guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-
 ### Questions?
 If you are unsure if a different component will work or what modifications might be needed, please post in the [Discussions](https://github.com/Resinchem/Ultimate-Bedside-Lamp/discussions) area of the repository. I will do my best to provide guidance there as my time allows.
 
-| [<- Previous: Welcome]({{ '/index' | relative_url }}){: .btn .btn-outline } | [Next: Concepts ->]({{ '/concepts' | relative_url }}){: .btn .btn-purple } |
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/' | relative_url }}" class="btn btn-outline"><- Previous: Welcome</a>
+  <a href="{{ '/concepts' | relative_url }}" class="btn btn-purple">Next: Concepts & Terminology-></a>
+</div>

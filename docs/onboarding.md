@@ -102,3 +102,8 @@ If you haven't completed the physical build yet, refer to these guides:
 Once your hardware is connected and powered, proceed to the [System Interfaces]({{ '/interfaces' | relative_url }}) section.
 
 | [<- Previous: Installation]({{ '/installation' | relative_url }}){: .btn .btn-outline } | [Next: System Interfaces ->]({{ '/interfaces' | relative_url }}){: .btn .btn-purple } |
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/installation' | relative_url }}" class="btn btn-outline"><- Previous: Installation</a>
+  <a href="{{ '/interfaces' | relative_url }}" class="btn btn-purple">Next: System Interfaces -></a>
+</div>

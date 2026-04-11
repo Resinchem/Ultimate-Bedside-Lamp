@@ -60,4 +60,7 @@ While the hardware is split into three parts, the user experience is seamless:
 
 For build instructions and physical assembly details, please refer to the [written companion guide](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html).
 
-| [<- Previous: About]({{ '/about' | relative_url }}){: .btn .btn-outline } | [Next: Getting Started ->]({{ '/startingmain' | relative_url }}){: .btn .btn-purple } |
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/about' | relative_url }}" class="btn btn-outline"><- Previous: About the Project</a>
+  <a href="{{ '/startingmain' | relative_url }}" class="btn btn-purple">Next: Getting Started -></a>
+</div>

@@ -114,4 +114,7 @@ Scroll to the bottom and click **Save and Reboot**. The Display controller will 
 
 With these steps completed, your "Controller Triumvirate" is now fully linked. You can now return to the web application to customize your preferences or set up optional [Controller Commands]({{ '/commands' | relative_url }}).
 
-| [<- Previous: Onboarding]({{ '/onboarding' | relative_url }}){: .btn .btn-outline } | [Next: The Boot Process ->]({{ '/booting' | relative_url }}){: .btn .btn-purple } |
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/onboarding' | relative_url }}" class="btn btn-outline"><- Previous: Onboarding</a>
+  <a href="{{ '/Booting' | relative_url }}" class="btn btn-purple">Next: The Boot Process -></a>
+</div>

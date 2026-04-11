@@ -100,4 +100,7 @@ Once the flashing is complete, power cycle the ESP32 by unplugging and reconnect
 ### Next Steps
 Repeat the above steps for the second controller. Once both are flashed and broadcasting their respective hotspots, you are ready to join them to your Wi-Fi network. This is covered in the next section, [Onboarding and First Time Setup]({{ '/onboarding' | relative_url }}).
 
-| [<- Previous: Getting Started]({{ '/startingmain' | relative_url }}){: .btn .btn-outline } | [Next: Onboarding ->]({{ '/onboarding' | relative_url }}){: .btn .btn-purple } |
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/startingmain' | relative_url }}" class="btn btn-outline"><- Previous: Getting Started</a>
+  <a href="{{ '/onboarding' | relative_url }}" class="btn btn-purple">Next: Onboarding -></a>
+</div>

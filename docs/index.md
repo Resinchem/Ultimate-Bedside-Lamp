@@ -48,4 +48,6 @@ Unfortunately, I simply do not have the bandwidth to create, maintain and upgrad
 **Issues opened for feature requests or alternate hardware will be closed without response.**
 {: .label .label-yellow }
 
-| | [Next: About the Project ->]({{ '/about' | relative_url }}){: .btn .btn-purple } |
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <span></span> <a href="{{ '/about' | relative_url }}" class="btn btn-purple">Next: About the Project -></a>
+</div>
