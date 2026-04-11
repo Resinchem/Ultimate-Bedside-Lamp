@@ -3,6 +3,7 @@ layout: default
 title: Concepts and Terminology
 parent: Welcome
 nav_order: 2
+has_toc: false
 ---
 
 # Concepts and Terminology
@@ -58,3 +59,5 @@ While the hardware is split into three parts, the user experience is seamless:
 ---
 
 For build instructions and physical assembly details, please refer to the [written companion guide](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html).
+
+| [<- Previous: About]({{ '/about' | relative_url }}){: .btn .btn-outline } | [Next: Getting Started ->]({{ '/startingmain' | relative_url }}){: .btn .btn-purple } |

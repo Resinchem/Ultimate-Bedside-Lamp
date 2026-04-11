@@ -3,6 +3,7 @@ layout: default
 title: The Boot Process
 parent: Getting Started
 nav_order: 4
+has_toc: false
 ---
 
 # The Boot Process
@@ -71,3 +72,5 @@ Because configuration is shared, if you change a setting on the Primary Controll
 ---
 
 With the boot process understood and your initial setup verified, you are ready to explore the [General Use]({{ '/use' | relative_url }}) of your Ultimate Bedside Lamp!
+
+| [<- Previous: System Interfaces]({{ '/intefaces' | relative_url }}){: .btn .btn-outline } | [Next: Setting up the System ->]({{ '/setupmain' | relative_url }}){: .btn .btn-purple } |

@@ -3,6 +3,7 @@ layout: default
 title: Onboarding and First Time Setup
 parent: Getting Started
 nav_order: 2
+has_toc: false
 ---
 
 # Onboarding and First Time Setup
@@ -95,7 +96,9 @@ At this point, you should move your controllers from your computer to their fina
 
 ### Build Resources
 If you haven't completed the physical build yet, refer to these guides:
-* **[YouTube Overview]()**
+* **[YouTube Overview]({{site.links.youtube_video}})**
 * **[Written Build Guide](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
 
 Once your hardware is connected and powered, proceed to the [System Interfaces]({{ '/interfaces' | relative_url }}) section.
+
+| [<- Previous: Installation]({{ '/installation' | relative_url }}){: .btn .btn-outline } | [Next: System Interfaces ->]({{ '/interfaces' | relative_url }}){: .btn .btn-purple } |

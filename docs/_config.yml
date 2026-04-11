@@ -13,16 +13,24 @@ search:
 # Callout definitions (Note, Warning, Important)
 callouts:
   note:
-    title: Note
+    title: ""
     color: blue
   warning:
-    title: Warning
+    title: ""
     color: red
   important:
-    title: Important
+    title: ""
     color: yellow
 
-# Navigation and UI Extras
+# Global Project Links
+links:
+  youtube_video: "" # Add your link here later!
+  blog_guide: "https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html"
+  main_repo: "https://github.com/Resinchem/Ultimate-Bedside-Lamp"
+  
+substitions:
+  youtube_title: "Coming Soon!"
+
 # Navigation & UI Extras
 back_to_top: true
 back_to_top_label: "Back to top"

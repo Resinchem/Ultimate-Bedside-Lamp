@@ -2,6 +2,7 @@
 layout: default
 title: Welcome
 nav_order: 1
+has_toc: false
 ---
 
 # Ultimate Bedside Lamp and Clock
@@ -17,7 +18,7 @@ This site contains information regarding the installation, configuration and use
 > This documentation **does not** contain build instructions, parts lists, or wiring diagrams. For the physical build details, please refer to the following resources:
 {: .note }
 
-* **YouTube Overview: ["YOUTUBE THUMB Linked to Video:]**
+* **YouTube Overview: [{{site.substitutions.youtube_title}}]({{site.links.youtube_video}})**
 * **Written guide, with parts list, wiring diagrams and more: [Building the Ultimate Bedside Lamp](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
 
 ### How this document is organized
@@ -47,3 +48,4 @@ Unfortunately, I simply do not have the bandwidth to create, maintain and upgrad
 **Issues opened for feature requests or alternate hardware will be closed without response.**
 {: .label .label-yellow }
 
+| | [Next: About the Project ->]({{ '/about' | relative_url }}){: .btn .btn-purple } |

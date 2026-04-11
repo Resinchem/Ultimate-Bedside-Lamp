@@ -3,6 +3,7 @@ layout: default
 title: Initial Firmware Installation
 parent: Getting Started
 nav_order: 1
+has_toc: false
 ---
 
 # Initial Firmware Installation
@@ -98,3 +99,5 @@ Once the flashing is complete, power cycle the ESP32 by unplugging and reconnect
 
 ### Next Steps
 Repeat the above steps for the second controller. Once both are flashed and broadcasting their respective hotspots, you are ready to join them to your Wi-Fi network. This is covered in the next section, [Onboarding and First Time Setup]({{ '/onboarding' | relative_url }}).
+
+| [<- Previous: Getting Started]({{ '/startingmain' | relative_url }}){: .btn .btn-outline } | [Next: Onboarding ->]({{ '/onboarding' | relative_url }}){: .btn .btn-purple } |

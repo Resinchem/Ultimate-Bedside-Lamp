@@ -3,6 +3,7 @@ layout: default
 title: Getting Started
 nav_order: 3
 has_children: true
+has_toc: false
 ---
 
 # Getting Started
@@ -18,7 +19,7 @@ This guide focuses strictly on the installation, configuration, and operation of
 
 > ### 🛠️ Hardware & Build Reference
 > If you are looking for wiring diagrams, assembly instructions, or a complete parts list, please refer to the following external resources:
-> * **[YouTube Overview Video]**
+> * **[{{site.substitutions.youtube_title}}]({{ site.links.youtube_video }})**
 > * **[Written Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html)**
 {: .note }
 
@@ -43,3 +44,5 @@ Verify your setup by observing the default boot sequence. This section explains 
 
 ## What's Next?
 The system will not be fully functional until all four steps above are completed. Once finished, you can proceed to the **General Use** and **Advanced Configuration** sections to customize your alarms, lighting modes, and _optional_ Home Assistant integrations.
+
+| [<- Previous: Concepts]({{ '/concepts' | relative_url }}){: .btn .btn-outline } | [Next: Installation ->]({{ '/installation' | relative_url }}){: .btn .btn-purple } |
