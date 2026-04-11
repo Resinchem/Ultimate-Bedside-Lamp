@@ -11,8 +11,7 @@ has_toc: false
 
 To successfully install and configure this firmware, it is important to understand the underlying system design and the specific terminology used throughout this documentation.
 
-> ### 🌐 Connectivity & Privacy
-> This system is designed to be **fully functional on a local Wi-Fi network**. While it supports integrations like Home Assistant, Open Weather Map, and NTP time-syncing, these are strictly **optional**. An active internet connection is not required for core operations.
+**🌐 Connectivity & Privacy:** This system is designed to be **fully functional on a local Wi-Fi network**. While it supports integrations like Home Assistant, Open Weather Map, and NTP time-syncing, these are strictly **optional**. An active internet connection is not required for core operations.
 {: .note }
 
 ---
@@ -37,8 +36,7 @@ This is a standard 30-pin **ESP32 WROOM32** running the custom Arduino-based fir
 ### 3. Display Controller
 This is a "Cheap Yellow Display" (CYD) featuring an integrated ESP32 and a 3.5" screen.
 
-> ### ⚠️ Critical Hardware Requirement
-> The firmware is compiled specifically for the **Capacitive Touch** version of the 3.5" CYD linked in the build guide. This firmware **will not work** with resistive touch displays. Using a different display will require significant changes to the `TFT_eSPI` library and a full code recompilation.
+**⚠️ Critical Hardware Requirement:** The firmware is compiled specifically for the **Capacitive Touch** version of the 3.5" CYD linked in the build guide. This firmware **will not work** with resistive touch displays. Using a different display will require significant changes to the `TFT_eSPI` library and a full code recompilation.
 {: .note }
 
 Like the Primary Controller, this board requires custom firmware flashing and Wi-Fi onboarding. Throughout this documentation, this is referred to as the **"Display"** or **"Secondary"** controller.

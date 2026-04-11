@@ -73,8 +73,6 @@ Because configuration is shared, if you change a setting on the Primary Controll
 
 With the boot process understood and your initial setup verified, you are ready to explore the [General Use]({{ '/use' | relative_url }}) of your Ultimate Bedside Lamp!
 
-| [<- Previous: System Interfaces]({{ '/intefaces' | relative_url }}){: .btn .btn-outline } | [Next: Setting up the System ->]({{ '/setupmain' | relative_url }}){: .btn .btn-purple } |
-
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/interfaces' | relative_url }}" class="btn btn-outline"><- Previous: System Interfaces</a>
   <a href="{{ '/setupmain' | relative_url }}" class="btn btn-purple">Next: System Setup -></a>

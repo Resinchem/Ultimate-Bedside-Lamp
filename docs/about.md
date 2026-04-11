@@ -45,8 +45,7 @@ This build was designed to address my specific pain points while adding several 
 ## Caveats and Hardware Support
 This system was built for my specific needs. The firmware is tightly coupled with the hardware components selected.
 
-> ### ⚠️ Technical Requirement
-> The touch panel utilizes the [TFT_eSPI](https://github.com/Bodmer/TFT_espi) library. To use this, you must define your specific display in the library's configuration, which requires compiling and flashing your own version of the firmware.
+**⚠️ Technical Requirement:** The touch panel utilizes the [TFT_eSPI](https://github.com/Bodmer/TFT_espi) library. To use this, you must define your specific display in the library's configuration, which requires compiling and flashing your own version of the firmware.
 {: .note }
 
 The [written guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html) includes a detailed parts list indicating which components are interchangeable and which will require code modifications.

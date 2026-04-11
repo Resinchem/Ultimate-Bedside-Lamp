@@ -45,8 +45,6 @@ Verify your setup by observing the default boot sequence. This section explains 
 ## What's Next?
 The system will not be fully functional until all four steps above are completed. Once finished, you can proceed to the **General Use** and **Advanced Configuration** sections to customize your alarms, lighting modes, and _optional_ Home Assistant integrations.
 
-| [<- Previous: Concepts]({{ '/concepts' | relative_url }}){: .btn .btn-outline } | [Next: Installation ->]({{ '/installation' | relative_url }}){: .btn .btn-purple } |
-
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/concepts' | relative_url }}" class="btn btn-outline"><- Previous: Concepts & Terminology</a>
   <a href="{{ '/booting' | relative_url }}" class="btn btn-purple">Next: The Boot Process -></a>

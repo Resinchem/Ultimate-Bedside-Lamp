@@ -116,5 +116,5 @@ With these steps completed, your "Controller Triumvirate" is now fully linked. Y
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/onboarding' | relative_url }}" class="btn btn-outline"><- Previous: Onboarding</a>
-  <a href="{{ '/Booting' | relative_url }}" class="btn btn-purple">Next: The Boot Process -></a>
+  <a href="{{ '/booting' | relative_url }}" class="btn btn-purple">Next: The Boot Process -></a>
 </div>

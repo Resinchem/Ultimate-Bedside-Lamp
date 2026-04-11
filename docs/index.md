@@ -14,8 +14,7 @@ has_toc: false
 </p>
 This site contains information regarding the installation, configuration and use of the firmware for this project. It <u>does not</u> contain build instructions, parts lists or anything related to the wiring or physical build.  For information on how to build the system, please see the following:<br><br>
 
-> ### ⚠️ Build Instruction Notice
-> This documentation **does not** contain build instructions, parts lists, or wiring diagrams. For the physical build details, please refer to the following resources:
+**⚠️ Build Instruction Notice:** This documentation **does not** contain build instructions, parts lists, or wiring diagrams. For the physical build details, please refer to the following resources:
 {: .note }
 
 * **YouTube Overview: [{{site.substitutions.youtube_title}}]({{site.links.youtube_video}})**
