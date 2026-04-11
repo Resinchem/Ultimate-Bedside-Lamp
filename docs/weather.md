@@ -1,64 +1,82 @@
+---
+layout: default
+title: Temperature and Weather
+parent: Setting Up the System
+nav_order: 6
+---
+
 # Setting Up a Weather Source
-<div align="center">
+{: .no_toc }
 
-![weather_01](images/weather_01.jpg)
+---
+
+<p align="center">
+  <img src="images/weather_01.jpg" alt="Weather Display Overview">
+</p>
+
+Currently, the system only uses temperature data, though future updates may add additional features from external weather sources. While designed for outdoor temperature, you can easily use it for indoor temperature depending on your source.
+
+> **💡 Note: Hardware Limitation**<br>The system does not have its own temperature sensor; it simply displays the value it receives from an external source. Until a weather source is configured, the clock will display an initial temperature of **0°**.
+{: .note }
+
+To access the weather integration settings, return to **System Integrations** from the primary controller's main web page.
+
+![05System_03](images/05System_03_Main.jpg)
+
+The weather settings are located at the bottom of the System Integrations page.
+
+![Weather Integration Section](images/weather_02.jpg)
+
+### Temperature Units and Source
+* **Temperature Units:** Select between **°F** or **°C**.
+* **Temperature Source:**
+    * **None:** Disables the temperature display.
+    * **OWM (Open Weather Map):** A free* service using your coordinates for local data. Requires an internet connection.
+    * **MQTT:** Receives temperature via your MQTT broker. See [MQTT Setup and Topics]({{ '/mqtt.md' | relative_url }}) for more info.
+    * **API:** Updates only when a valid HTTP API command is received. See the [API HTTP Command List]({{ '/api.md' | relative_url }}) for details.
+
+---
+
+### Open Weather Map Configuration
+These settings are only used if **OWM** is selected. You must create an account at [OpenWeatherMap.org](https://openweathermap.org/) to generate an API key.
+
+<p align="center">
+  <img src="images/weather_03.jpg" alt="OWM Config Interface">
+</p>
+
+> **⚠️ Important: API Limits and Billing**<br>The system uses the **One Call 3.0 API**. While this is free for up to **1,000 calls per day**, Open Weather Map requires a credit card on file for this tier. If you exceed 1,000 calls in a single day, charges will be incurred. 
+{: .important }
+
+To ensure you stay well within the free limit, the system enforces a **minimum refresh interval of 10 minutes** (maximum 144 calls/day).
+
+#### OWM API Key
+Copy and paste your API key here. You can use unique keys for different services (like Home Assistant) to track usage independently, but all calls count towards the 1,000 calls/day limit.
+
+![OWM API Key Field](images/weather_04.jpg)
+
+#### OWM Latitude and Longitude
+Enter your specific coordinates. If you don't know them, you can find them by clicking your location in Google Maps.
+
+> **⚠️ Important: Negative Coordinates**<br>Depending on your location, your latitude or longitude may be a negative number. You **must** include the negative sign (`-`) in the field or the system will pull weather for the wrong hemisphere.
+{: .important }
+
+#### OWM Refresh Interval
+This specifies how often the system polls the server. The minimum is **10 minutes** and the maximum is **1,440 minutes** (once per day).
+
+---
+
+### Page Buttons
+
+> **⚠️ Important: Global Impact**<br>Unlike other sections of the web app, the System Integration page buttons **apply to ALL settings on the page simultaneously**. 
+{: .important }
+
+* **Reset Button:** Reloads all saved configuration values. This affects OWM settings AND all other system integrations on the page.
+* **Save and Reboot Button:** Commits ALL integration settings to the configuration file and reboots the controller. Verify all values on the page (WiFi, MQTT, etc.) before clicking this.
+* **Cancel Button:** Discards all changes and returns to the main menu.
+
+---
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/time' | relative_url }}" class="btn btn-outline"><- Previous: Clock and Time Settings</a>
+  <a href="{{ '/touchsensors' | relative_url }}" class="btn btn-purple">Next: Touch Sensor Configuration -></a>
 </div>
-Currently, the system only uses temperature, but future updated may add other features from external weather sources.  While designed to display outdoor temperature, you can just as easily use it for indoor temperature if that is the source you use.  The system does not have its own temperature sensor, so it simply displays whatever value it receives from an external source. Use of any weather service is entirely optional and the system will work if this option is disabled.<br><br>
-
-**Until a weather source is configured (or disabled), the clock will always shown an initial temperature of 0°.**
-
-To acccess the weather integration settings, return to system integrations from the primary controller's main web page.
-
-![05_System_03](images/05System_03_Main.jpg)
-
-The weather integration settings can be found in a section at the bottom of the system integrations page.
-
-![weather_02](images/weather_02.jpg)
-
-***Temperature Units***<br>
-Temperature can be shown in °F or °C.
-
-***Temperature Source***<br>
-You can disable the temperature or select one of three sources for the current temperature:
-- _None_: Temperature will be disabled and nothing will be shown on the display. No other functionality is impacted.
-
-- _OWM (Open Weather Map)_: This free* service uses your latitude and longitude to create a 'micro-forecast' for your precise location.  The API can run a plethora of current and forecast data.  Setup information for using OWM is covered below.  Use of OWM requires an Internet connection for your system.  If you don't want your system to use the Internet, select a different weather source or simply disable the temperature.
-
-- _MQTT_: The system can receive the current temperature (indoor or outdoor) via MQTT.  This does require that you have an MQTT broker, an external system that publishes the temperature and you must also consider MQTT under the system integrations.  See [MQTT Setup and Topics](/mqtt.md) for more information on enabling MQTT and the topics used, including the temperature.  When selecting MQTT, no other settings are needed for the weather integration.
-
-- _API_: The HTTP API can also be used to set/update the temperature.  When this method is selected, the temperature is only updated when a new API command is received. See [API HTTP Command List](/api.md) for more information on using the API.  No other settings are needed for API weather integration.
-
-<br>
-
-***Open Weather Map Configuration***<br>
-These settings are only used if OWM is selected as the source.  They are ignored otherwise.  To use Open Weather Map, you must create an account and generate an API key.
-<div align="center">
-
-![weather_03](images/weather_03.jpg)
-</div>
-
-The system uses the One Call 3.0 API.  This API is free for up to 1,000 API calls a day.  That means you could update the current temperature once every 2 minutes and still not exceed your "free" API calls.  But since the temperature normally doesn't change that rapidly, a refresh interval will be used to limit the API calls to a minimum of 10 minutes.  This assures that that system will not make more than 144 calls in a given day.  See the [Open Weather Map](https://openweathermap.org/) web site to create an account and generate an API key.  
-
-***OWM API Key***<br>
-Simply copy/paste your OWN API key here.  As you can see from this example, you can create multiple keys for different services, like Home Assistant, if you use OWM for more than one service.
-
-![weather_04](images/weather_04.jpg)
-
-***OWM Latitude and Longitude***<br>
-Enter the latitude and longitude for your location.  If you don't know your current location coodinates, simply open up Google Maps, find your location and click a spot nearby.  An info card will pop up that lists the latitude and longitude for that location.  Note that depending on your locale, one or both values may be shown as negative numbers.  If a negative number is shown, copy it as a negative number as well.  Do not eliminate the negative sign or you will get the wrong weather.
-
-***OWM Refresh Interval***<br>
-This specifies how often the system sends an API call to update the temperature.  As mentioned above, the free OWM is limited to 1,000 API calls a day.  But since the temperature doesn't normally change that rapidly, an API call is only needed every so often.  The minimum refresh value is 10 minutes (resulting in a total of 144 calls a day).  The maximum refresh interval is 1,440 minutes, or a refresh just once a day.
-
-***Page Buttons***<br>
-
-**IMPORTANT**: _Note that unlike some other pages in the web app, the system integration page only has one set of buttons at the bottom that **apply to ALL settings on the page**! This means that if you clikc the reset or save buttons, ALL settings on the page are impacted._  
-
-***Reset Button***<br>
-The reset button will reload all the saved configuration values.  This not only applies to the OWM settings but all other system integrations on the page.  If you changed any other values, they will also be reset or reloaded when clicking the RESET button.
-
-***Save and Reboot Button***<br>
-This will not only save your weather settings, but ALL settings on the integrations page.  If you changed any other settings, please verify all values are correct before saving.  When you click SAVE & REBOOT, all current integration settings are saved to the configuration file and the controller will reboot, reading these new settings and applying them as the system defaults.
-
-***Cancel Button***<br>
-This simply discards any changes made and returns to the controller's main page.

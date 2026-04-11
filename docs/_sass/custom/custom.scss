@@ -16,44 +16,31 @@
 }
 
 /* 3. Remove default top/bottom margins from paragraphs inside the callout */
-/* This prevents 'double padding' when using inline bold titles and icons */
 .callout p {
     margin-top: 0 !important;
-    margin-bottom: 0.5rem !important; /* Small gap between paragraphs if a note has multiple */
-    line-height: 1.5 !important;
+    margin-bottom: 0.5rem !important; 
+    line-height: 1.4 !important;
 }
 
 .callout p:last-child {
     margin-bottom: 0 !important;
 }
 
-/* 4. Refinement for inline bold 'titles' to ensure they sit flush */
+/* 4. Refinement for inline bold 'titles' within callouts */
 .callout p strong:first-child {
     display: inline-block;
-    margin-right: 4px;
+    margin-bottom: 2px;
+    color: inherit;
 }
 
-/* 5. Increase content width on Desktop to reduce "Unused Space" */
-/* This targets larger screens while leaving mobile/tablet views untouched */
-@media (min-width: 66.5rem) {
-  .main-content-wrap {
-    max-width: 85rem !important; /* Default is ~60rem; adjusted for better layout on Chrome */
-  }
-}
-
-/* 6. Standardize Sidebar Width */
-/* Ensures the navigation menu has a consistent, professional presence */
-.side-bar {
-  width: 300px !important;
-}
-
-/* 7. Slim down lists when they appear inside a callout */
+/* 5. Slim down lists (bullets) when they appear inside a callout box */
 .callout ul {
     margin-top: 0.5rem !important;
     margin-bottom: 0 !important;
-    padding-left: 1.5rem !important;
+    padding-left: 1.2rem !important;
 }
 
 .callout li {
     margin-bottom: 0.2rem !important;
+    line-height: 1.4 !important;
 }

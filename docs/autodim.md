@@ -1,65 +1,83 @@
+---
+layout: default
+title: Auto-Dimming
+parent: Setting Up the System
+nav_order: 3
+---
+
 # Auto-Dimming
-<div align="center">
+{: .no_toc }
 
-![autodim_01](images/autodim_01.jpg)
+---
+
+<p align="center">
+  <img src="images/autodim_01.jpg" alt="Auto-Dimming Overview">
+</p>
+
+The display can be configured to automatically adjust its brightness based on the measured ambient light in the room. Unlike many retail clocks with fixed dimming, this system allows you to define a custom curve by specifying exact ambient light percentages and their corresponding display brightness levels.
+
+<p align="center">
+  <img src="images/autodim_01b.jpg" alt="Dimmed Display Example">
+</p>
+
+### Setting Up Auto-Dimming
+To configure these settings, return to the **Display Settings** page via the web application. The auto-dim options are located on the lower half of the page.
+
+![Navigation to Auto-Dim](images/autodim_02.jpg)
+
+  ![autodim_03](images/autodim_03.jpg)
+
+
+These options define the **DEFAULT** values loaded at boot. You can temporarily override these settings during operation, as covered in [Managing Display Brightness]({{ '/dispbrightness' | relative_url }}).
+
+#### Core Settings
+* **Enable Auto-Dimming:** Check this box to activate the feature by default. If unchecked, brightness remains constant at the "Default Brightness" level.
+* **Auto-Dim Debounce:** Specifies a delay (0–10 seconds) before a brightness change is applied. 
+    > **💡 Performance Hint**<br>Debouncing prevents the display from flickering if a shadow passes over the sensor or a light reflects off the screen. A value of **2–5 seconds** is recommended for a smooth experience.
+    {: .note }
+
+#### Ambient Light and Brightness Logic
+The system uses a tiered logic to determine brightness. You can specify up to four ambient light thresholds and five brightness levels. 
+
+> **💡 Understanding the Curve**<br>The system evaluates the room brightness from **Highest to Lowest**:
+> * If the light is **above** your top threshold (e.g., 50%), the highest brightness (e.g., 94%) is used.
+> * If the light falls **between** two thresholds, the lower corresponding brightness is applied.
+> * If the light is **below** your minimum threshold (e.g., 5%), the lowest defined brightness is used.
+{: .note }
+
+<p align="center">
+  <img src="images/autodim_04.jpg" alt="Brightness Logic Table">
+</p>
+
+---
+
+### Calibration Mode
+Because "50% brightness" looks different in every room, the system includes a live calibration tool. 
+
+> **⚠️ Warning**<br>Clicking the **Calibrate** button will discard any unsaved values currently entered on the Auto-Dim settings page. Save your progress before entering calibration.
+{: .warning }
+
+<p align="center">
+  <img src="images/autodim_05.jpg" alt="Calibration Interface">
+</p>
+
+The calibration page provides a "Live" ambient light reading that updates once per second. To find your ideal settings:
+1. Adjust your room lighting (turn on lamps, close curtains, etc.).
+2. Observe the measured ambient level.
+3. Use the slider to find a display brightness that feels comfortable for that specific light level.
+4. **Jot down these pairs** (Ambient % and Display %); they are not saved automatically on this page.
+
+**Note:** The calibration page is a sandbox. Use it to determine your desired values, then return to the Auto-Dim settings page to enter and save them.
+
+---
+
+### Maintenance Actions
+* **RESET Button:** Restores all values to the last saved defaults, overwriting any unsaved changes.
+* **SAVE AND REBOOT:** Commits your new curve to the configuration file and restarts the controller to apply them as the new system defaults.
+
+---
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/display' | relative_url }}" class="btn btn-outline"><- Previous: Display Configuration</a>
+  <a href="{{ '/lights' | relative_url }}" class="btn btn-purple">Next: Light Settings -></a>
 </div>
-The display can be configured to auto-dim based on measured ambient light level.  The brighter the room atmosphere, the brigher the display.  Unlike many other clocks with auto-dimming, in this case, you can specify various ambient light levels and the corresponding display brightness level.<br><br>
-
-![autodim_01b](images/autodim_01b.jpg)
-
-### Setup Auto-Dimming
-To setup auto-dimming, return to the Display Settings page:
-
-![autodim_02](images/autodim_02.jpg)
-
-The auto-dim setup can be found on the lower half of the page (under the general display settings).
-<div align="center">
-
-![autodim_03](images/autodim_03.jpg)
-</div>
-
-These options are used to set the **DEFAULT** auto-dimming values, which means that these settings will be used and applied each time the system starts up or reboots.
-
-#### _Enable Auto-Dimming_ 
-
-Check this box to use auto-dimming by default.  If unchecked, then the brightness level will remain constant unless manually changed.
-
-#### _Auto-Dim Debounce_ 
-
-The ambient light sensor takes a new reading every few milliseconds.  To prevent the display from rapidly changing brightness due to a short change in ambient lighting (say like a reflection), you can specify a "debounce" value, in seconds.  This means that a light level must be crossed _and maintain the new level_ for at least the specified amount of time before the display will change brightness.  Note that the longer the delay, the longer it will take for the display to change.  For example, if you have a 5 second debounce value and turn on the room lights, the display won't respond and change its brightness for at least 5 seconds.  You can experiment with this value to find the optimum debounce value for your situation.  Use 0 to disable debouncing or a maximum of 10 seconds.  A value of 2-5 seconds is recommended as a starting value.
-
-#### _Ambient Light % and Display Brightness_
-
-You can specify up to four different ambient light levels (by percentage) and five difference corresponding display brightness values.  To understand how these work, I'll use the above screen shot as an example.
-
-- Ambient Light Percentage - Specify an ambient light level from **HIGHEST** value at the top to the **LOWEST** value at the bottom.  In my example, the highest or brightest value, 50%, is set at the top and the lowest or dimmest level, 5%, is set at the bottom.  Don't know what percentages to use?  No problem, you can use the 'Calibrate' button.  Calibration is described below.
-
-- Display Brightness - Specify up to five display brightness values, again, specifying the brightest level at the top and decreasing as you move down.  Again, using the example above:
-    - If the current light level is above the top Ambient light percentatge (50%), then the highest display brightness value will be applied (94%) will be applied.
-    - If the current light level is between the first and second percentages, the display brightness will be set to the second brightness.
-    - This repeats for the next couple of ambient and display percentages until the final display brightness, which will be used if the ambient light level is less than the minimum ambient light level percentage.
-<div align="center">
-
-![autodim_04](images/autodim_04.jpg)
-</div>
-
-#### _Cablibration_
-You probably don't know what "50%" room or ambient lighting level actually looks like!  But no problem.. you can click the provided "Calibrate" button where you can see the measured light levels and experiment with different display brightness levels.  Note that you will be prompted that any unsaved auto-dim values will be lost when entering calibration mode.
-
-![autodim_05](images/autodim_05.jpg)
-
-The calibration page shows the "live" ambient room level measurement, updated once per second.  Try different light settings in the room... main lights on/off, curtains opened/closed, etc... to replicate normal different stages of lighting that you might experience.  
-
-You can also experiment with different display brightness levels by using the slider control.  So you can set the room to "maximum" brightess you might expect and then determine the display brightness level you want for that room light level.
-
-**IMPORTANT NOTE**: None of the values displayed or set on this page are saved.  Changing the display brightness via the slider will change the active display brightness, but otherwise all values are temporary and only used to determine the values you want to use.  The bottom portion is not editable and is simply a reference that shows an example as to how you may want to configure your values.
-
-For this reason, you should jot down or otherwise note the ambient and display brightness levels you want to use.  Once known, click the 'Auto-Dim' settings button at the top of the page to return to the auto-dim settings where you can now enter the desired values.
-
-#### _Reset Button_
-You can click the Reset Button at any time to restore the auto-dim values to their last saved defaults.  Note that this will overwrite any changes you may have made, but not yet saved.
-
-#### _Save and Reboot Button_
-Once you have your desired auto-dim settings entered, click the "Save and Reboot" button to commit these values to the saved configuration file and to make them the new boot **DEFAULT** values.  The system will then reboot and load your new auto-dim values as the defaults.
-
-Note that there are methods to temporarily override the default auto-dim setting (e.g. changing the **ACTIVE** value).  These methods are covered under the [Managing Display Brightness](dispbrightness.md) topic.
