@@ -1,16 +1,47 @@
+---
+layout: default
+title: Firmware Updates and Modifications
+nav_order: 9
+has_children: true
+has_toc: false
+---
+
 # Firmware Updates and Modifications
-<div align="center">
+{: .no_toc }
 
-![firmwaremain_01](images/firmwaremain_01a.jpg)
+---
+
+<p align="center">
+  <img src="images/firmwaremain_01a.jpg" alt="Firmware Management Overview">
+</p>
+
+Future versions of the firmware—containing bug fixes, performance improvements, or new features—may be released periodically. Additionally, because this system was built with specific hardware and design needs in mind, you may wish to modify the code to better suit your own unique use cases.
+
+These sections cover the methods for installing official firmware releases and provide technical tips if you choose to modify the source code yourself.
+
+---
+
+### In This Section
+
+* **[Installing Official Firmware Updates]({{ '/firmwareupdates' | relative_url }})** – Detailed steps for updating the Primary and Display controllers wirelessly or via USB.
+* **[Modifying the Firmware]({{ '/modifications' | relative_url }})** – Tips, tools, and structural information for those interested in customizing the C++, HTML, or CSS.
+
+---
+
+> **❗ Support Disclaimer**<br>While I am happy to answer questions regarding the official firmware releases, I am unable to provide technical support for modified versions of the code. I simply do not have the bandwidth to maintain or troubleshoot unique forks of the project.
+{: .important }
+
+### Required Technical Knowledge
+If you intend to modify the firmware, you should have a solid understanding of:
+* **Arduino / C++:** For core logic and hardware register management.
+* **HTML & CSS:** For the web interface layout and styling.
+* **JavaScript:** For the interactive elements of the web application.
+
+The source code is fairly well-documented to assist you in navigating the logic. Additional information can be found in the [Modifying the Firmware]({{ '/modifications' | relative_url }}) section.
+
+---
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/discoverymanual' | relative_url }}" class="btn btn-outline"><- Previous: Manually Creating MQTT Entities</a>
+  <a href="{{ '/firmwareupdates' | relative_url }}" class="btn btn-purple">Next: Installing Updates -></a>
 </div>
-
-Future versions of the firmware, with bug fixes or even new features, may be released from time to time. And as mentioned in the introduction, this system was built with very specific hardware and very specific design needs.  You may wish to modify the firmware for different hardware and/or uses.
-
-These sections cover methods of installing officially released firmware updates along with some tips and tools if you opt to modify the firmware yourself.
-
-- [Installing Official Firmware Updates]()
-- [Modifying the Firmware]()
-
-Note that if you opt to modify the firmware for your own needs, I will not be able to provide support.  I will happily answer any questions regarding the official firmware, but I simply do not have the bandwidth to develop, support or otherwise maintain multiple versions of the firmware.
-
-You should have a good understanding of Arduino/C++, HTML, CSS and Javascript to attempt any modifications.  The code is fairly well documented, and some additional information can be fund in the Modifying the Firmware section linked above.

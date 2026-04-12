@@ -44,3 +44,14 @@
     margin-bottom: 0.2rem !important;
     line-height: 1.4 !important;
 }
+
+/* --- 6. Inline Code Styling (Dark Theme Optimization) --- */
+:not(pre) > code {
+    background-color: #2d2d2d !important; /* Lighter than your main background for depth */
+    color: #f0b000 !important;          /* A technical amber/orange for high contrast */
+    padding: 2px 5px !important;
+    border-radius: 3px !important;
+    border: 1px solid #444 !important;    /* Defines the edge so it doesn't bleed into the background */
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 85%;                       /* Slightly smaller to stay in line with paragraph text */
+}
