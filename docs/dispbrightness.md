@@ -1,68 +1,89 @@
+---
+layout: default
+title: Managing Display Brightness
+parent: General System Use
+nav_order: 2
+---
+
 # Managing the Display Brightness
-<div align="center">
+{: .no_toc }
 
-![dispbrightness_01](images/dispbrightness_01.jpg)
-</div>
+---
 
-This section covers the various methods of controlling the display's brightness level.  Again, a reminder that you should understand the differences between the system's **DEFAULT** or boot brightness setting and the **ACTIVE** brightness setting.  In most case, and unless otherwise notes, the processes described here only update the **ACTIVE** setting.  This means that changes will be lost and the display will revert back to the **DEFAULT** brigntess settings if power is lost or the controller is rebooted.  For more infomration on the differences between DEFAULT and ACTIVE settings, please review the section on [Web Application Overview](/webapp.md).
+<p align="center">
+  <img src="images/dispbrightness_01.jpg" alt="Display Brightness Overview">
+</p>
 
-**NOTES ON AUTO-DIMMING AND AUTO-BRIGHTNESS**<br>
-- If auto-dimming is enabled, then any manual brightness adjustments will be overridden in a matter of seconds by the auto-dim settings.  As a general rule, if you want to manually control the display's brightness, you first need to disable the auto-dim setting if it is enabled.  The instructions below include information on how to do this for the **ACTIVE** setting.  If you want to change the **DEFAULT** setting or to calibrate auto-dimming see the [Using Auto-Dimming](/autodim.md) topic.
+This section covers the various methods for controlling the display’s brightness level. 
 
-- Regardless of the auto-dim settings, if the current **ACTIVE** brightness is less than the **DEFAULT** active brightness, you can simply tap anywhere on the display to _temporarily_ increase the brightness to the default level.  After approximately 10 seconds of inactivity, the screen will automatically return to the prior brightness.  This acts much like your phone or tablet, where you can just tap the screen to temporarily "waken" the display.
+> **💡 Reminder: Active vs. Default**<br>Unless otherwise noted, these processes only update the **ACTIVE** settings. Changes will be lost and the display will revert to its **DEFAULT** brightness if the system is restarted or reboots. Review the [Web Application Overview]({{ '/webapp' | relative_url }}) for more on this concept.
+{: .note }
 
-- Other certain actions may also temporarily brighten the screen.  For example, when an alarm sounds, the screen automatically brightens temporarily.  When the alarm is snoozed or stopped, the brightness returns to the prior setting.  In a similar manner, the screen will automatically brighten (if dimmed below a certain level) when entering any of the settings pages on the display.  Again, the brightness will return to the previous level when the settings pages are exited and the clock returns to normal operating mode.
+---
+
+### Key Brightness Behaviors
+
+#### Auto-Dimming Overrides
+If [Auto-Dimming]({{ '/autodim' | relative_url }}) is enabled, any manual brightness adjustment will be overridden within seconds by the automated light sensor logic. To maintain a manual brightness level, you must first disable the **ACTIVE** auto-dim setting.
+
+#### "Wake on Tap" (Temporary Brightness)
+If the current brightness is lower than your system's default, you can tap anywhere on the display to temporarily increase the brightness to the default level. After 10 seconds of inactivity, the screen will automatically return to its dimmed state.
+
+#### Automatic Brightening
+The screen will automatically brighten temporarily during the following events:
+* **Alarms:** The screen brightens when an alarm sounds and reverts once snoozed or stopped.
+* **Settings:** The screen brightens when entering any on-device settings menus to ensure visibility.
+
+---
 
 ### Control via the Web Application
+Active brightness controls are managed from the main **Display** page of the web app.
 
-The active controls for the display are managed from the main Display page of the web app.  From the main controller's page, simply select 'Display'.
+![Accessing Display Settings](images/dispbrightness_03.jpg)
 
-![dispbrightness_03](images/dispbrightness_03.jpg)
+#### Manual Adjustment
+1. **Disable Auto-Dim:** If enabled, uncheck the Auto-Dimming box. A temporary message will appear reminding you that this change is only active until the next reboot.
+2. **Brightness Slider:** Move the slider to immediately update the display. Setting this to 0% effectively turns the display off (though it still responds to "Wake on Tap").
 
-This will navigate to the primary display controller's page.  Controls for the display brightness are shown right at the top.
+![Web App Brightness Slider](images/dispbrightness_02.jpg)
 
-![dispbrightness_02](images/dispbrightness_02.jpg)
+#### Refresh & Sync
+The web page does not automatically detect brightness changes made via the touch panel or external APIs. Click the **REFRESH & SYNC** link to update the web interface with the hardware's current active values.
 
-As mentioned above, if auto-dimming is enabled, any changes to the display brightness will immediately be overwritten by the auto-dim settings.  So if enabled, uncheck this box to manually set the brightness.  Note that anytime you change the **ACTIVE** state of the auto-dim, a message will be shown to remind you that the change is only temporary and the state will be restored upon a restart or reboot of the controller.  See the link above if you wish to change the **DEFAULT**, or boot state, of auto-dimming.
-
-With auto-dimming disabled, simply move the slider to immediately change the display's brightness.  Move all the way to the left (0%) in effect shuts off the display.  Even when completely turned off, you can tap the screen to brighten it for approximately 10 seconds.
-
-***Refresh and Sync***<br>
-Similar to controlling the lights, the web page has no way of knowing if the brightness has been changed via one of the other methods listed below.  This means that if the display page is already shown and you change the brightness via the touch panel or external source, the web app will be unaware and will now be out-of-sync with the actual brightness.  Simply reload the web page or click the REFRESH & SYNC link to update the web page to match the current active brightness settings of the display.
+---
 
 ### Control via the Touch Display
-Assuming touch is enable for the display, you can also control the display brightness right from the display itself.
+If touch is enabled, you can adjust brightness directly on the device:
 
-From the normal "clock" display of the touch display, simply tap the gear icon located in the upper right corner.  This displays the main settings page with the display brightness controls shown right underneath the light controls.
+1. Tap the **Gear Icon** (⚙) in the upper right corner of the clock.
+2. Toggle the **Auto-Dim** state by tapping the **X** or **✔** icons.
+3. Once disabled, use the slider to adjust the brightness.
 
-![dispbrightness_05](images/dispbrightness_05.jpg)
+![Touch Display Brightness Menu](images/dispbrightness_05.jpg)
 
-Remember you need to disable auto-dimming to manually change the brightness.  You can change the **ACTIVE** state of auto-dimming by just tapping the X or ✔ icon.  Once disabled, you can manually adjust the display's brightness with the slider.  Changes will be shown immediately and when you are satisfied with the brightness, tap the red X in the upper right corner of the display or just wait a few seconds and the system will automatically revert back to the clock/normal mode.
+*The interface will return to the clock after 10 seconds of inactivity, or you can tap the red **X**.*
+
+---
 
 ### Control from External Sources
+The display can be integrated into external smart home systems like Home Assistant.
 
-The display brightness and auto-dim setting can also be controlled from an external system, such as Home Assistant.  This can be done through either the optional MQTT integration or via the native HTTP API.
+#### MQTT
+Commands are sent to the `cmnd/` topic. Examples:
+* **Set Auto-Dim State:** `cmnd/[topic]/autodim` (Payload: `on`, `off`, `1`, or `0`)
+* **Set Brightness:** `cmnd/[topic]/dispbrightness` (Payload: `0-255`, where 255 is 100%)
 
-***MQTT***<br>
-If you have an MQTT broker and have also enabled and configured MQTT for the system, you can send commands for the auto-dim state and brightness of the display.
+#### HTTP API
+Post URLs directly to the controller’s IP address:
+* **Set Auto-Dim:** `http://[IP]/api?autodim=0` (0 for off, 1 for on)
+* **Set Brightness:** `http://[IP]/api?dispbrightness=96` (Value 0–255)
+* **Relative Adjustment:** `http://[IP]/api?dispbrightness=up` (Increases/decreases by ~10%)
 
-Examples:
-- Set Auto-Dim Active State: 
-  - _Topic_: cmnd/[your-mqtt-topic]/autodim
-  - _Payload_: **on** or **off** (or 1/0)
+See the [API HTTP Command List]({{ '/api' | relative_url }}) for the full range of commands.
 
-- Set the Display Brightness:
-  - _Topic_: cmnd/[your-mqtt-topic]/dispbrightness
-  - _Payload_: 0 - 255  (numeric value representing 0-100%)
+---
 
-See the [MQTT Setup and Topics](/mqtt.md) for more information on configuring and using MQTT with your project.
-
-***HTTP API***<br>
-The API can be used by any system that can post a URL to the IP address of the controller.  No additional components or configuration is required.  The HTTP API commands for controlling auto-dimming and the display brightness are similar to MQTT.
-
-Examples:
-- _Set the auto-dim state_:&nbsp;&nbsp; http://controller_ip_address/api?autodim=0 &nbsp;&nbsp;  (or "1" for on)
-- _Set the display brightness_:&nbsp;&nbsp; http://controller_ip_address/api?dispbrightness=96&nbsp;&nbsp;  (from 0 - 255)
-  - The API also supports "up" and "down" for the brightness value which will increase/decrease the brightness by approximately 10%.
-
-See the section [API HTTP Command List](/api.md) for details on using the API and the available commands.
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/lightcontrol' | relative_url }}" class="btn btn-outline"><- Previous: Controlling Lights</a>
+  <a href="{{ '/commands' | relative_url }}" class="btn btn-purple">Next: Controller Commands -></a>
+</div>

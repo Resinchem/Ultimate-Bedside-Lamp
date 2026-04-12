@@ -1,22 +1,40 @@
+---
+layout: default
+title: Using MQTT and the API
+nav_order: 7
+has_children: true
+has_toc: false
+---
+
 # Using MQTT and the API
-<div align="center">
+{: .no_toc }
 
-![integrationmain_01](images/integrationmain_01.jpg)
+---
 
+<p align="center">
+  <img src="images/integrationmain_01.jpg" alt="Integrations Overview">
+</p>
+
+For advanced users, the Bedside Lamp can be integrated into external smart home ecosystems like Home Assistant, Node-RED, or custom automation scripts. This is accomplished via two primary methods: **MQTT** and the **HTTP API**.
+
+> **💡 Note: Optional Features**<br>Neither MQTT nor the API are required for the lamp to function. These are strictly optional tools provided for those who wish to control their lamp through external hardware or software.
+{: .note }
+
+---
+
+### 1. MQTT Integration
+Message Queuing Telemetry Transport (MQTT) is a lightweight messaging protocol designed for IoT communication. If you have an MQTT broker and a system that can publish/subscribe to topics, you can fully automate the lamp’s states and settings. 
+
+* **Learn more at:** [MQTT.org](https://mqtt.org/)
+* **Implementation:** [MQTT Setup & Topics]({{ '/mqtt' | relative_url }})
+
+### 2. HTTP API
+The Application Programming Interface (API) allows the lamp to accept commands directly via standard URLs. This method requires no middleman (like a broker); you can even test commands by entering them directly into your browser's address bar. 
+
+* **Implementation:** [API HTTP Command List]({{ '/api' | relative_url }})
+
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/alarmactions' | relative_url }}" class="btn btn-outline"><- Previous: Responding to Alarms</a>
+  <a href="{{ '/mqtt' | relative_url }}" class="btn btn-purple">Next: MQTT Setup & Topics -></a>
 </div>
-
-You can integrated and control the bedside lamp into other systems, such as Home Assistant, via two primary methods, MQTT and the HTTP API.
-
-### MQTT
-
-Message Queuing Telemetry Transport (MQTT) is a lightweight, open-source messaging protocol designed for the Internet of Things (IoT) and machine-to-machine (M2M) communication.  It is supported by most major programming languages, including C++, Python, Java, PHP and more.  Many home automation systems also support MQTT.  If you have an MQTT broker and an external system that can publish and subscribe to MQTT topics, then you can integrate this project.  If you want know more about MQTT and how it works, you can visit [MQTT.org](https://mqtt.org/).
-
-For use with this project, see the section [MQTT Setup & Topics](/mqtt.md)
-
-### HTTP API
-
-The Appication Programming Interface (API) is designed to accept commands directly from special URLs sent over HTTP.  This methods does not require any additional components or "middlement".  You can simply enter these commands directly into your browser's address bar.  This also means that if you have an external system that can POST an HTTP string, then you can also integrate this project.  Note that while the HTTP API has nearly the same command list as MQTT, it doesn't have the same ability to 'receive' data or show states of entities like MQTT.
-
-For use with this project, see the section [API HTTP Command List](/api.md)
-
-***Neither MQTT or use of the API are required.  These are both optional ways to integrate and control the lamp from extrenal systems*** but are not required for full functionality of the system.

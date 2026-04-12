@@ -1,56 +1,82 @@
+---
+layout: default
+title: Responding to Alarms
+parent: Alarms
+nav_order: 4
+---
+
 # Responding to Alarms
-<div align="center">
+{: .no_toc }
 
-![alarmactions_01](images/alarmactions_01.jpg)
+---
+
+<p align="center">
+  <img src="images/alarmactions_01.jpg" alt="Responding to Alarms Overview">
+</p>
+
+The previous sections focused on scheduling and activation. This section covers the practical side of the system: what to do when the alarm actually sounds.
+
+### Snoozing vs. Stopping
+Regardless of which method you use to interact with the hardware, there are two primary responses to an active alarm:
+
+* **Snooze:** Silences the alarm for the duration defined in [Alarm Options and Settings]({{ '/alarmoptions' | relative_url }}). Once the timer expires, the alarm sounds again.
+* **Stop:** Permanently cancels the current alarm event. If the alarm is set to repeat (e.g., every Wednesday), it will not sound again until the next scheduled occurrence.
+
+> **💡 Minimum Snooze Requirement**<br>The snooze period must be set to at least **one minute** for these features to function. If your snooze time is set to 0, all snooze-related buttons and functions are disabled.
+{: .note }
+
+---
+
+### Method 1: Using the Touch Display
+When an alarm sounds, the screen automatically brightens to its **DEFAULT** brightness (if it was previously dimmed). The clock face is updated with dedicated **SNOOZE** and **STOP** buttons.
+
+<p align="center">
+  <img src="images/alarmactions_02.jpg" alt="Touch Display Alarm Interface">
+</p>
+
+* **To Snooze:** Tap the SNOOZE button. The alarm will stop and the display will keep the STOP button visible in case you decide to cancel the alarm before the snooze expires.
+<p align="center">
+  <img src="images/alarmactions_03.jpg" alt="Display during Snooze">
+</p>
+
+* **To Stop:** Tap the STOP button at any time to return the system to normal clock mode.
+
+
+
+---
+
+### Method 2: Using the Touch Sensors
+If you have [configured your touch sensors]({{ '/touchsensors' | relative_url }}) with "Snooze" and "Stop" as their Alarm Functions, you can respond to the alarm simply by tapping the top of the lamp enclosure.
+
+<p align="center">
+  <img src="images/touchsensor_06.jpg" alt="Touch Sensor Usage">
+</p>
+
+The behavior on the screen remains the same as the touch display method, but there is one critical operational difference during a snooze:
+
+> **⚠️ Sensor Function Reversion**<br>While the alarm is in a **Snooze** state, the touch sensors immediately revert to their **Primary Function** (e.g., toggling the LED strip or light bulb). You **cannot** use the touch sensors to cancel a snoozed alarm early; you must use the touch display or a web command to cancel the alarm before the snooze timer expires.
+{: .warning }
+
+---
+
+### Method 3: Using External Systems
+For those utilizing smart home hubs or other external systems like Home Assistant, you can snooze or stop alarms via the network.  See [Using MQTT and the API](/integrationmain.md) for complete details.
+
+#### MQTT
+Send a command to the `alarmupdate` topic:
+* **Topic:** `cmnd/[your-mqtt-topic]/alarmupdate`
+* **Payload:** `snooze` or `stop`
+
+#### HTTP API
+Post a direct URL to the controller's IP address:
+* **Snooze:** `http://[IP]/api?alarmupdate=snooze`
+* **Stop:** `http://[IP]/api?alarmupdate=stop`
+
+The results are identical to a physical tap—the hardware will react, and the touch display will update its state accordingly.
+
+---
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/alarms' | relative_url }}" class="btn btn-outline"><- Previous: Setting and Editing Alarms</a>
+  <a href="{{ '/integrationmain' | relative_url }}" class="btn btn-purple">Next: Using MQTT and the API -></a>
 </div>
-The previous sections covered the various ways to edit and/or activate alarms.  This section shows the various methods of responding to an alarm when it sounds.<br><br>
-
-***Snoozing vs. Stopping***<br>
-For all methods, a sounding alarm may be 'snoozed' or 'stopped'.  If snoozed, the alarm will be silenced for the amount of time configured in the [Alarm Options and Settings](/alarmoptions.md) and the system will return to normal operations. After the snooze time expires, the alarm will sound again.  Once again, it can be snoozed again or stopped.  The snooze period must be at least one minute or longer for these processes to work as described.  If snoozing is disable (period=0), then none of the snooze features will apply.
-
-When an alarm is stopped, it is permanently cancelled.  It will not sound again unless it has a repeat setting, at which point it will repeat and start over based on the repeat schedule (e.g. every Wednesday).
-
-### Using the Touch Display
-
-When an alarm sounds, the screen will automatically brighten to the DEFAULT brightness value if the current ACTIVE value is dimmer.  In addition, a SNOOZE and STOP button will appear on the display.
-
-![alarmaction_02](images/alarmactions_02.jpg)
-
-Simply tap either button to snooze or stop the alarm.  If you snooze the alarm, then the display will update as follows:
-
-![alarmaction_03](images/alarmactions_03.jpg)
-
-The STOP button will remain on the display during a snooze period in case you opt to cancel the alarm before the current snooze expires.  If the screen was brightened when the alarm sounds, it will return to the lower brightness level (or current auto-dim level if auto-dim is enabled) after a few seconds and while the snooze is occurring.
-
-When a snooze period expires, the alarm will begin sounding again, the screen will brighten (if appropriate) and the SNOOZE button will once again be shown next to the STOP button.  Hitting snooze starts the snooze process over again.  Hitting STOP at any point will cancel the current alarm and the system will return to normal operating mode until the next alarm is encountered.
-
-### Using the Touch Sensors
-
-![touchsensor_06](images/touchsensor_06.jpg)
-
-If you configured your optional touch sensors to have Snooze and Stop as their alarm functions (see [Defining the touch sensors](/touchsensors.md)), then you can simply tap the top of the enclosure to snooze or stop an alarm.  The functionality works identically to the touch display as described above.  In fact, the display will show the stop and snooze buttons in the same manner, even if the touch sensors are used to snooze/stop the alarm.  However, if you snooze the alarm, both touch sensors will return to their primary function (shown as toggling the bulb and LED strip above) while the snooze is active.
-
-In other words, if an alarm sounds and you tap the snooze button (say your snooze time is 5 minutes).  During the 5 minute snooze cycle, both touch sensors revert back to their primary function until the alarm sounds again.  This means that if you wish to stop/cancel an alarm during a snooze period, you must use the touch display or alternate method, as attempting to tap Sensor 2 in this case will toggle on the light bulb and not stop the alarm.  Snooze and Stop Alarm functions are only actie for the touch sensors _when an active alarm is sounding_ and not during a snooze or any other normal operation.
-
-### Using External Systems
-
-Much like settings alarms, you can also snooze or stop an active alarm using either MQTT or the HTTP API. In fact external systems, like Home Assistant, can be used to set, snooze, cancel or activate/deactive alarms.  This provides a variety of automation possibliities.
-
-***MQTT***<br>
-If you have a properly configured MQTT broker and have setup MQTT under the System Integrations, you can send a simply MQTT command to snooze/stop an alarm.
-
-Example:
-- Topic: ```cmnd/[your-mqtt-topic]/alarmupdate```
-- Payload: ```snooze or stop```
-
-This will exceute the same process as using the touch display or touch sensor so the results are identical, including what is shown on the display.  See the [MQTT Setup & Topics](/mqtt.md) section for more details on using MQTT with the system.
-
-***HTTP API***<br>
-The HTTP API can also be used to send a SNOOZE or STOP commmand for an actively sounding alarm.
-
-Example:
-```
-http://your-controller-ip/api?alarmupdate=snooze
-http://your-controller-ip/api?alarmupdate=stop
-```
-Again, the same process and results occur as using the touch options described above. See the [HTTP API Command List](/api.md) for more information on using the HTTP API.

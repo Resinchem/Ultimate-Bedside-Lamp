@@ -1,42 +1,54 @@
+---
+layout: default
+title: Alarms
+nav_order: 6
+has_children: true
+has_toc: false
+---
+
 # Alarms
-<div align="center">
+{: .no_toc }
 
-![alarmmain_01](images/alarmmain_01.jpg)
+---
+
+<p align="center">
+  <img src="images/alarmmain_01.jpg" alt="Alarms Overview Header">
+</p>
+
+Alarms are a core component of the Resinchem Tech Bedside Clock. The system provides a sophisticated scheduling engine designed for flexibility and ease of use.
+
+### Key Features
+* **Multi-Alarm Support:** Up to five independent alarms can be active at any time.
+* **Custom Audio:** Use the provided sounds or upload your own `.mp3` files to the microSD card.
+* **Gentle Wake:** Optional setting that starts the alarm at a low volume and fades it in over 60 seconds.
+* **Flexible Scheduling:** Set alarms for specific dates or recurring days (Weekdays, Weekends, or specific days of the week).
+* **Custom Snooze:** Adjustable snooze duration from 0 to 60 minutes.
+
+---
+
+### In This Section
+
+* **[Setting Up Alarm Sounds]({{ '/sounds' | relative_url }})** – Installing audio files and mapping track titles. **Start here.**
+* **[Alarm Options and Settings]({{ '/alarmoptions' | relative_url }})** – Global configuration for snooze and volume behavior.
+* **[Setting and Editing Alarms]({{ '/alarms' | relative_url }})** – Using the scheduling interface and setting recurrences.
+* **[Snoozing and Stopping Alarms]({{ '/alarmactions' | relative_url }})** – Managing the hardware response when an alarm is sounding.
+
+---
+
+> **⚠️ Performance Note**<br>Alarms will only sound when the system is in **Normal** operating mode (displaying the clock). If the system is in a Test Mode, powered off, or rebooting when an alarm is triggered, the event will be skipped. Missed alarms are not "queued" for later.
+{: .note }
+
+> **❗ Important: Fallback Recommendation**<br>While the system has been extensively tested, it is **highly recommended** that you use a secondary backup alarm until you have full confidence in your configuration. Resinchem Tech is not responsible for missed appointments or events due to missed alarms.
+{: .important }
+
+### Critical Operational Notes
+* **Test Mode Overrides:** Alarms will not sound if you are currently editing settings on the touch display or running hardware tests.
+* **Snooze Persistence:** If the clock loses power or is restarted during an active **SNOOZE** period, the alarm is canceled and will not resume after the reboot.
+* **Conflict Resolution:** If an alarm is already sounding and a second scheduled alarm event occurs, the second event is ignored.
+
+---
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/commands' | relative_url }}" class="btn btn-outline"><- Previous: Controller Commands</a>
+  <a href="{{ '/sounds' | relative_url }}" class="btn btn-purple">Next: Setting Up Alarm Sounds -></a>
 </div>
-
-Alarms make up a key component of the overall system.  What good would a bedside lamp and clock be without the ability to set and sound alarms?  The system has the following features as related to alarms:
-
-- Up to five alarms can be set and active at any given time.
-- Customizable alarm sounds.  Use a provided sound or your own .mp3 files as the alarm sound.
-- Optional "gentle wake" settting where the alarm initially sounds at a low level and slowly increases the volume over approximately one minute.
-- Customizable snooze time from none to 60 minutes.
-- Alarms can be set days, weeks or even months in advance by specifying an alarm date as well at time.
-- Alarms can be repeatable by individual day of the week, every weekday or every weekend day.
-- Multiple options for setting, updating and responding to alarms.
-
-The setup, scheduling and responding to alarm events are covered in the following sections:
-
-[Setting Up Alarm Sounds](/sounds.md) - Installing sounds on the microSD card and creating a mapping between tracks and titles.  Start here.
-
-[Alarm Options and Settings](/alarmoptions.md) - Covers global settings and options as related to alarms.
-
-[Setting and Editing Alarms](/alarms.md) - Covers the various alarm options and the ways that alarms can be created and edited.
-
-[Snoozing and Stopping Alarms](/alarmactions.md) - Covers the various ways to snooze or stop to a sounding alarm.
-
-**NOTE**: Alarms will only sound when the system is in "normal" operating mode.  If the system has been placed in one of the "test" modes (e.g. display testing, light config testing, etc.), is powered off or in the middle of a reboot when an alarm event occurs, the alarm may not sound.  Any "missed" alarms are skipped and not "queued" up for later sounding.
-
-<div style="background-color: Yellow; color: black; font-style: bolder; text-align:center;">
-
-**CAUTION!!! Please read!** 
-</div>
-
-While the system has been extensively tested to assure alarms work appropriately, it is **highly** recommended that you use a backup alarm until you have fully tested and have confidence in the alarms and alarm system.  I can't be responsible for a missed flight or important meeting because an alarm didn't sound as expected.  This could be due to something as simple as not having the volume set for the alarm sounds.  So until you've used the system successfully for a few alarms, having a fallback is advised.
-
-Here are a few other important notes regarding alarms:
-
-- Alarms will not sound if the system is in a test mode or your are currently editing the setings on the touch display.
-
-- if the clock loses power or is restarted during an active SNOOZE period, the alarm is canceled and will not restart after rebooting or restarting.
-
-- If an alarm is already actively sounding and second alarm event occurs, the second occurance is ignored.  As a general rule, an alarm will only sound if the system is in "normal operation" mode (the clock is showing) and no other alarms are actively sounding.

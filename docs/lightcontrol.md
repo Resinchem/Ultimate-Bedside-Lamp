@@ -1,93 +1,92 @@
+---
+layout: default
+title: Controlling Lights
+parent: General System Use
+nav_order: 1
+---
+
 # Controlling the Lights
-<div align="center">
+{: .no_toc }
 
-![lightcontrol_01](images/lightcontrol_01.jpg)
-</div>
+---
 
-This section covers the various methods of controlling the main RGBW light bulb along with the LED strip.  Again, a reminder that you should understand the differences between the system's **DEFAULT** or boot settings and the **ACTIVE** settings.  In most case, and unless otherwise notes, the processes described here only update the **ACTIVE** settings.  This means that changes will be lost and the lights will revert back to the **DEFAULT** settings if power is lost or the controller is rebooted.  For more infomration on the differences between DEFAULT and ACTIVE settings, please review the section on [Web Application Overview](/webapp.md).
+<p align="center">
+  <img src="images/lightcontrol_01.jpg" alt="Lighting Control Header">
+</p>
+
+This section covers the various methods for controlling the main RGBW light bulb and the LED strip. 
+
+> **💡 Reminder: Active Settings**<br>Most interactions described here only update the **ACTIVE** settings. This means any changes to colors or brightness will be lost and the hardware will revert to its **DEFAULT** boot settings if the system is restarted or power is lost.
+{: .note }
+
+---
 
 ### Control via the Web Application
-Using the web application gives you the most control over the system's lights.  The light controls are listed right at the top of the main page of the primary controller.
+The web application offers the most granular control over your lighting. The controls are located at the top of the primary controller’s main page.
 
-![lightcontrol_02](images/lightcontrol_02.jpg)
+![Web App Lighting Controls](images/lightcontrol_02.jpg)
 
-The control and options for the RGBW light bulb are on the left and LED strip are on the right.  Both sets of controls work in a similar manner.
+#### Color Selection
+Clicking the color box for either light opens the color picker. 
 
-***State Buttons***<br>
-Simply click the on/off button to toggle the state of the desired light.  Note that due to the fact that the page must be submitted to the ESP32, then the ESP32 has to send the command and wait back for the results and then finally post the updated state to the web page, there may be a small delay from the time you click the button and when the button state on the web page updates.  Remember that the web server (and all other functions) are operating simultaneously in a tiny ESP32.  For this reason, the web application isn't always as "snappy" as some other sites or applications.  See the Refresh & Sync section below for more information.
+![Color Picker Interface](images/lights_05.jpg)
 
-***Color Pickers***
-Clicking the color box for either light will open up a color picker.  
+* **Visual Selection:** Use the slider for the hue and the large box for saturation/value.
+* **Eyedropper:** Select any color visible on your desktop.
+* **Manual Input:** Enter RGB, HSL, or Hex codes. Note that selecting a color automatically switches the light bulb to **RGB Mode**.
 
-![lights_05](images/lights_05.jpg)
+#### Core Controls
+* **State Buttons:** Toggle the power for either the bulb or the strip. 
+* **Brightness Sliders:** Represented by the "sun" icon. Move to the right to increase intensity. The value is sent to the hardware as soon as you release the slider.
+* **White Temperature (Bulb Only):** Indicated by the thermometer icon. Sliding to the left creates a "Cool" blue-white; sliding to the right creates a "Warm" yellow-white.
+    * **Auto-Mode Switch:** Adjusting this automatically switches the bulb to "White Mode." The color picker box will turn white to reflect this state.
 
-You can select a color for the light (bulb or strip) by using any of the three methods:
-- Use the slider to select the general color or color range and then click in the large box for the exact color.
-- Use the eye-dropper to pick a color from anywhere on your desktop (even outside of the app).
-- Manually enter in a color value.  You can switch between RGB, HSL and Hex formats by clicking the small arrow next to the current color input mode.
+> **⚠️ Performance Note**<br>The ESP32 processes web requests alongside all other system functions. You may notice a slight delay (1–2 seconds) between clicking a button and seeing the interface update. Avoid rapid "multi-clicking" to prevent queuing up conflicting commands.
+{: .warning }
 
-As soon as you click away from the color picker, the color is sent to the light.
 
-_RGBW Bulb Only_: When you select a color from the color picker, the bulb is automatically switched to RGB color mode.
 
-***Brightness***<br>
-The slider with the small "sun" symbol represents the light brightness.  Move the slider to the right to increase the brightness and to the left to decrease brightness.  As soon as you 'release' the slider, the new brightness value is sent to the light.  Again note that there may be a slight delay as the ESP32 handles multiple processes before it can process your web request.
+#### Refresh & Sync
+The web server only sends data in response to a request. If you change the lights via MQTT or the touch display while the web app is open, the browser won't know. Click the **REFRESH & SYNC** link to force the web app to pull the current "Active" values from the hardware.
 
-***White Temperature*** - APPLIES TO RGBW BULB ONLY<br>
-The RGBW bulb also has a white "temperature" setting, indicated by a small thermometer icon, which controls how 'cool' or 'warm' the white light is.  Simply slide the control to the left for a 'cooler' white (more bluish-white) or to the right for a 'warmner' what (more yellow-white).  Note that when you change the white temperature value, the bulb will automatically switch to 'white color' or temperature mode.  In addition, the color picker box will change to white, not only to truly refect the current color, but to also let you know at a glance that the bulb is using temperature mode for it's color.  As general rule, you don't have to worry about the bulb "mode" as it is switched automatically based on whether you change the color or temperature.
-
-***Refresh & Sync***<br>
-The web server runs in the ESP32.  However, it knows nothing about the "web client" or the browser that is running on your local device.  It can only send data to a browser in response to a request from that same browser.  What this means that if you have the web page displayed and then change one of the lights using a different method as covered below, the browser has no way of knowing that these values were changed elsewhere.
-
-What this means is that if you change the lights outside of the web app, the web app may become "out of sync" with the actual states of the lights.  If this happens, simply click the **REFRESH & SYNC** link to request that the server send the current state of the light, including the color, brightness and temperature (if applicable).  This in effect, "syncs" the current web page to the actual active values of the lights.
+---
 
 ### Control via the Touch Display
-Assuming touch is enable for the display, you can also control the _states_ of the lights right from the device itself.
+If touch is enabled, you can toggle the power states directly from the clock.
 
-From the normal "clock" display of the touch display, simply tap the gear icon located in the upper right corner.  This displays the main settings page with the light controls at the top.
+1. Tap the **Gear Icon** (⚙) in the upper right corner of the clock display.
+2. Tap the **Bulb** or **LED** button to toggle the state.
 
-![lightcontrol_03](images/lightcontrol_03.jpg)
+![Touch Display Settings](images/lightcontrol_03.jpg)
 
-Tapping either button will toggle the state of the corresponding of the light off/on.  Similar to the web app, there may a small delay between when the light turns on and when the button on the display updates.  This is normal and a result of the ESP32 load to manage all the various processes occuring.
+> **💡 Note: State Only**<br>The touch display only toggles the On/Off state. The lights will turn on using whatever **ACTIVE** color, brightness, and temperature are currently in effect. To change colors or brightness, use the web app or external commands.
+{: .note }
 
-**Note**: Only the states (off/on) can be controlled via the touch panel.  Light will turn on with whatever the current **ACTIVE** color, brightness and temperature (bulb only) are in effect at the time.  To change color, brightness or temperature, you must use the web app or one of the other methods covered in this section.
+*The settings menu will automatically exit and return to the clock after 10 seconds of inactivity, or you can tap the red **X**.*
 
-To return to the clock or normal operating mode, you can click the red X in the upper right corner or just wait a few seconds.  If no touches are registered after approximately 10 seconds, the settings will automatically exit and the system returns to normal clock mode.
+---
 
 ### Control from External Sources
+Advanced users can integrate the lamp into systems like Home Assistant via MQTT or the HTTP API.
 
-The lights can also be completely controlled (state, brightness, color, etc.) from an external system, such as Home Assistant.  This can be done through either the optional MQTT integration or via the native HTTP API.
+#### MQTT
+Commands are sent to the `cmnd/` topic. Examples include:
+* **Set LED State:** `cmnd/[topic]/ledstate` (Payload: `on`, `off`, `0`, or `1`)
+* **Set LED Brightness:** `cmnd/[topic]/ledbrightness` (Payload: `0-255`)
+* **Set LED Color:** `cmnd/[topic]/ledcolor` (Payload: `255,0,0` or `#ff0000`)
 
-***MQTT***<br>
-If you have an MQTT broker and have also enabled and configured MQTT for the system, you can send commands for the state, brightness and/or color (and temperature for the light bulb).
+See [MQTT Setup and Topics]({{ '/mqtt' | relative_url }}) for the full list of available topics.
 
-Examples:
+#### HTTP API
+The API is accessible via standard URL posts to the controller’s IP address:
+* **Set Bulb State:** `http://[IP]/api?bulbstate=on`
+* **Set Bulb Brightness:** `http://[IP]/api?bulbbrightness=96`
+* **Set Bulb Color:** `http://[IP]/api?bulbcolor=ff0000`
+* **Set Bulb Temp:** `http://[IP]/api?bulbtemp=225`
 
-- Set state of LED strip:
-  - Topic: cmnd/[your-mqtt-topic]/ledstate
-  - Payload: on or off (or 0 / 1)
+See the [API HTTP Command List]({{ '/api' | relative_url }}) for details.
 
-- Set brightness of LED strip:
-  - Topic: cmnd/[your-mqtt-topic]/ledbrightness
-  - Payload: numeric value from 0 - 255 (setting to 0 is equivalent to setting state to "OFF")
-
-- Set color of LED strip:
-  - Topic: cmnd/[your-mqtt-topic]/ledcolor
-  - Payload: color value expressed as RGB (255,0, 0) or as a Hex color string (#ff0000)
-
-See the [MQTT Setup and Topics](/mqtt.md) for more information on configuring and using MQTT with your project.
-
-***HTTP API***
-The API can be used by any system that can post a URL to the IP address of the controller.  No additional components or configuration is required.  The HTTP API commands for controlling the lights are similar to MQTT.
-
-Examples:
-
-- _Set the bulb state_:&nbsp;&nbsp; http://controller_ip_address/api?bulbstate=on &nbsp;&nbsp;  (or off)
-- _Set the bulb brightness_:&nbsp;&nbsp; http://controller_ip_address/api?bulbbrightness=96
-- _Set the bulb RGB Color_:&nbsp;&nbsp; http://controller_ip_address/api?bulbcolor=ff0000
-- _Set the bulb white temp_:&nbsp;&nbsp; http://controller_ip_address/api?bulbtemp= 225
-
-See the section [API HTTP Command List](/api.md) for details on using the API and the available commands.
-
-
-
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
+  <a href="{{ '/usingmain' | relative_url }}" class="btn btn-outline"><- Previous: General System Use</a>
+  <a href="{{ '/dispbrightness' | relative_url }}" class="btn btn-purple">Next: Managing Display Brightness -></a>
+</div>
