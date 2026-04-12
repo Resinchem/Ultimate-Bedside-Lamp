@@ -15,12 +15,10 @@ has_toc: false
 
 ---
 
-<p align="center">
 **This repository is under active development and not yet publicly available!**
 {: .label .label-yellow }
-</p>
 
-If you stumbled upon this site by accident, not only is this document incomplete, many of the links point to sources that are not yet available.  This message will be removed when the repository "goes live". 
+If you stumbled upon this site by accident, not only is this document incomplete, many of the links point to sources that are not yet available.  This message will be removed when the repository "goes live" and development is complete. 
 
 ---
 
