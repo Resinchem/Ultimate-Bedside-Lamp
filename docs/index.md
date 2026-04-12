@@ -12,6 +12,18 @@ has_toc: false
 <p align="center">
   <img src="images/01Home_1A_topThumb.jpg" width="250">
 </p>
+
+---
+
+<p align="center">
+**This repository is under active development and not yet publicly available!**
+{: .label .label-yellow }
+</p>
+
+If you stumbled upon this site by accident, not only is this document incomplete, many of the links point to sources that are not yet available.  This message will be removed when the repository "goes live". 
+
+---
+
 This site contains information regarding the installation, configuration and use of the firmware for this project. It <u>does not</u> contain build instructions, parts lists or anything related to the wiring or physical build.  For information on how to build the system, please see the following:<br><br>
 
 > **⚠️ Build Instruction Notice**<br> This documentation **does not** contain build instructions, parts lists, or wiring diagrams. For the physical build details, please refer to the following resources:
