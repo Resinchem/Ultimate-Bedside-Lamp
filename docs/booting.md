@@ -24,7 +24,7 @@ As covered in the [Concepts]({{ '/concepts' | relative_url }}) section, this pro
 
 ## Visual Boot Indicators
 
-When you power on the system (assuming the "Triumvirate" is linked), the devices follow a specific sequence (you can modify portions of this behavior later):
+When you power on the system (assuming the "Triumvirate" is linked), the devices follow a specific sequence (you can modify portions of this behavior later). If the lights don't dance, or if the screen stays as dark as a rainy Monday, check your power supply. These ESP32s are like toddlers—if they don't get enough "juice," they’ll simply refuse to cooperate and leave you sitting in the dark.
 
 1.  **RGBW Bulb:** Boots first. The other controllers wait for this step to complete.
 2.  **Primary Controller:** * Briefly flashes the **LED Strip** (Red, Green, Blue) to test hardware.

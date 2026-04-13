@@ -55,5 +55,5 @@ Because the Home Assistant environment evolves frequently, the firmware is desig
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/discoveryentities' | relative_url }}" class="btn btn-outline"><- Previous: Editing or Hiding Entities</a>
-  <a href="{{ '/firmwaremain.md' | relative_url }}" class="btn btn-purple">Next: Firmware Updates -></a>
+  <a href="{{ '/firmwaremain' | relative_url }}" class="btn btn-purple">Next: Firmware Updates -></a>
 </div>

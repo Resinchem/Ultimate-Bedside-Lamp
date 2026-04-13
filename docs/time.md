@@ -60,7 +60,9 @@ Select this to manually override the clock.
 The recommended method for most users. It sets the time automatically at boot and maintains accuracy via periodic resyncs.
 
 * **NTP Server URL:** The address of your time server (e.g., `us.pool.ntp.org`). Use the **Lookup...** link to find servers near your location.
-* **Time Zone (POSIX):** Enter your time zone in POSIX format. Use the **Lookup...** link to find the correct string for your region (this handles Daylight Savings automatically if observed in your time zone).
+
+* **Time Zone (POSIX):** Entering your time zone using a POSIX string like `EST5EDT,M3.2.0,M11.1.0` feels less like setting a clock and more like writing an incantation. It’s not pretty, but it’s the secret language that tells your lamp exactly when to jump forward or fall back so you aren't late for work. If you get it wrong, you’ll be living in the future (or the past), which is great for sci-fi fans but terrible for breakfast schedules. Use the **Lookup...** link to find the correct string for your region (this handles Daylight Savings automatically if observed in your time zone).
+
 * **Sync Interval:** Frequency of resyncs (15 to 1,440 minutes). 
    * Normally a resync every few hours (or even once or twice per day) is sufficient to keep the clock accurate.  NTP servers generally block any requests made more frequently than once per 15 minutes.
 

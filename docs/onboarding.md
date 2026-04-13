@@ -49,13 +49,15 @@ Later in the setup, you will need to provide the bulb's name in the **Home Assis
 You must perform this process twice—once for each controller. 
 
 ### Step 1: Join the Hotspot
-When powered on, each flashed controller will broadcast its own Wi-Fi hotspot:
+Once flashed, the controller will broadcast its own Wi-Fi network. It’s essentially a very tiny, very exclusive club where the only item on the menu is "Configuration." If your phone warns you that the "Network has no Internet access," take a deep breath and tell it everything is fine. We aren't here to browse cat memes; we’re here to give a lamp its identity.
+
+The default hotspot names for the Wi-Fi hotspots are:
 * **Primary:** `BedsideLamp01_AP`
 * **Display:** `BL_Display01_AP`
 
 ![04Onboard_03_AP](images/04Onboard_03_AP.jpg)
 
-Use a phone or laptop to join the hotspot. If your device warns you that there is "No Internet Connection," select **Stay Connected**.
+Use a phone, tablet, or laptop to join the hotspot. Remember, if your device warns you that there is "No Internet Connection," select **Stay Connected**.
 
 ### Step 2: Access the Onboarding Form
 Open a web browser and enter the IP address: **`192.168.4.1`**. The onboarding form will appear:

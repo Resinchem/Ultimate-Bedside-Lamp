@@ -43,11 +43,12 @@ The remaining topics cover optional and more advanced options, along with a trou
 
 ### Hardware Substitutions
 
-The firmware is written for a very specific set of hardware. Any substitutions (different displays, ESP boards, touch sensors) will likely require corresponding changes to the C++ firmware code.
+The firmware is written for a very specific set of hardware. If you decide to swap the display for a different model you found in a "miscellaneous electronics" drawer, congratulations! You’ve just been promoted to Lead Engineer of your own custom fork.
+
+>While I admire the DIY spirit, I simply don’t have the bandwidth to maintain multiple versions of the firmware. If you venture off-book, you are the Captain of that ship—I’ll be on the shore cheering you on, but I can't help you navigate the "Why is my screen mirrored and purple?" phase of the journey.
+{: .important }
 
 *If you use different hardware, you will need to fork this repository and modify the code yourself. See the [**Modifying the Firmware**](/modifications.md) section for more info.*
-
-Unfortunately, I simply do not have the bandwidth to create, maintain and upgrade multiple versions of the firmware for different hardware configurations.
 
 ### Opening Issues
 * **Issues:** Reserved strictly for firmware errors or bugs.

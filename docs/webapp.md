@@ -18,6 +18,9 @@ The web application is the primary interface for the lamp and all its various se
 
 As covered in [Concepts]({{ '/concepts' | relative_url }}), this project uses three ESP-based controllers. While the app automatically handles most communication behind the scenes, there are specific system commands where you must know which controller you are currently accessing.
 
+> **🌐 Hosted Locally (No Cloud Required)**<br>The entire web interface is served directly from the ESP32's memory. It’s a remarkable feat of engineering when you consider that a chip the size of a postage stamp is doing the work of a web server on top of all its other processing. Just remember that it’s not a supercomputer—if you mash the "Refresh" button like you're trying to win a radio contest, the ESP32 might get a little overwhelmed and take a brief, unscheduled nap.
+{: .note }
+
 ### Identifying the "Active" Controller
 Because commands can vary by controller, there are several visual indicators to help you identify which interface is currently active in your browser:
 
@@ -28,8 +31,7 @@ Because commands can vary by controller, there are several visual indicators to 
 
 ![Browser Tabs](images/07Web_02_Tabs2.jpg)
 
-> **⚠️ Performance Note**<br>The web app is served directly from the ESP32 controllers while they are simultaneously managing lighting, audio, and displays. Expect a slight delay (a few seconds) for page loads. Avoid rapid repeat clicking, as this can queue up multiple requests and lead to unexpected behavior.
-{: .warning }
+
 
 ---
 

@@ -44,13 +44,18 @@ These settings are only used if **OWM** is selected. You must create an account 
   <img src="images/weather_03.jpg" alt="OWM Config Interface">
 </p>
 
+
 > **⚠️ Important: API Limits and Billing**<br>The system uses the **One Call 3.0 API**. While this is free for up to **1,000 calls per day**, Open Weather Map requires a credit card on file for this tier. If you exceed 1,000 calls in a single day, charges will be incurred. 
 {: .important }
 
 To ensure you stay well within the free limit, the system enforces a **minimum refresh interval of 10 minutes** (maximum 144 calls/day).
 
 #### OWM API Key
-Copy and paste your API key here. You can use unique keys for different services (like Home Assistant) to track usage independently, but all calls count towards the 1,000 calls/day limit.
+
+> 🔍 Generating an API key is a bit of a "quest" that involves signing up for an account and waiting for the key to activate (which can take a few hours). Don't blame the lamp if the key doesn't work instantly—OpenWeatherMap's servers need a little time to realize you’ve joined the party.
+{: .note}
+
+Once generated, copy and paste your API key into the OWM API Key field. You can use unique keys for different services (like Home Assistant) to track usage independently, but all calls count towards the 1,000 calls/day limit.
 
 ![OWM API Key Field](images/weather_04.jpg)
 

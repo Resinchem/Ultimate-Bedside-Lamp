@@ -15,7 +15,11 @@ has_toc: false
   <img src="images/about_01.jpg" alt="Ultimate Bedside Lamp prototype">
 </p>
 
-After years of testing dozens of different alarm clocks and bedside lamps, I was never able to find the "perfect" combination. Most retail devices suffered from at least one deal-breaker:
+## The Problem
+
+My nightstand had reached a state of "technological junk-drawer." Between the standalone clock, the lamp, the remote for an LED strip, and a tangled web of charging cables, it looked less like a bedroom and more like the bargain bin at a 1998 RadioShack&trade;. I needed one device to rule them all—or at least one that didn't require a search-and-rescue team to find the "Snooze" button at 6:00 AM.  
+
+Most retail devices also suffered from at least one or more of the following issues:
 
 * **Display Issues:** Screens were often too bright for a dark bedroom, or the digits were too small to read at night without glasses.
 * **Audio Issues:** Jarring buzzers or beeps with no volume control made for a stressful wake-up experience.

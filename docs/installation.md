@@ -68,6 +68,9 @@ If you haven't done so yet, connect the controller (the ESP32 for primary, or th
 
 Select the appropriate **COM Port**. 
 
+#### USB Drivers: The Invisible Gatekeepers
+If your computer treats your ESP32 like an unrecognized alien artifact, you are likely missing the USB-to-Serial drivers. Don’t feel bad; even the most seasoned developers have spent an hour troubleshooting a board only to realize they were using a "charge-only" USB cable they found in the back of a drawer. If you don't see a new COM port appear, try a different cable before you start questioning your life choices.
+
 **🔍 Troubleshooting COM Ports**<br>If you aren't sure which port to pick, disconnect the ESP32 and check the list; the port that disappears is your device. If no ports appear, you may need to install the **CP2102** or **CH340** USB-to-Serial drivers for your specific hardware.
 {: .note }
 

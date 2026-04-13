@@ -51,5 +51,5 @@ If you are using a different IDE or a specialized flashing utility (like the Esp
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/advanceddisplay' | relative_url }}" class="btn btn-outline"><- Previous: Display Library and Fonts</a>
-  <a href="{{ '/troubleshootmain' | relative_url }}" class="btn btn-purple">Next: Troubleshooting -></a>
+  <a href="{{ '/troubleshooting' | relative_url }}" class="btn btn-purple">Next: Troubleshooting -></a>
 </div>

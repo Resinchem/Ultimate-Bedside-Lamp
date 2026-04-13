@@ -19,6 +19,10 @@ If built as described in the [Build Article](https://resinchemtech.blogspot.com/
 > **⚠️ Material Warning**<br>Touch sensors will not function through metallic or other conductive surfaces. Additionally, ensure the sensors are placed at least 3-4 inches (7-10 cm) apart; if they are too close, triggering one may accidentally trigger the other.
 {: .warning }
 
+
+> **🔍 Dealing with Ghosts in the Machine**<br>Capacitive touch is magic until it isn't. If your lamp starts turning itself on and off like it's haunted, your sensitivity thresholds are likely set too low. High humidity or a stray charging cable resting near the sensor can trick the ESP32 into thinking a finger is present. Unless you're looking for a supernatural roommate, a quick adjustment to the duration usually clears things up.  If necessary, you can also add a capacitor to the TTP223 sensor to reduce its native sensitivity.
+{:  .note }
+
 ---
 
 ### Configuring the Sensors

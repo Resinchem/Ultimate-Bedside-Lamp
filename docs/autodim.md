@@ -69,6 +69,9 @@ The calibration page provides a "Live" ambient light reading that updates once p
 
 **Note:** The calibration page is a sandbox. Use it to determine your desired values, then return to the Auto-Dim settings page to enter and save them.
 
+>🔍 **The Brightness Balancing Act**<br>Finding the perfect auto-dimming levels is a bit of an art form. You want it bright enough to read during a sunny afternoon, but not so bright that it feels like the sun has decided to move into your bedroom at 3:00 AM. If you find your lamp is constantly flickering between brightness levels, you’ve likely set your thresholds too close together—give the sensor a little breathing room!
+{: .note }
+
 ---
 
 ### Maintenance Actions

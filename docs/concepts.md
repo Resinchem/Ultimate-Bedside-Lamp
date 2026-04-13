@@ -23,7 +23,7 @@ To successfully install and configure this firmware, it is important to understa
 The "Ultimate Bedside Lamp" is not a single device, but a coordinated system of three separate controllers communicating via a custom internal API.
 
 ### 1. RGBW Wi-Fi Light Bulb
-The bulb contains an embedded ESP8266 chip factory pre-flashed with a standalone version of ESPHome. 
+The bulb is the system's "Silent Partner." It arrives with a specialized version of ESPHome pre-installed, and it expects the rest of the world to keep up with its specific API. Think of it as the talented lead singer of the band who refuses to learn the other members' names—as long as the Primary Controller sends the right commands, the bulb performs beautifully. Just don't try to "re-educate" it with different firmware unless you're prepared for a very quiet (and dark) room. 
 
 * **No Dependency:** You do **not** need to be a Home Assistant user or have an ESPHome server to use this bulb. It only requires a local Wi-Fi connection.
 * **Integration:** If you are a Home Assistant user, you can optionally import the bulb as an ESPHome node. Note that if you also integrate the Primary Controller via MQTT or Home Assistant Discovery, you may see duplicate entities for the bulb.

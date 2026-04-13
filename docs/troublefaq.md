@@ -78,5 +78,5 @@ _Please don't email me directly unless specifically requested.  The volume of em
 ---
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
-  <a href="{{ '/toublediscovery' | relative_url }}" class="btn btn-outline"><- Previous: Home Assistant & MQTT</a>
+  <a href="{{ '/troublediscovery' | relative_url }}" class="btn btn-outline"><- Previous: Home Assistant & MQTT</a>
 </div>

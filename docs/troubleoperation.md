@@ -64,5 +64,5 @@ If the internal update continues to fail, use **ESPConnect** via USB. Just ensur
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/troublesetup' | relative_url }}" class="btn btn-outline"><- Previous: Initial Setup & Connectivity Issues</a>
-  <a href="{{ '/toublediscovery' | relative_url }}" class="btn btn-purple">Next: Home Assistant & MQTT Issues-></a>
+  <a href="{{ '/troublediscovery' | relative_url }}" class="btn btn-purple">Next: Home Assistant & MQTT Issues-></a>
 </div>

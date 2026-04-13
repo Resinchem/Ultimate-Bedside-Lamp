@@ -57,6 +57,9 @@ This setting impacts how the Primary Controller initializes during a cold boot.
 By default, this is set to **0 seconds**. If your Wi-Fi network is slow to initialize and the controllers fail to "find" each other during power-up, you can increase this delay. If you aren't experiencing boot issues, leave this at 0.
 
 ### Core Integrations
+
+**⚠️ IP Addresses: Get the Numbers Right**<br>This is the part where you play matchmaker. You’ll need to tell the Primary Controller exactly where its siblings live on the network. Be precise! If you typo an IP address here, the controllers will spend their lives shouting into the void, wondering why nobody is returning their calls. It’s a classic case of digital "it’s not you, it’s my configuration."
+
 For the initial setup, you must complete the following three sections:
 
 ![05System_04_Integrations](images/05System_04_Integrations.jpg)
