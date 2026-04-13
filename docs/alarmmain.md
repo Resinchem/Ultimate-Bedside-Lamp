@@ -15,7 +15,9 @@ has_toc: false
   <img src="images/alarmmain_01.jpg" alt="Alarms Overview Header">
 </p>
 
-Alarms are a core component of the Resinchem Tech Bedside Clock. The system provides a sophisticated scheduling engine designed for flexibility and ease of use.
+### The Most Loved (and Hated) Feature!
+
+This section covers everything related to the alarm system. Whether you prefer a gentle, sunrise-style fade-in or a more "urgent" wake-up call, these settings allow you to customize exactly how you transition from sleep to reality. I’ve designed the system to be as reliable as possible, because we know that a failed alarm isn't just a technical glitch—it's a ruined Tuesday.
 
 ### Key Features
 * **Multi-Alarm Support:** Up to five independent alarms can be active at any time.

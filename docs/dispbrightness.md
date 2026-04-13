@@ -47,6 +47,10 @@ Active brightness controls are managed from the main **Display** page of the web
 
 ![Web App Brightness Slider](images/dispbrightness_02.jpg)
 
+>**💡 Manual Override: Use with Caution**<br>The manual slider allows you to force the display to a specific brightness, bypassing the auto-dimming logic. This is great for showing off the screen to friends, but be careful! Sliding this to 100% in a pitch-black room is a very efficient way to accidentally give yourself a temporary retinal tan. Your sleepy 3:00 AM self will thank you for letting the auto-dimming handle the heavy lifting.
+{: .note } 
+
+
 #### Refresh & Sync
 The web page does not automatically detect brightness changes made via the touch panel or external APIs. Click the **REFRESH & SYNC** link to update the web interface with the hardware's current active values.
 

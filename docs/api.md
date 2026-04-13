@@ -14,7 +14,7 @@ nav_order: 2
   <img src="images/api_01.jpg" alt="HTTP API Overview">
 </p>
 
-The HTTP API provides a powerful method for controlling your bedside lamp directly via network requests. Unlike MQTT, the API does not require third-party intermediaries (like a broker) or complex configuration. Commands are issued as standard URLs:
+The API allows for "headless" control of the system via simple HTTP requests. It's essentially a remote control that lives in your browser's address bar or your favorite automation script. Unlike MQTT, the API does not require third-party intermediaries (like a broker) or complex configuration. Commands are issued as standard URLs:
 
 `http://[your-controller-ip]/api?...`
 

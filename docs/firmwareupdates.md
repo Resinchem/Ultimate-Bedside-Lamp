@@ -57,7 +57,7 @@ If you are running the standard, unmodified firmware, you only need the `.bin` f
 ---
 
 ### Installing the Update
-> **⚠️ WARNING: Files are NOT Interchangeable**<br>The Primary and Display controllers use different pin mappings and logic. Attempting to flash the Primary firmware onto the Display controller (or vice-versa) will render the system inoperable. You will likely need to reflash via a USB cable to recover.
+> **⚠️ WARNING: Files are NOT Interchangeable**<br>The Primary and Display controllers use different pin mappings and logic. **Double-check your files!** Sending the Display firmware to the Primary controller (or vice versa) is a quick way to turn your smart lamp into a very confused (and dark) paperweight. You will likely need to reflash via a USB cable to recover.
 {: .warning }
 
 1. Navigate to the **Controller Commands** section of the unit you wish to upgrade.
@@ -67,7 +67,11 @@ If you are running the standard, unmodified firmware, you only need the `.bin` f
 
 3. On the upgrade page, verify the **Background Color** (Gray for Primary, Yellow for Display) to ensure you are on the correct unit.  You can also check the labels and current version number as extra confirmation.
 4. Click **Choose File** and select the `.bin` file you downloaded.
-5. Click **UPDATE**.
+5. Click **UPDATE**.<br>
+    > **⚠️ Caution**<br>Once the update starts, resist the urge to tinker. It only takes a minute, and interrupting a flash is the digital equivalent of waking a sleepwalker—it rarely ends well.
+{: .important }
+
+<br>
 
 ![Upgrade Interface](images/frimwareupdates_06.jpg)
 

@@ -24,9 +24,13 @@ Alarm audio is handled by a DFPlayer Mini module equipped with a microSD card. B
 ### Supported Sound Files
 The system supports any `.mp3` file. While you can use full-length songs, the system will "loop" the audio to create a continuous alarm. 
 
-* **Recommended Length:** 30–60 seconds.
+> **🎵 Choose Your Soundtrack Wisely**<br>A word of advice: choose your alarm sounds carefully. There is no faster way to grow to loathe your favorite song than by making it the reason you have to stop dreaming and go to work. If you're unsure, "Gentle Waves" is a safe bet; "Industrial Jackhammer" is only for the bravest souls.
+{: .note }
+
+* **Recommended Length:** 5–30 seconds.
 * **Selection Limit:** Only the first **20 tracks** on the card are selectable as alarm sounds via the web app.
 * **Extended Library:** You can store up to **255 tracks** (0001.mp3 to 0255.mp3). While tracks beyond 20 cannot be used for alarms, they can be triggered remotely via MQTT or the HTTP API.
+
 
 ---
 

@@ -153,7 +153,7 @@ Numeric repeat values correspond to 0=None, 1=Sunday, 2=Monday. 3=Tuesday, 4=Wed
 ---
 
 ## MQTT Command (Subscribe) Topics
-Use these topics to change or update entities. Commands should be published with a retain flag of **FALSE**. Format: `cmnd/[your-subscribe-topic]/[topic-suffix]`.
+The lamp is a very attentive listener. It watches these specific topics for commands; just ensure your syntax is perfect, or the lamp will politely ignore you. Commands should be published with a retain flag of **FALSE**. Format: `cmnd/[your-subscribe-topic]/[topic-suffix]`.
 
 |Topic Suffix|Payload(s)|Example|Notes|
 |:---|:---:|:---:|:---|

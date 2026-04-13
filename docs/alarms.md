@@ -31,6 +31,8 @@ You may define up to five simultaneous alarms. Each slot contains the following 
 * **Date:** Required, but only used for one-time (non-repeating) alarms. You can set alarms days, weeks, or months in advance. Click the small calendar icon to display a date picker or manually enter a date in mm/dd/yyyy format.
 * **Time:** Click the clock icon to use the time picker. Ensure you select the correct AM/PM toggle. Or manually enter time in hh:mm AM/PM format.
 * **Repeat:** Choose from **None**, **Single Day**, **Weekdays (M-F)**, or **Weekends (Sat/Sun)**. Recurring alarms ignore the Date field and run indefinitely until deactivated.
+    > **💡 Tip: One-Time vs. Repeating**<br>Setting a repeating alarm is a great way to ensure you don't forget that 7:00 AM Monday meeting. Just remember to check your settings before a holiday! There is a unique kind of morning frustration that comes from being woken up by a perfectly functioning "Weekday" alarm on a Friday you took off for vacation.
+    {: .note }
 
 #### Controls
 * **RELOAD:** Discards unsaved changes and pulls the current schedule from the controller.

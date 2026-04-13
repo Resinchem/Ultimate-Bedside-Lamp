@@ -15,7 +15,7 @@ has_toc: false
   <img src="images/integrationmain_01.jpg" alt="Integrations Overview">
 </p>
 
-For advanced users, the Bedside Lamp can be integrated into external smart home ecosystems like Home Assistant, Node-RED, or custom automation scripts. This is accomplished via two primary methods: **MQTT** and the **HTTP API**.
+This section is for those who prefer to let their lamp take orders from a script rather than a finger. Whether you're a Home Assistant power user or a terminal enthusiast, these tools let you bypass the UI and talk directly to the hardware. 🛠️
 
 > **💡 Note: Optional Features**<br>Neither MQTT nor the API are required for the lamp to function. These are strictly optional tools provided for those who wish to control their lamp through external hardware or software.
 {: .note }

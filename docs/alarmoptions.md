@@ -43,7 +43,7 @@ The global alarm settings are located at the top of the page.
 ---
 
 ### Gentle Wake Feature
-The Gentle Wake feature prevents jarring wake-ups by starting the alarm at a whisper and slowly increasing the volume over approximately a one minute period until the configured alarm volume is reached.
+This feature slowly increases the light and volume over approximately one minute. It’s designed to coax you out of sleep rather than startling you into a state of cardiac arrest. It’s the difference between a polite "excuse me, it's morning" and a digital bucket of cold water. If you find you're sleeping through the "gentle" part, you might need to increase the final volume or reconsider your late-night scrolling habits.
 
 > **⚠️ Volume Requirement**<br>The **Alarm Volume** must be set to at least **50%** for Gentle Wake to function. If the volume is set lower than 50%, the alarm will immediately sound at the target volume without a fade-in period.
 {: .warning }

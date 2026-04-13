@@ -17,7 +17,7 @@ has_toc: false
 
 Future versions of the firmware—containing bug fixes, performance improvements, or new features—may be released periodically. Additionally, because this system was built with specific hardware and design needs in mind, you may wish to modify the code to better suit your own unique use cases.
 
-These sections cover the methods for installing official firmware releases and provide technical tips if you choose to modify the source code yourself.
+These sections cover the methods for installing official firmware releases and provide technical tips if you choose to modify the source code yourself. Think of this as the "brain surgery" section of the documentation. Whether you’re keeping up with the latest fixes or hacking the code to make the lamp do things I never intended, this is where the evolution happens. 🧠
 
 ---
 

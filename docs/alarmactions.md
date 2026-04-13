@@ -20,7 +20,7 @@ The previous sections focused on scheduling and activation. This section covers 
 Regardless of which method you use to interact with the hardware, there are two primary responses to an active alarm:
 
 * **Snooze:** Silences the alarm for the duration defined in [Alarm Options and Settings]({{ '/alarmoptions' | relative_url }}). Once the timer expires, the alarm sounds again.
-* **Stop:** Permanently cancels the current alarm event. If the alarm is set to repeat (e.g., every Wednesday), it will not sound again until the next scheduled occurrence.
+* **Stop:** Permanently cancels the current alarm event. If the alarm is set to repeat (e.g., every Wednesday), it will not sound again until the next scheduled occurrence. At this point, the lamp has done its job; the rest is up to you. (I recommend coffee.)
 
 > **💡 Minimum Snooze Requirement**<br>The snooze period must be set to at least **one minute** for these features to function. If your snooze time is set to 0, all snooze-related buttons and functions are disabled.
 {: .note }

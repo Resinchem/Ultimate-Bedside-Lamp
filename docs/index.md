@@ -22,11 +22,16 @@ If you stumbled upon this site by accident, not only is this document incomplete
 
 ---
 
-This site contains information regarding the installation, configuration and use of the firmware for this project. It <u>does not</u> contain build instructions, parts lists or anything related to the wiring or physical build.  For information on how to build the system, please see the following:<br><br>
+This site contains information regarding the installation, configuration and use of the firmware for this project. <br>
 
 > **⚠️ Build Instruction Notice**<br> This documentation **does not** contain build instructions, parts lists, or wiring diagrams. For the physical build details, please refer to the following resources:
 > * **YouTube Overview: [{{site.substitutions.youtube_title}}]({{site.links.youtube_video}})**
 > * **Written guide, with parts list, wiring diagrams and more: [Building the Ultimate Bedside Lamp](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
+{: .important }
+
+<br>
+
+> **🤖 AI Transparency Statement**<br>The provided firmware and documentation were created and developed by me (**a certified human**).  While Gemini AI was used to resolve issues with some of the more complex logic, _no code was blindly copied and pasted without detailed review_.  Gemini was also used to style and to provide consistency across these documentation pages.  But all content is mine... and developed by a real human!
 {: .note }
 
 ### How this document is organized
@@ -45,7 +50,7 @@ The remaining topics cover optional and more advanced options, along with a trou
 
 The firmware is written for a very specific set of hardware. If you decide to swap the display for a different model you found in a "miscellaneous electronics" drawer, congratulations! You’ve just been promoted to Lead Engineer of your own custom fork.
 
->While I admire the DIY spirit, I simply don’t have the bandwidth to maintain multiple versions of the firmware. If you venture off-book, you are the Captain of that ship—I’ll be on the shore cheering you on, but I can't help you navigate the "Why is my screen mirrored and purple?" phase of the journey.
+>🛠️ **Please Note**<br>While I admire the DIY spirit, I simply don’t have the bandwidth to maintain multiple versions of the firmware. If you venture off-book, you are the Captain of that ship—I’ll be on the shore cheering you on, but I can't help you navigate the "Why is my screen mirrored and purple?" phase of the journey.
 {: .important }
 
 *If you use different hardware, you will need to fork this repository and modify the code yourself. See the [**Modifying the Firmware**](/modifications.md) section for more info.*
