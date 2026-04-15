@@ -14,7 +14,7 @@ nav_order: 6
   <img src="images/weather_01.jpg" alt="Weather Display Overview">
 </p>
 
-Currently, the system only uses temperature data, though future updates may add additional features from external weather sources. While designed for outdoor temperature, you can easily use it for indoor temperature depending on your source.
+Currently, the system only uses temperature data, though future updates may add additional features from external weather sources. While designed for outdoor temperature, you can easily use it for indoor temperature by simply changing the source.
 
 > **💡 Note: Hardware Limitation**<br>The system does not have its own temperature sensor; it simply displays the value it receives from an external source. Until a weather source is configured, the clock will display an initial temperature of **0°**.
 {: .note }
@@ -31,7 +31,7 @@ The weather settings are located at the bottom of the System Integrations page.
 * **Temperature Units:** Select between **°F** or **°C**.
 * **Temperature Source:**
     * **None:** Disables the temperature display.
-    * **OWM (Open Weather Map):** A free* service using your coordinates for local data. Requires an internet connection.
+    * **OWM (Open Weather Map):** A free* service using your coordinates for local data. _Requires an internet connection_.
     * **MQTT:** Receives temperature via your MQTT broker. See [MQTT Setup and Topics]({{ '/mqtt.md' | relative_url }}) for more info.
     * **API:** Updates only when a valid HTTP API command is received. See the [API HTTP Command List]({{ '/api.md' | relative_url }}) for details.
 
@@ -55,7 +55,7 @@ To ensure you stay well within the free limit, the system enforces a **minimum r
 > 🔍 Generating an API key is a bit of a "quest" that involves signing up for an account and waiting for the key to activate (which can take a few hours). Don't blame the lamp if the key doesn't work instantly—OpenWeatherMap's servers need a little time to realize you’ve joined the party.
 {: .note}
 
-Once generated, copy and paste your API key into the OWM API Key field. You can use unique keys for different services (like Home Assistant) to track usage independently, but all calls count towards the 1,000 calls/day limit.
+Once generated, copy and paste your API key into the OWM API Key field. You can use unique keys for different services (like Home Assistant) to track usage independently, but all calls count towards the 1,000 calls/day limit regardless of key used.
 
 ![OWM API Key Field](images/weather_04.jpg)
 
@@ -77,9 +77,8 @@ This specifies how often the system polls the server. The minimum is **10 minute
 
 * **Reset Button:** Reloads all saved configuration values. This affects OWM settings AND all other system integrations on the page.
 * **Save and Reboot Button:** Commits ALL integration settings to the configuration file and reboots the controller. Verify all values on the page (WiFi, MQTT, etc.) before clicking this.
-* **Cancel Button:** Discards all changes and returns to the main menu.
+* **Cancel Button:** Discards all changes and returns to the controller's main page.
 
----
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/time' | relative_url }}" class="btn btn-outline"><- Previous: Clock and Time Settings</a>

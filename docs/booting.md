@@ -24,12 +24,12 @@ As covered in the [Concepts]({{ '/concepts' | relative_url }}) section, this pro
 
 ## Visual Boot Indicators
 
-When you power on the system (assuming the "Triumvirate" is linked), the devices follow a specific sequence (you can modify portions of this behavior later). If the lights don't dance, or if the screen stays as dark as a rainy Monday, check your power supply. These ESP32s are like toddlers—if they don't get enough "juice," they’ll simply refuse to cooperate and leave you sitting in the dark.
+When you power on the system (assuming the "Triumvirate" is linked), the devices follow a specific sequence (you can modify portions of this behavior later). If the lights don't dance, or if the screen stays as dark as a rainy Monday, also check your power supply. These ESP32s are like toddlers—if they don't get enough "juice," they’ll simply refuse to cooperate and leave you sitting in the dark.
 
 1.  **RGBW Bulb:** Boots first. The other controllers wait for this step to complete.
 2.  **Primary Controller:** * Briefly flashes the **LED Strip** (Red, Green, Blue) to test hardware.
     * Briefly flashes the **RGBW Bulb** (Red, Green, Blue) to test connectivity.
-    * Sets both to their default "Start" state (usually Off).
+    * Sets both to their default "Start" state (usually Off, but configurable later).
 3.  **Display Controller:** Shows a line-by-line status report directly on the screen.
 
 ![05Boot_02_Display](images/06Boot_02_Display.jpg)
@@ -47,7 +47,7 @@ When you power on the system (assuming the "Triumvirate" is linked), the devices
 | **Alarms** | Confirms the alarm schedule file was found and processed. |
 | **SD Card** | Confirms the audio hardware for alarm tracks is ready. |
 
-**💡 Initial Setup Note**<br>It is **perfectly normal** for several items (Clock, MQTT, Alarms, etc.) to show as **DISABLED** or **FAILED** during your first boot. These will become active once you configure them in the web application.
+**💡 Initial Setup Note**<br>It is **perfectly normal** for several items (Clock, MQTT, Alarms, etc.) to show as **DISABLED** or **FAILED** during your first boot. These will become active once you configure them in the web application.  For initial setup, the first three items are the most critical and required for full functionality.
 {: .note }
 
 ---
@@ -69,7 +69,7 @@ Because configuration is shared, if you change a setting on the Primary Controll
 
 ---
 
-With the boot process understood and your initial setup verified, you are ready to explore the [General Use]({{ '/use' | relative_url }}) of your Ultimate Bedside Lamp!
+With the boot process understood and your initial setup verified, you are ready to setup to the system to make it your own Ultimate Bedside Lamp!
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/interfaces' | relative_url }}" class="btn btn-outline"><- Previous: System Interfaces</a>

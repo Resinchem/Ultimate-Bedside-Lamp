@@ -20,16 +20,12 @@ These sections contain the "under the hood" technical details of the Bedside Lam
 > **🐉 Here Be Dragons**<br>By entering these pages, you are leaving the "safe zone" of standard consumer setup. I am happy to answer questions about the official firmware, but if you start rewriting the logic or swapping out hardware components, you’re officially the Captain of your own ship. I simply don't have the bandwidth to troubleshoot custom forks!
 {: .important }
 
----
-
-### System Architecture Overview
+## System Architecture Overview
 The system relies on a distributed processing model across three separate ESP controllers. While they work together as a cohesive unit, each maintains its own firmware, filesystem, and logic.
 
 * **HTML & UI:** To keep modifications straightforward, the entire web application (HTML, CSS, and JavaScript) is stored as embedded strings within a dedicated `html.h` header file. This means you don't need to worry about managing SPIFFS assets for the UI—just compile and flash.
 
----
-
-### In This Section
+## In This Section
 
 * **[Firmware and File Structure]({{ '/advancedstructure' | relative_url }})** – A breakdown of the Kauf bulb firmware and the specific source files for the Primary and Display units.
 * **[Configuration Files]({{ '/advancedconfig' | relative_url }})** – Detailed JSON mappings of the `config.json`, `discovery.json`, and alarm files.

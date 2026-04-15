@@ -16,7 +16,7 @@ nav_order: 4
 
 The previous sections focused on scheduling and activation. This section covers the practical side of the system: what to do when the alarm actually sounds.
 
-### Snoozing vs. Stopping
+## Snoozing vs. Stopping
 Regardless of which method you use to interact with the hardware, there are two primary responses to an active alarm:
 
 * **Snooze:** Silences the alarm for the duration defined in [Alarm Options and Settings]({{ '/alarmoptions' | relative_url }}). Once the timer expires, the alarm sounds again.
@@ -27,7 +27,7 @@ Regardless of which method you use to interact with the hardware, there are two 
 
 ---
 
-### Method 1: Using the Touch Display
+## Method 1: Using the Touch Display
 When an alarm sounds, the screen automatically brightens to its **DEFAULT** brightness (if it was previously dimmed). The clock face is updated with dedicated **SNOOZE** and **STOP** buttons.
 
 <p align="center">
@@ -39,13 +39,13 @@ When an alarm sounds, the screen automatically brightens to its **DEFAULT** brig
   <img src="images/alarmactions_03.jpg" alt="Display during Snooze">
 </p>
 
-* **To Stop:** Tap the STOP button at any time to return the system to normal clock mode.
+* **To Stop:** Tap the STOP button at any time to cancel the alarm and return the system to normal clock mode.
 
 
 
 ---
 
-### Method 2: Using the Touch Sensors
+## Method 2: Using the Touch Sensors
 If you have [configured your touch sensors]({{ '/touchsensors' | relative_url }}) with "Snooze" and "Stop" as their Alarm Functions, you can respond to the alarm simply by tapping the top of the lamp enclosure.
 
 <p align="center">
@@ -55,19 +55,19 @@ If you have [configured your touch sensors]({{ '/touchsensors' | relative_url }}
 The behavior on the screen remains the same as the touch display method, but there is one critical operational difference during a snooze:
 
 > **⚠️ Sensor Function Reversion**<br>While the alarm is in a **Snooze** state, the touch sensors immediately revert to their **Primary Function** (e.g., toggling the LED strip or light bulb). You **cannot** use the touch sensors to cancel a snoozed alarm early; you must use the touch display or a web command to cancel the alarm before the snooze timer expires.
-{: .warning }
+{: .important }
 
 ---
 
-### Method 3: Using External Systems
+## Method 3: Using External Systems
 For those utilizing smart home hubs or other external systems like Home Assistant, you can snooze or stop alarms via the network.  See [Using MQTT and the API](/integrationmain.md) for complete details.
 
-#### MQTT
+### MQTT
 Send a command to the `alarmupdate` topic:
 * **Topic:** `cmnd/[your-mqtt-topic]/alarmupdate`
 * **Payload:** `snooze` or `stop`
 
-#### HTTP API
+### HTTP API
 Post a direct URL to the controller's IP address:
 * **Snooze:** `http://[IP]/api?alarmupdate=snooze`
 * **Stop:** `http://[IP]/api?alarmupdate=stop`

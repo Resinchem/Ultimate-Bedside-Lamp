@@ -26,7 +26,7 @@ Once you have successfully flashed the firmware to your Primary and Display cont
 Follow the instructions provided with your bulb to complete its initial Wi-Fi setup. While the process is similar to the controllers below, there is one specific detail you must capture for the system to function: the **ESPHome Device Name**.
 
 ### Finding the Device Name
-If you are not using Home Assistant, locate the IP address assigned to the bulb by your router and enter it into a web browser. This opens the bulb’s native interface.
+After WIFI onboarding, and if you are not using Home Assistant, locate the IP address assigned to the bulb by your router and enter it into a web browser. This opens the bulb’s native interface.
 
 ![04Onboard_02_Header](images/04Onboard_02_Header.jpg)
 
@@ -54,6 +54,8 @@ Once flashed, the controller will broadcast its own Wi-Fi network. It’s essent
 The default hotspot names for the Wi-Fi hotspots are:
 * **Primary:** `BedsideLamp01_AP`
 * **Display:** `BL_Display01_AP`
+
+_As noted earlier, these hotspot names may show your assigned DeviceName_AP instead of the above._
 
 ![04Onboard_03_AP](images/04Onboard_03_AP.jpg)
 

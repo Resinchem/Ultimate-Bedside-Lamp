@@ -90,7 +90,7 @@ The system will restart. You may notice "boot indicators" such as the LED strip 
 
 ## Display Controller Configuration
 
-The Primary Controller now knows how to find the Display, but we must now tell the Display how to find the Primary.
+The Primary Controller now knows how to find the Display Controller, but we must now tell the Display how to find the Primary.
 
 ### 1. Identify the Interface
 Launch the web app again by navigating to the Primary Controller's IP. This time, select **Display** under Settings and Defaults.
@@ -115,7 +115,7 @@ Scroll to the bottom and click **Save and Reboot**. The Display controller will 
 
 ---
 
-With these steps completed, your "Controller Triumvirate" is now fully linked. You can now return to the web application to customize your preferences or set up optional [Controller Commands]({{ '/commands' | relative_url }}).
+With these steps completed, your "Controller Triumvirate" is now fully linked. Once the system successfully completes the boot process, you can return to the web application to customize your preferences or set up optional services.
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/onboarding' | relative_url }}" class="btn btn-outline"><- Previous: Onboarding</a>

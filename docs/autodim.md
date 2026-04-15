@@ -30,13 +30,13 @@ To configure these settings, return to the **Display Settings** page via the web
 
 These options define the **DEFAULT** values loaded at boot. You can temporarily override these settings during operation, as covered in [Managing Display Brightness]({{ '/dispbrightness' | relative_url }}).
 
-#### Core Settings
+### Core Settings
 * **Enable Auto-Dimming:** Check this box to activate the feature by default. If unchecked, brightness remains constant at the "Default Brightness" level.
 * **Auto-Dim Debounce:** Specifies a delay (0–10 seconds) before a brightness change is applied. 
     > **💡 Performance Hint**<br>Debouncing prevents the display from flickering if a shadow passes over the sensor or a light reflects off the screen. A value of **2–5 seconds** is recommended for a smooth experience.
     {: .note }
 
-#### Ambient Light and Brightness Logic
+### Ambient Light and Brightness Logic
 The system uses a tiered logic to determine brightness. You can specify up to four ambient light thresholds and five brightness levels. 
 
 > **💡 Understanding the Curve**<br>The system evaluates the room brightness from **Highest to Lowest**:
@@ -51,10 +51,10 @@ The system uses a tiered logic to determine brightness. You can specify up to fo
 
 ---
 
-### Calibration Mode
+## Calibration Mode
 Because "50% brightness" looks different in every room, the system includes a live calibration tool. 
 
-> **⚠️ Warning**<br>Clicking the **Calibrate** button will discard any unsaved values currently entered on the Auto-Dim settings page. Save your progress before entering calibration.
+> **⚠️ Warning**<br>Clicking the **Calibrate** button will discard any unsaved values currently entered on the Auto-Dim settings page.
 {: .warning }
 
 <p align="center">

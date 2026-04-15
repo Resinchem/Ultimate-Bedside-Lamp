@@ -36,6 +36,7 @@ If you intend to modify the firmware, you should have a solid understanding of:
 * **Arduino / C++:** For core logic and hardware register management.
 * **HTML & CSS:** For the web interface layout and styling.
 * **JavaScript:** For the interactive elements of the web application.
+* **JSON:** For some data structures, including how to serialize/deserialize JSON payloads.
 
 The source code is fairly well-documented to assist you in navigating the logic. Additional information can be found in the [Modifying the Firmware]({{ '/modifications' | relative_url }}) section.
 

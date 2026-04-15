@@ -16,22 +16,18 @@ nav_order: 1
 
 If you wish to use MQTT with the system, you must meet a few prerequisites and also enable and configure MQTT in the web application.
 
-### Prerequisites
-To use MQTT you must have a local MQTT broker available on your network. While you can technically use a cloud-based MQTT provider, this is not recommended due to the lag introduced between sending a command and having it received by the system. One of the most popular free versions is [Eclipse Mosquitto](https://mosquitto.org/).
+## Prerequisites
+To use MQTT you must have a local MQTT broker available on your network. While you can technically use a cloud-based MQTT provider, this is not recommended due to the lag introduced between sending a command and having it received by the system. One of the most popular free local versions is [Eclipse Mosquitto](https://mosquitto.org/).
 
-If you are a Home Assistant user, you can turn Home Assistant into your MQTT broker by installing the MQTT broker add-on.
+If you are a Home Assistant user, you can turn Home Assistant into your MQTT broker by installing the MQTT broker app/add-on.
 
----
-
-### Understanding Topics
+## Understanding Topics
 MQTT works using a subscribe/publish method. The system allows you to define these topics, and your external system must use these same topics for proper communication.
 
 * **Publish (stat/):** All messages sent by the lamp are published to a topic prepended with `stat/`.
 * **Subscribe (cmnd/):** All topics subscribed to by the lamp are prepended with `cmnd/`.
 
----
-
-### Enabling and Configuring MQTT
+## Enabling and Configuring MQTT
 MQTT configuration is found under the primary controller's **System Settings and Integrations**.
 
 ![Accessing Integrations](images/mqtt_02.jpg)
@@ -52,21 +48,19 @@ The MQTT setup section is located near the bottom of the page.
 > **💡 Integration Tip**<br>Since the system prepends `stat/` and `cmnd/` automatically, you can use the same string for both (e.g., `bedlamp`) to simplify your naming convention.
 {: .note }
 
-#### Maintenance & Buttons
+### Maintenance & Buttons
 > **⚠️ Important: Global Page Buttons**<br>Unlike some other settings pages, there is only ONE set of buttons at the bottom of the page. These buttons apply to **ALL** fields and integrations on the page (WiFi, Weather, etc.).
 {: .important }
 
 * **Reset Button:** Restores any changed values back to the current saved configuration.
-* **Save and Reboot:** Saves all current values on the page. Both the **Primary and Display** controllers will reboot.
+* **Save and Reboot:** Saves all current values on the page. Both the **Primary and Display** controllers will reboot. The system will start publishing/subscribing to MQTT topics upon completion of the boot.
 * **Cancel Button:** Discards changes and returns to the main menu.
-
----
 
 ## MQTT State (Publish) Topics
 The system publishes current values and diagnostic data to the broker. All state topics are published with the **Retain** flag set to **TRUE**.
 
 ### Diagnostic / Boot Topics
-These values are published only at boot time, except for LWT (status) which is updated by the broker.
+These values are published only at boot time, except for LWT (status) which is updated by the broker.<br> Formatted as `stat/[your-publish-topic]/[topic-suffix]`.
 
 |Topic Suffix|Payload Type|Example/Range|Notes|
 |:---|:---:|:---:|:---|
@@ -109,6 +103,7 @@ Formatted as `stat/[your-publish-topic]/[topic-suffix]`.
 > **💡 Alarm JSON Payloads**<br>The `/alarms` topic publishes the entire saved alarm array. It is contingent upon your external system to deserialize this JSON to utilize the values.
 {: .note }
 
+_Example payload_:
 ```json
 [
   {
@@ -153,7 +148,7 @@ Numeric repeat values correspond to 0=None, 1=Sunday, 2=Monday. 3=Tuesday, 4=Wed
 ---
 
 ## MQTT Command (Subscribe) Topics
-The lamp is a very attentive listener. It watches these specific topics for commands; just ensure your syntax is perfect, or the lamp will politely ignore you. Commands should be published with a retain flag of **FALSE**. Format: `cmnd/[your-subscribe-topic]/[topic-suffix]`.
+The lamp is a very attentive listener. It watches these specific topics for commands; just ensure your syntax is perfect, or the lamp will politely ignore you. Commands should be published with a retain flag of **FALSE**. <br><br>Format: `cmnd/[your-subscribe-topic]/[topic-suffix]`.
 
 |Topic Suffix|Payload(s)|Example|Notes|
 |:---|:---:|:---:|:---|

@@ -19,9 +19,7 @@ This section is intended for advanced users comfortable with C++, HTML, and CSS.
 > **❗ Disclaimer: Here Be Dragons**<br>I am happy to answer general questions about how the standard firmware works, but once you begin modifying the code, you are on your own! I cannot provide support for custom forks or troubleshooting for modified logic.
 {: .important }
 
----
-
-### File Organization
+## File Organization
 The most efficient way to customize the project is to clone or fork the [Ultimate-Bedside-Lamp repository](https://github.com/Resinchem/Ultimate-Bedside-Lamp). This ensures you have the correct directory structure for the Arduino IDE.
 
 If you do not have a Github account, or prefer to download the files manually, you will need the contents of the following directories:
@@ -30,12 +28,10 @@ If you do not have a Github account, or prefer to download the files manually, y
 
 Refer to the [Advanced Topics]({{ '/advanced' | relative_url }}) for a deep dive into the specific files and their intended roles within the system.
 
----
-
-### IDE Configuration
+## IDE Configuration
 While you can use various environments (like PlatformIO), the firmware was developed using the standard **Arduino IDE**. 
 
-#### Minimum Requirements
+### Minimum Requirements
 * **Arduino IDE:** Version 2.3.x or later.
 * **ESP32 Board Support:** Ensure the Espressif board manager URL is added and the ESP32 platform is installed.
 * **Libraries:** All external dependencies are listed at the top of the main `.ino` sketch file.
@@ -46,10 +42,8 @@ While you can use various environments (like PlatformIO), the firmware was devel
 **Example:**
 `#include "DFRobotDFPlayerMini.h" // MP3 Player: v.1.0.6`
 
----
-
-### Board & Compiler Settings
-Due to the complexity of the firmware and the size of the web application, standard ESP32 partition schemes will not work. You must use the following settings in the **Tools** menu:
+## Board & Compiler Settings
+Due to the complexity of the firmware and the size of the web application, standard ESP32 partition schemes will not work. You must use the following settings in the **Tools** menu.  These settings are the same for both the primary and display controller firmware:
 
 * **Board:** `ESP32 Dev Module`
 * **Partition Scheme:** `Minimal SPIFFS (1.9MB APP with OTA/190KB SPIFFS)`
@@ -57,7 +51,7 @@ Due to the complexity of the firmware and the size of the web application, stand
 * **Upload Speed:** `921600` (or lower if your cable/bridge is unstable)
 * **Core Debug Level:** `None` (Set to `Info` or `Debug` only when troubleshooting)
 
-#### Debugging
+### Debugging
 If you are modifying code and need to monitor the output, the Serial Monitor should be set to **115200 baud**. Note that since the system was designed to operate wirelessly, Serial output is disabled by default as a USB connection is required for output.  To enable for troubleshooting, locate the following line near the top of the source code and change the "0" to a "1":
 
 `#define SERIAL_DEBUG 0`  //Set to 1 to enable, 0 to disable.

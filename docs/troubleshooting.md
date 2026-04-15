@@ -24,7 +24,7 @@ Before diving into the specific fixes below, first verify that you have reviewed
 ### 🛑 The Golden Rule of Hardware
 As emphasized throughout this project, **the firmware is designed to work with very specific hardware components.** 
 
-> **❗ Support Disclaimer**
+> **❗ Support Disclaimer**<br>
 > I am unable to provide technical support for builds that use substituted hardware components. If you decide to go "off-book" with different screens, sensors, or controllers, you are officially the lead engineer for that version! Please don't ask for custom firmware modifications for unsupported hardware.
 {: .important }
 

@@ -34,7 +34,7 @@ Each sensor is configured independently. You must check the **Enable** box for e
 
 ![Touch Sensor Config Interface](images/touchsensor_03.jpg)
 
-#### Dual-Function Logic
+***Dual-Function Logic***<br>
 Each sensor can be assigned two distinct roles based on the current state of the lamp:
 * **Primary Function:** The action executed when a touch is detected while the alarm is idle or in a "Snooze" state.
 * **Alarm Function:** The action executed specifically while an alarm is actively sounding.
@@ -65,6 +65,7 @@ The Alarm Function is active only while an alarm is sounding. If an alarm is cur
 
 ![Alarm Function List](images/touchsensor_05.jpg)
 
+* **None:** No action is taken when the sensors are tapped during an actively sounding alarm.
 * **Snooze Alarm:** Taps trigger the snooze period. The sensor then returns to its primary function until the snooze expires.
 * **Stop Alarm:** Taps fully deactivate the sounding alarm. The sensor returns to its primary function immediately.
 
@@ -98,5 +99,5 @@ In this common setup:
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/weather' | relative_url }}" class="btn btn-outline"><- Previous: Temperature and Weather</a>
-  <a href="{{ '/usingmain' | relative_url }}" class="btn btn-purple">Next: Using the System -></a>
+  <a href="{{ '/usingmain' | relative_url }}" class="btn btn-purple">Next: General System Use-></a>
 </div>

@@ -54,7 +54,7 @@ The Display ESP32 handles the touch interface, the clock, alarms, and the audio 
 
 ---
 
-> **⚠️ The "Don't Cross the Streams" Warning**
+> **⚠️ The "Don't Cross the Streams" Warning**<br>
 > While the files look similar, the pin mappings and logic are fundamentally different. **Never** attempt to flash the Primary firmware to the Display controller or vice versa. Doing so won't just fail; it will likely lock up the controller so hard it will require a manual USB recovery and a very patient afternoon. Verify your file names twice before clicking that "Update" button!
 {: .warning }
 

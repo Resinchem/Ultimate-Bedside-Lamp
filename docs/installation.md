@@ -21,7 +21,7 @@ To make this process as simple as possible, we now use a modern, browser-based t
 
 ![03_02_ESPConnLogo](images/03Flashing_2_ESPConnectLogo.jpg)
 
-ESPConnect is a free, open-source web tool for interacting with ESP32-based microcontrollers. It allows you to flash firmware directly from your browser using the same technology found in tools for WLED, Tasmota, and ESPHome.
+[ESPConnect](https://thelastoutpostworkshop.github.io/ESPConnect/) is a free, open-source web tool for interacting with ESP32-based microcontrollers. It allows you to flash firmware directly from your browser using the same technology found in tools for WLED, Tasmota, and ESPHome.  This is what will be shown in this guide for the firmware installation step, but other alternatives will also be covered.
 
 ---
 
@@ -53,7 +53,7 @@ The process for both controllers is identical. The only difference is the firmwa
 * **Primary Controller:** Use `Primary_Ctrl_vx.xx.bin`
 * **Display Controller:** Use `Display_Ctrl_vx.xx.bin`
 
-*(Note: `vx.xx` represents the version number. Always use the most recent versions found in the assets section of the latest release.)*
+*(Note: `vx.xx` represents the version number. Always use the most recent versions found in the assets section of the [latest release](https://github.com/Resinchem/Ultimate-Bedside-Lamp/releases/latest).*
 
 ### Step 1: Connect to ESPConnect
 Open a Chromium-based browser and navigate to the [ESPConnect Tool](https://thelastoutpostworkshop.github.io/ESPConnect/).
@@ -68,22 +68,25 @@ If you haven't done so yet, connect the controller (the ESP32 for primary, or th
 
 Select the appropriate **COM Port**. 
 
-**🖥️ USB Drivers: The Invisible Gatekeepers**<br>If your computer treats your ESP32 like an unrecognized alien artifact, you are likely missing the USB-to-Serial drivers. Don’t feel bad; even the most seasoned developers have spent an hour troubleshooting a board only to realize they were using a "charge-only" USB cable they found in the back of a drawer. If you don't see a new COM port appear, try a different cable before you start questioning your life choices.
+**🖥️ USB Drivers: The Invisible Gatekeepers**<br>If your computer treats your ESP32 like an unrecognized alien artifact, you might be using a charge-only USB cable. Don’t feel bad; even the most seasoned developers have spent an hour troubleshooting a board only to realize they were using a "charge-only" USB cable they found in the back of a drawer. If you don't see a new COM port appear, try a different cable before you start questioning your life choices.
 {: .important }
 
-**🔍 Troubleshooting COM Ports**<br>If you aren't sure which port to pick, disconnect the ESP32 and check the list; the port that disappears is your device. If no ports appear, you may need to install the **CP2102** or **CH340** USB-to-Serial drivers for your specific hardware.
+**🔍 Troubleshooting COM Ports**<br>If you aren't sure which port to pick, disconnect the ESP32 and check the list; the port that disappears is your device. If no ports appear (and you are using a known, good USB data cable), you may need to install the **CP2102** or **CH340** USB-to-Serial drivers for your specific hardware.
 {: .note }
 
 ### Step 2: Configure Flash Settings
-Once connected, select **Flash Tools** from the left sidebar menu.
+Once connected, complete the following steps.
 
 ![03_05_ESPConnect](images/03Flashing_5_ESPConnect.jpg)
 
 1. **Select Flash Tools**: Select the Flash Tools option from the sidebar menu.
 2. **Select Firmware:** Click the Firmware Binary box and select the proper `.bin` file for the controller you are flashing.
 3. **Flash Offset:** Leave this at the default **0x0**.
-4. **Erase Flash:** Check the **Erase entire flash** checkbox to ensure a clean installation.
+4. **Erase Flash\*:** Check the **Erase entire flash** checkbox to ensure a clean installation.
 5. **Install:** Click the large blue "Flash Firmware" button to start the upload process.
+
+**⚠️ *Only Erase Flash for New Installs!**<br>If you are using this method to _upgraded_ the firmware on an existing controller, **clear the 'Erase enttire flash' checkbox** or your existing configuration, WiFi connection info, etc. will be lost and you will have to onboard and configure the controller again.  See [Installing Updates](/installation.md) for details.
+{: .critical }
 
 ### Step 3: Flash and Verify
 ESPConnect will show a progress bar during the flashing process:
@@ -95,6 +98,9 @@ Once the flashing is complete, power cycle the ESP32 by unplugging and reconnect
 ![03_07_ESPConnect](images/03Flashing_7_ESPConnect.jpg)
 
 **Success Criteria:** If you see a Wi-Fi hotspot named `BedsideLamp01_AP` (or `BL_Display01_AP` for the display), the flash was successful.
+
+**⏹️Hotspot Name**<br>Note that the hotspot shown may use the assigned device name followed by '_AP' (e.g. _MyDeviceName_AP_) instead of the defaults.  This is likely if onboarding a previously used controller, but may happen with new installs as well if initial onboarding fails.  The correct AP should be obvious as long as you use a descriptive device name.
+{: .note }
 
 ---
 

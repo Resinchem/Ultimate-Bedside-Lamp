@@ -14,7 +14,7 @@ nav_order: 4
   <img src="images/lights_01.jpg" alt="Lighting Configuration Header">
 </p>
 
-To access the default configuration for the RGBW Light Bulb and the internal LED Strip, select the **Lights** option from the primary controller’s main menu.
+To access the default configurations for the RGBW Light Bulb and the LED Strip, select the **Lights** option from the primary controller’s main menu.
 
 ![Lighting Menu Access](images/lights_02.jpg)
 
@@ -53,7 +53,7 @@ The smart bulb configuration works similarly to the LED strip but includes optio
 * **Default White Temperature:** Adjusts the "warmth" of the white light when in White mode.
     * **Cool White:** ~6,600 K (150 mired).
     * **Warm White:** ~2,800 K (350 mired).
-* **Default Brightness:** Sets the initial bulb intensity.
+* **Default Brightness:** Sets the initial bulb intensity. Some bulbs may not illuminate at very low settings.
 * **Show Test During Boot:** Flashes the bulb Red, Green, and Blue during the primary controller boot process. After booting completes, the bulb is set to the specified Start-up state.
 
 ---
@@ -69,9 +69,8 @@ The smart bulb configuration works similarly to the LED strip but includes optio
 * **RESET:** Reverts all fields in that section to the last saved defaults.
 * **SAVE AND REBOOT:** Commits the values for that specific section to flash memory and restarts the controller to apply them.
 
----
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
-  <a href="{{ '/autodim' | relative_url }}" class="btn btn-outline"><- Previous: Auto-Dimming</a>
+  <a href="{{ '/autodim' | relative_url }}" class="btn btn-outline"><- Previous: Auto-Dim Settings</a>
   <a href="{{ '/time' | relative_url }}" class="btn btn-purple">Next: Clock and Time Settings-></a>
 </div>

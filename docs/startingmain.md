@@ -28,7 +28,7 @@ This guide focuses strictly on the installation, configuration, and operation of
 To achieve a fully functional system, you must complete the following steps in the specific order listed below. Each section builds upon the previous one.
 
 ### 1. [Firmware Installation]({{ '/installation' | relative_url }})
-The first step is flashing the custom C++ firmware to your Primary and Display (CYD) controllers using the Arduino IDE or a compatible flashing utility.
+The first step is flashing the custom C++ firmware to your Primary and Display (CYD) controllers using a compatible flashing utility or the Arduino IDE.
 
 ### 2. [Network Onboarding]({{ '/onboarding' | relative_url }})
 Once flashed, you will connect each controller to your local Wi-Fi network. Remember: this system is designed for local-first operation and does not require an active internet connection for core functionality.
@@ -42,7 +42,7 @@ Verify your setup by observing the default boot sequence. This section explains 
 ---
 
 ## What's Next?
-The system will not be fully functional until all four steps above are completed. Once finished, you can proceed to the **General Use** and **Advanced Configuration** sections to customize your alarms, lighting modes, and _optional_ Home Assistant integrations.
+The system will not be fully functional until all four steps above are completed. Once finished, you can proceed to the **General Use** and the remaining topics to customize your alarms, lighting modes, and _optional_ Home Assistant integrations.
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/concepts' | relative_url }}" class="btn btn-outline"><- Previous: Concepts & Terminology</a>

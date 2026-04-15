@@ -44,7 +44,7 @@ If you are using a different IDE or a specialized flashing utility (like the Esp
 | **app1** | app | ota_1 | `0x1F0000` | `0x1E0000` (1.875MB) |
 | **spiffs** | data | spiffs | `0x3D0000` | `0x30000` (~190KB) |
 
-> **💡 Fun Fact**<br>By using this "Minimal SPIFFS" layout, we still have two identical `app` slots (OTA0 and OTA1). This is what allows the lamp to perform a "Safe Update"—it downloads the new firmware into the empty slot and only switches over if the download is successful. It’s like wearing a belt and suspenders at the same time!
+> **💡 Fun Fact**<br>By using this "Minimal SPIFFS" layout, we still have two identical `app` slots (OTA0 and OTA1). This is what allows a controller to perform a "Safe Update"—it downloads the new firmware into the empty slot and only switches over if the download is successful. It’s like wearing a belt and suspenders at the same time!
 {: .note }
 
 ---

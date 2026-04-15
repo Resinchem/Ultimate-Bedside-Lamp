@@ -19,12 +19,12 @@ Both the Primary and Display controllers utilize specialized configuration files
 > **⚠️ A Note on Manual Editing**<br>While these files are accessible via certain third-party utilities, **manual modification is not recommended.** A single missing comma or a stray bracket in a JSON file can prevent the controller from booting. If you need to troubleshoot, use the "Config Dump" feature in the [Controller Commands]({{ '/commands' | relative_url }}) menu to view the raw data safely.
 {: .warning }
 
----
+## Primary Controller Files
 
-### Primary Controller Files
-
-#### 1. Main Configuration (`config.json`)
+### 1. Main Configuration (`config.json`)
 This is the master configuration file for the Primary controller. It stores system interfaces, startup preferences, and integration keys.
+
+_Example primary config.json file_
 
 ```json
 {
@@ -84,16 +84,17 @@ This is the master configuration file for the Primary controller. It stores syst
   "temp_units": 13,
   "weather_source": 1,
   "owm_key": "your-api-key-here",
-  "own_lat": "39.6642",
-  "owm_long": "-86.0242",
+  "own_lat": "39.8098",
+  "owm_long": "-98.5551",
   "temp_update_period": 15
 }
 
 ```
 
-#### 2. Discovery Configuration (`discovery.json`)
+### 2. Discovery Configuration (`discovery.json`)
 This file is generated only after running the [Home Assistant Discovery]({{ '/discoverymain' | relative_url }}) process. It tracks which entity groups are currently exposed to your smart home hub.
 
+_Example discovery.json file_
 ```json
 {
   "devname": "Bedside Lamp",
@@ -108,11 +109,12 @@ This file is generated only after running the [Home Assistant Discovery]({{ '/di
 
 ---
 
-### Display Controller Files
+## Display Controller Files
 
-#### 1. Main Configuration (`config.json`)
+### 1. Main Configuration (`config.json`)
 Similar to the primary unit, the display controller stores its hardware-specific preferences and communication settings here.
 
+_Example display config.json file_
 ```json
 {
   "device_name": "BL_Display01",
@@ -168,15 +170,16 @@ Similar to the primary unit, the display controller stores its hardware-specific
   "weather_source": 1,
   "owm_key": "your-owm-key-here",
   "own_lat": "39.8083",
-  "owm_long": "-98.5583",
+  "owm_long": "-98.5551",
   "temp_update_period": 15
 }
 
 ```
 
-#### 2. Alarm File (`alarm.bin`)
+### 2. Alarm File (`alarm.bin`)
 Because the system checks the alarm schedule multiple times per minute, this data is stored in a binary format for high-speed access. When viewed via a "Config Dump," the system translates the binary data into the following JSON format:
 
+_Example alarm.bin config file_
 ```json
 {
   "system_time": "2026-04-10 08:41:37",
@@ -221,9 +224,10 @@ Because the system checks the alarm schedule multiple times per minute, this dat
 
 ```
 
-#### 3. Sound Library (`sounds.json`)
+### 3. Sound Library (`sounds.json`)
 This file contains the mapping of your microSD card files to the friendly titles shown in the web app and on the touch display.
 
+_Example sounds.json file_
 ```json
 [
   {

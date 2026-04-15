@@ -32,7 +32,7 @@ Other commands must be sent as the only command in the URL.
 ---
 
 ### SET Commands
-These commands are used to modify the active state of the system. Commands marked **NO** in the "Multi" column must be sent as standalone requests.
+These commands are used to modify the active state of the system. Commands marked **NO** in the "Multi" column must be sent as standalone requests and cannot be combined with other commands.
 
 | Command | Parameter(s) | Returns | Multi | Example / Notes |
 | :--- | :---: | :---: | :---: | :--- |
@@ -65,7 +65,7 @@ These commands are used to modify the active state of the system. Commands marke
 | `dispsaveconfig`| 1 | OK | **NO** | **CAUTION:** Saves active as default and reboots. |
 | `primsaveconfig`| 1 | OK | **NO** | **CAUTION:** Saves active as default and reboots. |
 
-#### Detailed SET Parameter Notes
+### Detailed SET Parameter Notes
 
 **Setting an Alarm**<br>
 Requires a specific set of parameters: `/api?setalarm=1&alarmnum=3&date=2026-04-01&time=14:30:00&repeat=7`
@@ -78,7 +78,7 @@ Requires a specific set of parameters: `/api?setalarm=1&alarmnum=3&date=2026-04-
 **Setting the Time**<br>
 Requires: `/api?settime=1&mon=4&day=15&yr=2026&hr=14&min=30&sec=0`
 * **Source**: Time source must be set to **Manual** for this to persist. Otherwise the next sync will overwrite the set time.
-* **Requirements**: All parameters (Month, Day, Year, Hour, Minute, Second) are required.
+* **Requirements**: All parameters (Month, Day, Year, Hour, Minute, Second) are required. Hours must be specified in 24-hour (military) format.
 
 ---
 
@@ -96,26 +96,27 @@ These commands retrieve data and do not modify settings. They must be sent indiv
 
 ---
 
-### DIRECT Commands
+## DIRECT Commands
 These are shortcut commands typically sent to a specific controller. Note the **omission** of `/api` in the URL.
 
-#### Controller-Specific Direct Calls
+### Controller-Specific Direct Calls
+
 | Command | Parameter(s) | Returns | Notes |
-| :--- | :---: | :---: | :--- |
+|---|:---:|:---:|---|
 | `/restart` | none | Web Page | Reboots the targeted controller. |
 | `/restartall` | none | Web Page | Reboots all three units (Primary IP only). |
 | `/otaupdate` | none | Web Page | Places targeted unit in OTA Update mode. |
 
-#### RGBW Light Bulb Direct Commands
+### RGBW Light Bulb Direct Commands
 The bulb uses the ESPHome API base: `http://[bulb-ip]/light/[bulbname]/[command]`
 
 | Command | Parameter(s) | Returns | Notes |
-| :--- | :---: | :---: | :--- |
+|---|:---:|:---:|----|
 | *empty* | none | JSON | Returns a JSON payload of current state. |
 | `/turn_on` | optional | OK | Toggles bulb on with last or new settings. |
 | `/turn_off` | none | OK | Turns the light bulb off. |
 
-> **💡 JSON Example: Bulb State**
+**💡 JSON Example: Current Bulb State**
 ```json
 {
   "id": "light-bedside_lamp_bulb",
@@ -125,11 +126,12 @@ The bulb uses the ESPHome API base: `http://[bulb-ip]/light/[bulbname]/[command]
   "color_temp": 287
 }
 ```
+**🔍 JSON Payload May Vary**<br>The contents of the bulb's state payload will vary based on whether the bulb is in _color_temp_ or _rgb_ color mode.
 {: .note }
 
 ---
 
-### External Bulb Support
+## External Bulb Support
 
 While not utilitized or linked to from the app, the bulb does have its own web interface that can be accessed by simply entering the bulb's IP address in a browser.
 

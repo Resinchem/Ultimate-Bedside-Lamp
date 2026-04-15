@@ -17,7 +17,7 @@ has_toc: false
 
 ### Daily Operations
 
-This is where the magic happens. Now that you've done the hard work of flashing and wiring, it's time to actually use the thing. Whether you're adjusting colors via the web app or checking the weather from your nightstand, these pages cover the "how-to" of your new bedside companion. No specialized engineering degree required (though it might feel like you earned one by this point). 
+This is where the magic happens. Now that you've done the hard work of flashing, wiring, and configuring, it's time to actually use the thing. Whether you're adjusting colors via the web app or checking the weather from your nightstand, these pages cover the "how-to" of your new bedside companion. No specialized engineering degree required (though it might feel like you earned one by this point). 
 
 > **💡 Active vs. Default Settings**<br>When interacting with the system using the methods covered here, you are primarily changing the system's **ACTIVE** values. These changes reflect the current state of the lamp but will be lost if the system restarts or reboots. To make a change permanent, you must adjust the **DEFAULT** values as covered in [Setting Up the System]({{ '/setupmain' | relative_url }}).
 {: .note }

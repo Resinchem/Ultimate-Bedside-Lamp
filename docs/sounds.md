@@ -21,8 +21,8 @@ Alarm audio is handled by a DFPlayer Mini module equipped with a microSD card. B
 
 ---
 
-### Supported Sound Files
-The system supports any `.mp3` file. While you can use full-length songs, the system will "loop" the audio to create a continuous alarm. 
+## Supported Sound Files
+The system supports any standard `.mp3` file. While you can use full-length songs, the system will "loop" the audio to create a continuous alarm. 
 
 > **🎵 Choose Your Soundtrack Wisely**<br>A word of advice: choose your alarm sounds carefully. There is no faster way to grow to loathe your favorite song than by making it the reason you have to stop dreaming and go to work. If you're unsure, "Gentle Waves" is a safe bet; "Industrial Jackhammer" is only for the bravest souls.
 {: .note }
@@ -34,7 +34,7 @@ The system supports any `.mp3` file. While you can use full-length songs, the sy
 
 ---
 
-### Naming and Transferring Files
+## Naming and Transferring Files
 The microSD card must be formatted as **FAT32**. Files must be named using a four-digit sequential format: `0001.mp3`, `0002.mp3`, `0003.mp3`, etc.
 
 > **⚠️ Important: Physical Copy Order**<br>The DFPlayer addresses files based on their physical location on the disk, not necessarily their filename. To ensure `0001.mp3` is actually seen as Index 1, you should **copy the files to the SD card one at a time, in order**. A bulk "drag and drop" of 20 files may result in the player seeing them in a random order.
@@ -42,19 +42,19 @@ The microSD card must be formatted as **FAT32**. Files must be named using a fou
 
 ---
 
-### Managing the Sound Library
+## Managing the Sound Library
 Since numeric filenames are hard to remember, the web application allows you to map these indices to meaningful names. Navigate to the **Display** settings from the primary menu to find the Sound Library.
 
 ![Accessing the Sound Library](images/sounds_02.jpg)
 
-#### Mapping Track Names
+### Mapping Track Names
 When you first open the library, the fields will be empty. You must define the relationship between the physical file and the name shown in the alarm menus.
 
 ![Sound Library Interface](images/sounds_03.jpg)
 
 * **File Name:** Enter the sequential filename (e.g., `0001.mp3`). This must match the physical index of the file on the SD card.
 * **Track Title:** Assign a descriptive name (e.g., "Forest Birds" or "FX_Heavy_Siren"). These titles will appear in the alarm configuration dropdowns.
-* **Unused Tracks:** Any indices without an assigned file must have the Track Title set to `_empty_`. This is a system requirement—do not leave the field blank.
+* **Unused Tracks:** Any indices without an assigned file must have the Track Title set to _`empty`_. This is a system requirement—do not leave the field blank.
 
 #### Controls
 * **RESET:** Reloads the last saved library settings from the configuration file.
@@ -65,6 +65,6 @@ When you first open the library, the fields will be empty. You must define the r
 ---
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
-  <a href="{{ '/alarmmain' | relative_url }}" class="btn btn-outline"><- Previous: Alarms</a>
+  <a href="{{ '/alarmmain' | relative_url }}" class="btn btn-outline"><- Previous: Alarm Overview</a>
   <a href="{{ '/alarmoptions' | relative_url }}" class="btn btn-purple">Next: Alarm Options & Settings -></a>
 </div>

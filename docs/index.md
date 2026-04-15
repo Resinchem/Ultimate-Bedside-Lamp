@@ -29,7 +29,7 @@ This site contains information regarding the installation, configuration and use
 > * **Written guide, with parts list, wiring diagrams and more: [Building the Ultimate Bedside Lamp](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
 {: .important }
 
-<br>
+
 
 > **🤖 AI Transparency Statement**<br>The provided firmware and documentation were created and developed by me (**a certified human**).  While Gemini AI was used to resolve issues with some of the more complex logic, _no code was blindly copied and pasted without detailed review_.  Gemini was also used to style and to provide consistency across these documentation pages.  But all content is mine... and developed by a real human!
 {: .note }

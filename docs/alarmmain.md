@@ -15,7 +15,7 @@ has_toc: false
   <img src="images/alarmmain_01.jpg" alt="Alarms Overview Header">
 </p>
 
-### The Most Loved (and Hated) Feature!
+## The Most Loved (and Hated) Feature!
 
 This section covers everything related to the alarm system. Whether you prefer a gentle, sunrise-style fade-in or a more "urgent" wake-up call, these settings allow you to customize exactly how you transition from sleep to reality. I’ve designed the system to be as reliable as possible, because we know that a failed alarm isn't just a technical glitch—it's a ruined Tuesday.
 
@@ -40,8 +40,8 @@ This section covers everything related to the alarm system. Whether you prefer a
 > **⚠️ Performance Note**<br>Alarms will only sound when the system is in **Normal** operating mode (displaying the clock). If the system is in a Test Mode, powered off, or rebooting when an alarm is triggered, the event will be skipped. Missed alarms are not "queued" for later.
 {: .note }
 
-> **❗ Important: Fallback Recommendation**<br>While the system has been extensively tested, it is **highly recommended** that you use a secondary backup alarm until you have full confidence in your configuration. Resinchem Tech is not responsible for missed appointments or events due to missed alarms.
-{: .important }
+> **❗ Important: Fallback Recommendation**<br>While the system has been extensively tested, it is **highly recommended** that you use a secondary backup alarm until you have full confidence in your configuration. Sorry, but I can't be responsible for missed appointments or events due to misbehaving alarms (but you can still blame me when explaining to the boss why you missed the staff meeting!).
+{: .warning }
 
 ### Critical Operational Notes
 * **Test Mode Overrides:** Alarms will not sound if you are currently editing settings on the touch display or running hardware tests.

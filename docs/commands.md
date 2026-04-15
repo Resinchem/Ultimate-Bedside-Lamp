@@ -18,13 +18,13 @@ Under normal operation, the system firmware abstracts the hardware so you don't 
 
 > **💡 Identifying the Active Controller**<br>As detailed in the [Web Application Overview]({{ '/webapp' | relative_url }}), look for these indicators to know which unit you are controlling:
 > * **Primary Controller:** Light Gray background; assigned Device Name in the header.
-> * **Display Controller:** Pale Yellow background; "Display" in the header/tab.
+> * **Display Controller:** Pale Yellow background; "Display" in the header/browser tab.
 {: .note }
 
 ---
 
 ## Primary Controller Commands
-These are found at the bottom of the primary controller’s web page. All **yellow** buttons in this section impact only the primary unit.
+These are found at the bottom of the primary controller’s web page. All **yellow** buttons in this section impact only the _primary_ controller.
 
 ![Primary Commands Interface](images/commands_02.jpg)
 
@@ -39,11 +39,11 @@ These are found at the bottom of the primary controller’s web page. All **yell
     * **Config File:** The primary boot values.
     * **Discover File:** Only present if [Home Assistant Discovery]({{ '/discoverymain' | relative_url }}) has been utilized.
 
-#### System-Wide Action
+### System-Wide Action
 * **Restart ALL:** This is the only "global" command. It sends a reboot signal to all three controllers simultaneously to refresh the entire system.
 
-> **❗ HIGH RISK: RESET PRIMARY**<br>This command wipes **ALL** configuration data from the primary controller, including saved Wi-Fi credentials. Use this only if you intend to return the unit to its factory state. You will have to repeat the [Onboarding]({{ '/onboarding' | relative_url }}) process.
-{: .important }
+> **❗ HIGH RISK: RESET PRIMARY**<br>This command wipes **ALL** configuration data from the primary controller, including saved Wi-Fi credentials. Use this only if you intend to return the controller to its original installation state. You will have to repeat the [Onboarding]({{ '/onboarding' | relative_url }}) and [System Setup]({{ '/setupmain' | relative_url }}) processes.
+{: .warning }
 
 ---
 
@@ -62,13 +62,12 @@ The commands are located at the bottom of the display settings page. While the i
     * **Alarm File:** Saved schedules and alarm preferences.
     * **Sound Library:** Maps track names to physical indices on the microSD card.
 
-> **❗ HIGH RISK: RESET ALL (Display)**<br>This command wipes all display-specific data and Wi-Fi credentials. If the IP address changes after a reset, you must update the [System Interface]({{ '/interfaces' | relative_url }}) settings on the primary controller to restore communication.
-{: .important }
+> **❗ HIGH RISK: RESET ALL (Display)**<br>This command wipes all display-specific data and Wi-Fi credentials. You will need to onboard and configure the controller again.  If the IP address changes after a reset, you must also update the [System Interface]({{ '/interfaces' | relative_url }}) settings on the primary controller to restore communication.
+{: .warning }
 ---
 ## External Control
 Some of these commands can also be send via MQTT or via the HTTP API.  See * [Using MQTT and the API]({{ '/integrationmain' | relative_url }}) for a list of applicable commands.
 
->**The "Magic" Reboot Button**<br>
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/dispbrightness' | relative_url }}" class="btn btn-outline"><- Previous: Managing Display Brightness</a>

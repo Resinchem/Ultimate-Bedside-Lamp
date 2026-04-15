@@ -11,15 +11,15 @@ nav_order: 1
 ---
 
 <p align="center">
-  <img src="images/07Web_01_Header.jpg" alt="Web App Header">
+  <img src="images/webapp_01.jpg" alt="Web App Header">
 </p>
 
 The web application is the primary interface for the lamp and all its various settings. While the system can be controlled via MQTT, API, or the touch interface, the web application is the **only** interface that provides access to every available setting and option.
 
-As covered in [Concepts]({{ '/concepts' | relative_url }}), this project uses three ESP-based controllers. While the app automatically handles most communication behind the scenes, there are specific system commands where you must know which controller you are currently accessing.
-
 > **🌐 Hosted Locally (No Cloud Required)**<br>The entire web interface is served directly from the ESP32's memory. It’s a remarkable feat of engineering when you consider that a chip the size of a postage stamp is doing the work of a web server on top of all its other processing. Just remember that it’s not a supercomputer—if you mash the "Refresh" button like you're trying to win a radio contest, the ESP32 might get a little overwhelmed and take a brief, unscheduled nap.
 {: .note }
+
+As covered in [Concepts]({{ '/concepts' | relative_url }}), this project uses three ESP-based controllers. While the app automatically handles most communication behind the scenes, there are specific system commands where you must know which controller you are currently accessing.
 
 ### Identifying the "Active" Controller
 Because commands can vary by controller, there are several visual indicators to help you identify which interface is currently active in your browser:
@@ -44,7 +44,7 @@ The application is fully responsive and accessible via any modern web browser on
 To log in, enter the IP address of your **Primary Controller** (e.g., `192.168.1.205`) into your browser's address bar. 
 
 <p align="center">
-  <img src="images/07Web_03_Main.jpg" alt="Main Web Interface">
+  <img src="images/webapp_03.jpg" alt="Main Web Interface">
 </p>
 
 ---

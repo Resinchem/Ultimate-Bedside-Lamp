@@ -49,7 +49,7 @@ This build was designed to address my specific pain points while adding several 
 ## Caveats and Hardware Support
 This system was built for my specific needs. The firmware is tightly coupled with the hardware components selected.
 
-**⚠️ Technical Requirement**<br>The touch panel utilizes the [TFT_eSPI](https://github.com/Bodmer/TFT_espi) library. To use this, you must define your specific display in the library's configuration, which requires compiling and flashing your own version of the firmware.
+**⚠️ Technical Requirement**<br>The touch panel utilizes the [TFT_eSPI](https://github.com/Bodmer/TFT_espi) library. To use a display different than mine, you must define your specific display in the library's configuration, which requires compiling and flashing your own version of the firmware.
 {: .note }
 
 The [written guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html) includes a detailed parts list indicating which components are interchangeable and which will require code modifications.
@@ -58,7 +58,7 @@ The [written guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-
 {: .label .label-yellow }
 
 ### Questions?
-If you are unsure if a different component will work or what modifications might be needed, please post in the [Discussions](https://github.com/Resinchem/Ultimate-Bedside-Lamp/discussions) area of the repository. I will do my best to provide guidance there as my time allows.
+If you can't find an answer here or in the companion [Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html), please post your question in the [Discussion](https://github.com/Resinchem/Ultimate-Bedside-Lamp/discussions) are of the repository.  I will do my best to provide guidance as time allows.
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/' | relative_url }}" class="btn btn-outline"><- Previous: Welcome</a>

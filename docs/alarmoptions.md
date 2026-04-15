@@ -29,7 +29,7 @@ The global alarm settings are located at the top of the page.
 
 ---
 
-### Configuration Fields
+## Configuration Fields
 
 * **Use SD Card:** This must be checked to enable the DFPlayer and microSD card. If you are not using audio alarms, unchecking this skips the player initialization.
 * **Alarm Sound:** Select your desired tone from the dropdown list. This list is populated by the first 20 tracks defined in your [Sound Library]({{ '/sounds' | relative_url }}).
@@ -42,15 +42,15 @@ The global alarm settings are located at the top of the page.
 
 ---
 
-### Gentle Wake Feature
+## Gentle Wake Feature
 This feature slowly increases the light and volume over approximately one minute. It’s designed to coax you out of sleep rather than startling you into a state of cardiac arrest. It’s the difference between a polite "excuse me, it's morning" and a digital bucket of cold water. If you find you're sleeping through the "gentle" part, you might need to increase the final volume or reconsider your late-night scrolling habits.
 
 > **⚠️ Volume Requirement**<br>The **Alarm Volume** must be set to at least **50%** for Gentle Wake to function. If the volume is set lower than 50%, the alarm will immediately sound at the target volume without a fade-in period.
-{: .warning }
+{: .important }
 
 ---
 
-### Maintenance and Testing
+## Maintenance and Testing
 
 * **TEST SOUND:** Plays the selected track using your current (unsaved) volume and Gentle Wake settings. Use this to verify that your "Gentle Wake" fade is smooth and the final volume is appropriate.
    * This can also be used to test your sound mappings.  If the track name is mismatched with the actual sound, update the [Sound Library]({{ '/sounds' | relative_url }}).
