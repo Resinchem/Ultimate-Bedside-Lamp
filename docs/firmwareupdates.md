@@ -33,9 +33,8 @@ Assure you've enable notifcations in your Github settings and you can receive an
 ## Obtaining the Latest Firmware
 The most recent stable files are always located in the **Releases** section of the GitHub repository.
 
-<p align="center">
-  <img src="images/imagehold.jpg" alt="GitHub Releases Page Placeholder">
-</p>
+![firmwareupdates_08](images/firmwareupdates_08b.jpg)
+
 
 ### Release Notes
 Each release includes notes detailing exactly what changed. Some updates may target only one controller, while others update the entire system. All releases will contain both controller's firmware, but the release notes will indicate which files have been updated and which remain the same. 
@@ -43,9 +42,8 @@ Each release includes notes detailing exactly what changed. Some updates may tar
 > **❗ Pay Attention to Breaking Changes**<br>Always check the release notes for a **BREAKING CHANGES** section. These may require you to perform extra configuration steps or hardware adjustments during the upgrade process.
 {: .important }
 
-<p align="center">
-  <img src="images/imagehold.jpg" alt="Release Notes Placeholder">
-</p>
+_Example of a Breaking Changes section in release notes:_<br>
+![firmwareupdates_09](images/firmwareupdates_09.jpg)
 
 ### Which file do I need?
 If you are running the standard, unmodified firmware, you only need the `.bin` files under the release's assets:
