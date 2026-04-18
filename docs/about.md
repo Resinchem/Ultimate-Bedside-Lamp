@@ -31,17 +31,25 @@ This project is the result of those requirements: an all-in-one system I call th
 
 ---
 
-## Project Goals
+## The Solution
 This build was designed to address my specific pain points while adding several modern features:
 
 * **Integrated Hardware:** A single device providing lighting, clock, and alarm functions.
 * **Versatile Lighting:** Uses an RGBW bulb and an LED strip for "Normal" and "Night" modes.
-* **High-End Display:** Auto-dimming screen with configurable fonts and sizes.
+* **High-End Display:** Auto-dimming touch screen with configurable fonts, colors and sizes.
+    * Show time in 12 or 24-hours format.  Outdoor temperature in °F\°C
+    * Configurable dimming levels based on measured ambient light level
+    * Control lighting, set alarms and more right from the touch screen panel
+* **Dual Touch Sensors:** Configurable touch sensors for controlling lights, snoozing/stopping alarms, etc.
 * **Advanced Alarms:**
     * Multiple simultaneous alarms and long-term scheduling.
     * **Gentle Wake:** Audio starts quietly and slowly increases in volume.
-    * Selectable tracks and customizable snooze (0–60 minutes).
-* **Smart Integration:** Control via Web App, Touch Panel, or _optionally_ via **Home Assistant**.
+    * Selectable alarm sounds (or use you own MP3s) and customizable snooze (0–60 minutes).
+* **Flexible Control Options:** Manage via integrated web app, local touch controls or integrated with external systems.
+* **Device Charging:** Dual USB ports for charging two devices simultaneously
+* **Smart Integration:** Multiple methods to _optionally_ interface with external systems.
+    * MQTT or HTTP API for exchanging data and controlling many features of the system
+    * **Home Assistant**: One click integration with Home Assistant. No configuration or YAML needed!
 * **Local Control:** Operates fully over Wi-Fi with only optional external data use.
 
 ---

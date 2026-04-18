@@ -216,6 +216,20 @@ If you opt to use MQTT time for syncing, a special independent topic is used. Th
   <img src="images/mqtt_04a.jpg" alt="MQTT Time Config">
 </p>
 
+**🔍 Forcing MQTT Time Update at Boot**<br>
+Since the time only updates when a new MQTT message is published, the clock could potentially show the default date and time (_January 1, 2006 12:00 am_) following the boot process and this could be shown for up to a full minute before the next MQTT message is published by the source system.
+
+However, when MQTT time is selected as the source, the system will publish a request on a special topic during the boot process requesting an immedate time update from the source:
+* **Topic:** `stat/[your-publish-topic]/gettime`
+* **Payload:** `now`
+* **Retain:** `false`
+
+If you can configure the source system to listen (subscribe) to this topic and when received, publish an immediate time update, then the clock should update to the correct date/time within a few seconds after booting.
+
+For something like Home Assistant, this would involve creating an automation that triggers on the `stat/[your-publish-topic]/gettime` topic.  When received, the automation would simply publish the current date/time to special MQTT Time Topic described above.
+
+_This isn't a requirement.  If not possible to configure from the source, then just note that the clock may not show the correct date/time following a boot until a new MQTT message is published from the source system._
+
 > **⚠️ Reliability Warning**<br>If using MQTT as a "live" time source and the broker or WIFI goes down, time will not be updated on the clock until the broker/WIFI is restored. This could result in missed alarms.
 {: .warning }
 

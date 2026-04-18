@@ -70,7 +70,7 @@ The recommended method for most users. It sets the time automatically at boot an
 Requires an active MQTT broker. The system listens to a specific topic for time updates.
 
 * **MQTT Time Topic:** The specific topic where your external system (like Home Assistant) publishes the time.
-   * This topic is independent of the general topics setup for other MQTT operations.  See the [MQTT topics](/integrationmain.md) for more information.
+   * This topic is independent of the general topics setup for other MQTT operations.  See the [MQTT topics](/mqtt.md) for more information.
 * **Format:** Time must be published by the source as `yyyy-mm-dd hh:mm:ss` in **24-hour format**.
 * **Sync Only:** Sets the time at boot; uses the internal RTC thereafter.
 * **Live Updates:** Ignores the internal RTC and only updates when a new MQTT message is received (requires per-minute publishing by the source).
