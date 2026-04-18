@@ -42,11 +42,7 @@
 
 Please review the above carefully.  For reasons described, this project expects a very specific set of hardware.  Substitutions will likely require firmware modifications.
 
-<div style="text-align:center;background-color: #fafa5f; color: black;">
-
-
-#### I do not have the bandwidth to maintain multiple versions of the firmware for different hardware combinations. <br>Please do not submit issues requesting support for alternate hardware. 
-</div>
+**_I do not have the bandwidth to maintain multiple versions of the firmware for different hardware combinations. <br>Please do not submit issues requesting support for alternate hardware._** 
 
 ### Questions?
 Can't find an answer above?  Please post your question in the [Discussion](https://github.com/Resinchem/Ultimate-Bedside-Lamp/discussions) are of the repository.  I will do my best to provide guidance as time allows.
