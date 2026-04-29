@@ -36,7 +36,7 @@
 
 ### Guides, Instructions and More Information
 
-- [Video Overview]() - video overview of the project (YouTube)
+- [Video Overview](https://youtu.be/4I0m3b1LWYo) - video overview of the project (YouTube)
 - [Build Information](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html) - written guide with parts list, wiring diagrams and general build instructions
 - [Firmware Guide](https://resinchem.github.io/Ultimate-Bedside-Lamp/) - Instructions for installing, configuring and using the firmware and integrated web application.
 
