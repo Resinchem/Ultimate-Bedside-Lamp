@@ -100,7 +100,7 @@ At this point, you should move your controllers from your computer to their fina
 ### Build Resources
 If you haven't completed the physical build yet, refer to these guides:
 * **[YouTube Overview]({{site.links.youtube_video}})**
-* **[Written Build Guide](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
+* **[Written Build Guide](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html)**
 
 Once your hardware is connected and powered, proceed to the [System Interfaces]({{ '/interfaces' | relative_url }}) section.
 

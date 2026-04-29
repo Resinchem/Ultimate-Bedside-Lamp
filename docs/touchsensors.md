@@ -14,7 +14,7 @@ nav_order: 7
   <img src="images/touchsensor_01.jpg" alt="Touch Sensor Placement">
 </p>
 
-If built as described in the [Build Article](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html), the lamp includes two TTP223 capacitive touch sensors mounted under the lid. These sensors are highly sensitive and function through non-conductive materials like PLA (tested up to 5mm) or wood.
+If built as described in the [Build Article](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html), the lamp includes two TTP223 capacitive touch sensors mounted under the lid. These sensors are highly sensitive and function through non-conductive materials like PLA (tested up to 5mm) or wood.
 
 > **⚠️ Material Warning**<br>Touch sensors will not function through metallic or other conductive surfaces. Additionally, ensure the sensors are placed at least 3-4 inches (7-10 cm) apart; if they are too close, triggering one may accidentally trigger the other.
 {: .warning }

@@ -16,7 +16,7 @@ nav_order: 2
 
 The main display is a 3.5" 'Cheap Yellow Display' (CYD) featuring capacitive touch and a resolution of 480x320 pixels. 
 
-> **⚠️ Hardware Compatibility**<br>As detailed in the [Build Article](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html), using a different display model will likely require firmware modifications, specifically within the **TFT_eSPI** library configuration. 
+> **⚠️ Hardware Compatibility**<br>As detailed in the [Build Article](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html), using a different display model will likely require firmware modifications, specifically within the **TFT_eSPI** library configuration. 
 {: .important }
 
 ---

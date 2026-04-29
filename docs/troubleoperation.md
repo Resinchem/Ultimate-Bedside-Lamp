@@ -20,7 +20,7 @@ If your lamp is up and running but you find that settings aren't sticking or upd
 If you make changes to your setup and they seem to vanish after a reboot, check the following:
 
 ### RTFM! (**R**ead **T**he **F**\*\*\*\*\*g **M**anual!)
-It sounds harsh, but it’s the most effective fix. Ensure you’ve reviewed the applicable sections in this guide and the [Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html). Most "bugs" turn out to be a result of missed instructions or incorrect assumptions about how the firmware handles specific hardware.
+It sounds harsh, but it’s the most effective fix. Ensure you’ve reviewed the applicable sections in this guide and the [Build Guide](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html). Most "bugs" turn out to be a result of missed instructions or incorrect assumptions about how the firmware handles specific hardware.
 
 ### Check Release Notes
 If you recently performed an upgrade, read the release notes for **Breaking Changes**. Occasionally, a new version requires a change to the underlying `config.json` structure, which might require a post-update manual tweak.

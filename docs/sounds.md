@@ -16,7 +16,7 @@ nav_order: 1
 
 Alarm audio is handled by a DFPlayer Mini module equipped with a microSD card. Because the DFPlayer has very specific requirements for file organization, following these steps exactly is critical for a functional alarm system.
 
-> **💡 Build Reference**<br>For full details on the hardware installation and SD card compatibility (8-32GB supported), refer to the [Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html).
+> **💡 Build Reference**<br>For full details on the hardware installation and SD card compatibility (8-32GB supported), refer to the [Build Guide](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html).
 {: .note }
 
 ---

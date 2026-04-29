@@ -25,7 +25,7 @@ Before you open a GitHub issue or head to the discussions board, check these Fre
 
 
 **Short answer:** Probably not.  
-**Long answer:** The firmware is written with specific pin-mappings and hardware register commands for the components listed in the [Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html). This guide includes a parts list that indicates which components can be substitued and those likely to require a firmware modficiation.  While you *can* modify the code to work with other hardware, I cannot provide support for these versions. If you swap a component, you are officially the lead developer for your specific fork!
+**Long answer:** The firmware is written with specific pin-mappings and hardware register commands for the components listed in the [Build Guide](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html). This guide includes a parts list that indicates which components can be substitued and those likely to require a firmware modficiation.  While you *can* modify the code to work with other hardware, I cannot provide support for these versions. If you swap a component, you are officially the lead developer for your specific fork!
 
 ### Why is my display screen just white/blank after flashing?
 {: style="color: #edbd32; margin-top: 2rem;" }

@@ -66,7 +66,7 @@ The [written guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-
 {: .label .label-yellow }
 
 ### Questions?
-If you can't find an answer here or in the companion [Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html), please post your question in the [Discussion](https://github.com/Resinchem/Ultimate-Bedside-Lamp/discussions) are of the repository.  I will do my best to provide guidance as time allows.
+If you can't find an answer here or in the companion [Build Guide](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html), please post your question in the [Discussion](https://github.com/Resinchem/Ultimate-Bedside-Lamp/discussions) are of the repository.  I will do my best to provide guidance as time allows.
 
 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid #333; padding-top: 20px;">
   <a href="{{ '/' | relative_url }}" class="btn btn-outline"><- Previous: Welcome</a>

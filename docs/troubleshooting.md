@@ -17,7 +17,7 @@ has_toc: false
 
 If you find there is a "ghost in the machine" or your lamp isn't behaving as expected, don't panic. Electronics can be finicky, but most issues can be resolved with a bit of systematic checking. 
 
-Before diving into the specific fixes below, first verify that you have reviewed the applicable sections throughout this document and the [Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html) to ensure a step wasn't missed during the assembly or configuration process.
+Before diving into the specific fixes below, first verify that you have reviewed the applicable sections throughout this document and the [Build Guide](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html) to ensure a step wasn't missed during the assembly or configuration process.
 
 ---
 

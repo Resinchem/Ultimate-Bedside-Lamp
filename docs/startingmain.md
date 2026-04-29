@@ -19,7 +19,7 @@ This guide focuses strictly on the installation, configuration, and operation of
 
 **🛠️ Hardware & Build Reference**<br>If you are looking for wiring diagrams, assembly instructions, or a complete parts list, please refer to the following external resources:
 * **[{{site.substitutions.youtube_title}}]({{ site.links.youtube_video }})**
-* **[Written Build Guide](https://resinchemtech.blogspot.com/2026/04/ultimate-bedside-lamp.html)**
+* **[Written Build Guide](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html)**
 {: .note }
 
 ---

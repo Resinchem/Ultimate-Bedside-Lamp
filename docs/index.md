@@ -26,7 +26,7 @@ This site contains information regarding the installation, configuration and use
 
 > **⚠️ Build Instruction Notice**<br> This documentation **does not** contain build instructions, parts lists, or wiring diagrams. For the physical build details, please refer to the following resources:
 > * **YouTube Overview: [{{site.substitutions.youtube_title}}]({{site.links.youtube_video}})**
-> * **Written guide, with parts list, wiring diagrams and more: [Building the Ultimate Bedside Lamp](https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html)**
+> * **Written guide (parts list, wiring diagrams, etc.): [Building the Ultimate Bedside Lamp](https://resinchemtech.blogspot.com/2026/05/ultimate-bedside-lamp.html)**
 {: .important }
 
 
