@@ -24,12 +24,12 @@ callouts:
 
 # Global Project Links
 links:
-  youtube_video: "" # Add your link here later!
+  youtube_video: "https://youtu.be/4I0m3b1LWYo"
   blog_guide: "https://resinchemtech.blogspot.com/2026/03/ultimate-bedside-lamp.html"
   main_repo: "https://github.com/Resinchem/Ultimate-Bedside-Lamp"
   
 substitutions:
-  youtube_title: "Video Coming Soon!"
+  youtube_title: "Build this PRIVATE Smart Lamp"
 
 # Navigation & UI Extras
 back_to_top: true
