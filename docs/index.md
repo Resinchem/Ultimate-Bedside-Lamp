@@ -13,12 +13,6 @@ has_toc: false
   <img src="images/01Home_1A_topThumb.jpg" width="250">
 </p>
 
----
-
-**This repository is under active development and not yet publicly available!**
-{: .label .label-yellow }
-
-If you stumbled upon this site by accident, not only is this document incomplete, many of the links point to sources that are not yet available.  This message will be removed when the repository "goes live" and development is complete. 
 
 ---
 
