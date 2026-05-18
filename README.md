@@ -12,12 +12,12 @@
 - **High-End Display:** Auto-dimming touch screen with configurable fonts, colors and sizes
    * Show time in 12 or 24-hour format.  Outdoor or indoor temperature in °F or °C.
    * Configurable dimming levels based on measured ambient light levels
-   * Control lighting, set alearms and more right from the touch panel
+   * Control lighting, set alarms and more right from the touch panel
 - **Dual Touch Sensors:** Up to two configurable touch sensors
    * _Primary functions_: Toggle the lights, or change brightness of lights or the display with a simply tap.
    * _Special Alarm functions_: Buttons can automatically become alarm snooze/stop buttons when alarm sounds.
 - **Advanced Alarms:** Define up to five active alarms
-   * Allows long-term advanced scheduling and mutliple active alarms can co-exist
+   * Allows long-term advanced scheduling and multiple active alarms can co-exist
    * **Gentle Wake Option:** Alarm sounds quietly and slowly increases in volume.
    * Selectable Alarm Sounds: Use one of the provided sounds or provide your own MP3 sounds
    * Customizable Snooze Range: Set your snooze time from 0-60 minutes.
