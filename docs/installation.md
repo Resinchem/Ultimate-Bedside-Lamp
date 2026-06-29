@@ -85,7 +85,7 @@ Once connected, complete the following steps.
 4. **Erase Flash\*:** Check the **Erase entire flash** checkbox to ensure a clean installation.
 5. **Install:** Click the large blue "Flash Firmware" button to start the upload process.
 
-**⚠️ *Only Erase Flash for New Installs!**<br>If you are using this method to _upgraded_ the firmware on an existing controller, **clear the 'Erase enttire flash' checkbox** or your existing configuration, WiFi connection info, etc. will be lost and you will have to onboard and configure the controller again.  See [Installing Updates](/installation.md) for details.
+**⚠️ *Only Erase Flash for New Installs!**<br>If you are using this method to _upgraded_ the firmware on an existing controller, **clear the 'Erase enttire flash' checkbox** or your existing configuration, WiFi connection info, etc. will be lost and you will have to onboard and configure the controller again.  See [Installing Updates](/firmwareupdates.md) for details.
 {: .critical }
 
 ### Step 3: Flash and Verify
