@@ -37,6 +37,8 @@ back_to_top_label: "Back to top"
 
 # External links (header)
 aux_links:
+  "Project Repository":
+    - https://github.com/Resinchem/Ultimate-Bedside-Lamp
   "YouTube Channel":
     - https://www.youtube.com/@ResinChemTech
   "Blog":

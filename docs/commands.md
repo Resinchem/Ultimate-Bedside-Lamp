@@ -31,10 +31,10 @@ These are found at the bottom of the primary controller’s web page. All **yell
 * **Restart:** Reboots the primary controller only. Other units remain operational, though some cross-device features will pause until the primary unit finishes its boot sequence.
 
 * **Firmware Upgrade:** Accesses the update page for the primary controller. 
-    > **⚠️ Warning**<br>Installing the wrong firmware file on the wrong controller will break your system. See [Installing Updates]({{ '/updates' | relative_url }}) before proceeding.
+    > **⚠️ Warning**<br>Installing the wrong firmware file on the wrong controller will break your system. See [Installing Updates]({{ '/firmwareupdates' | relative_url }}) before proceeding.
     {: .warning }
 
-* **Arduino OTA:** Enables "Over-the-Air" programming for 20 seconds, allowing you to begin flashing code directly from the Arduino IDE. See [Modifying the Firmware]({{ '/firmwaremods' | relative_url }}).
+* **Arduino OTA:** Enables "Over-the-Air" programming for 20 seconds, allowing you to begin flashing code directly from the Arduino IDE. See [Modifying the Firmware]({{ '/modifications' | relative_url }}).
 * **Config Dump:** Clicking this will spit out a raw JSON view of your entire configuration. It’s not the prettiest thing to look at, but it is the "Source of Truth" for your lamp’s brain. If a support request asks for your config, this is where you go to prove that you haven't actually programmed the lamp to wake you up at 4:00 AM on a Sunday. 
     * **Config File:** The primary boot values.
     * **Discover File:** Only present if [Home Assistant Discovery]({{ '/discoverymain' | relative_url }}) has been utilized.

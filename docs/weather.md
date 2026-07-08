@@ -32,8 +32,8 @@ The weather settings are located at the bottom of the System Integrations page.
 * **Temperature Source:**
     * **None:** Disables the temperature display.
     * **OWM (Open Weather Map):** A free* service using your coordinates for local data. _Requires an internet connection_.
-    * **MQTT:** Receives temperature via your MQTT broker. See [MQTT Setup and Topics]({{ '/mqtt.md' | relative_url }}) for more info.
-    * **API:** Updates only when a valid HTTP API command is received. See the [API HTTP Command List]({{ '/api.md' | relative_url }}) for details.
+    * **MQTT:** Receives temperature via your MQTT broker. See [MQTT Setup and Topics]({{ '/mqtt' | relative_url }}) for more info.
+    * **API:** Updates only when a valid HTTP API command is received. See the [API HTTP Command List]({{ '/api' | relative_url }}) for details.
 
 ---
 

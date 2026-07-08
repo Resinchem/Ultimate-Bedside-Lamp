@@ -32,7 +32,7 @@ The configuration page is divided into two sections. The top section manages the
 
 
 #### Hardware Definitions
-* **Dimensions & Touch Address:** These values are hard-coded in the TFT_eSPI library during firmware compilation and cannot be changed via the web app. If you are using non-standard hardware, refer to [Modifying the Firmware]({{ '/firmwaremods' | relative_url }}).
+* **Dimensions & Touch Address:** These values are hard-coded in the TFT_eSPI library during firmware compilation and cannot be changed via the web app. If you are using non-standard hardware, refer to [Modifying the Firmware]({{ '/firmwaremain' | relative_url }}).
 * **Screen Rotation:** Options include 0°, 90°, 180°, and 270° (Default). 
     * **Note:** The firmware is optimized for landscape (90°/270°). Portrait orientations may result in text being cut off. 
 

@@ -84,7 +84,7 @@ Once the system reboots, navigate to the top of the controller's main page. The 
 
 ![Version Verification](images/frimwareupdates_07.jpg)
 
-If the old version number is still displayed, the update failed and the system successfully "rolled back" to the previous firmware. You can attempt the flash again or consult the [Troubleshooting]({{ '/troubleshootmain' | relative_url }}) guide.
+If the old version number is still displayed, the update failed and the system successfully "rolled back" to the previous firmware. You can attempt the flash again or consult the [Troubleshooting]({{ '/troubleshooting' | relative_url }}) guide.
 
 ## Using Third-Party Utilities
 While the internal web update is the recommended path, utilities like [ESPConnect](https://thelastoutpostworkshop.github.io/ESPConnect/) can be used as a fallback.

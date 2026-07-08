@@ -38,7 +38,7 @@ To help you find a solution without scrolling through pages of unrelated text, t
 
 * **[Initial Setup & Connectivity]({{ '/troublesetup' | relative_url }})** – Issues with COM ports, USB drivers, flashing errors, and the initial onboarding hotspot.
 * **[Daily Operation & Configuration]({{ '/troubleoperation' | relative_url }})** – Problems with "Save & Reboot" persistence, firmware update failures, and reviewing Config Dumps.
-* **[Home Assistant & MQTT]({{ '/toublediscovery' | relative_url }})** – Discovery issues, "stuck" MQTT topics, and integration prerequisites.
+* **[Home Assistant & MQTT]({{ '/troublediscovery' | relative_url }})** – Discovery issues, "stuck" MQTT topics, and integration prerequisites.
 * **[FAQ & Getting Help]({{ '/troublefaq' | relative_url }})** – Frequently Asked Questions and the proper etiquette for opening a GitHub Issue or starting a Discussion.
 
 ---
