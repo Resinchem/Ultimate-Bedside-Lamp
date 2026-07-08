@@ -38,7 +38,7 @@ The documentation follows a logical setup flow, grouped into the sections seen i
 
 The remaining topics cover optional and more advanced options, along with a troubleshooting section.
 
-**If you are setting up your system for the first time, begin with the [Getting Started](/startingmain) section.**
+**If you are setting up your system for the first time, begin with the [Getting Started](/startingmain.md) section.**
 
 ### Hardware Substitutions
 
