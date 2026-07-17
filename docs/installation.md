@@ -29,7 +29,7 @@ To make this process as simple as possible, we now use a modern, browser-based t
 
 To complete the installation, you will need:
 * **Hardware:** A computer with an available USB port and a **microUSB Data Cable**. (Note: "Power-only" cables will not work).
-* **Firmware:** A copy of the firmware `.bin` files (available in the [Releases](https://github.com/Resinchem/Ultimate-Bedside-Lamp/releases) area of the repository).
+* **Firmware:** A copy of the firmware `_Full.bin` files (available in the [Releases](https://github.com/Resinchem/Ultimate-Bedside-Lamp/releases) area of the repository).
 * **Software:** A Chromium-based browser (Chrome, Edge, Brave, or Arc) version 89 or newer.
  
 **🖥️ Browser Alternatives**<br>If you do not wish to use a Chromium-based browser, you must use traditional desktop flashing utilities. For guidance on that method, you can refer to my [Beginner's Guide to Flashing Custom Firmware](https://youtu.be/74NGHj-cOls) video (skip to the **8:08** mark).
@@ -50,10 +50,12 @@ To complete the installation, you will need:
 
 The process for both controllers is identical. The only difference is the firmware `.bin` file used:
 
-* **Primary Controller:** Use `Primary_Ctrl_vx.xx.bin`
-* **Display Controller:** Use `Display_Ctrl_vx.xx.bin`
+* **Primary Controller:** Use `Primary_Ctrl_vx.xx_Full.bin`
+* **Display Controller:** Use `Display_Ctrl_vx.xx_Full.bin`
 
 *(Note: `vx.xx` represents the version number. Always use the most recent versions found in the assets section of the [latest release](https://github.com/Resinchem/Ultimate-Bedside-Lamp/releases/latest).*
+
+Releases may also contain **\_Update.bin** files for each controller.  These are meant for _upgrading an existing system_ and not for new installs.  Attempting to install an update file to a new controller will likely fail and may put the ESP32 into a boot loop.
 
 ### Step 1: Connect to ESPConnect
 Open a Chromium-based browser and navigate to the [ESPConnect Tool](https://thelastoutpostworkshop.github.io/ESPConnect/).

@@ -19,6 +19,9 @@ This information is critical if you are manually flashing source code via the Ar
 ### The "Sketch Too Large" Problem
 Due to the complexity of the firmware and the inclusion of the web application strings, the binary is too large to fit into a standard ESP32 partition. To solve this, we "borrow" space normally reserved for the SPIFFS (the local file system). Since our configuration files are tiny JSON strings, we can safely shrink the SPIFFS area and give that extra room to the primary sketch.
 
+**🖥️ Full vs. Update .bin Files**<br>This partitioning is why the releases contain both a **_Full.bin** and a **_Update.bin** file.  When flashing the **_Full.bin** file, the new partitions are created as part of the installation.  This will cause the destruction and loss of any pre-existing data, which is why upgrading an existing system with the **_Full.bin** file causes loss of the existing configuration.  Alternatively, attempting to install the **_Update.bin** file on a new board only updates the sketch area, but since the correct partitions do not exist, it gets written to the wrong area and generally results in a boot loop.
+{: .note }
+
 ---
 
 ### Arduino IDE Configuration

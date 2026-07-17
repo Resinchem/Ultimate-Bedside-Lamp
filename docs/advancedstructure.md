@@ -37,8 +37,11 @@ The Primary ESP32 acts as the "brain" for logic and external integrations. When 
 * **`bedside_lamp.ino`**: The main C++ source code containing the logic, MQTT handling, and hardware control.
 * **`html.h`**: A critical header file containing the entire web application (HTML, CSS, and JavaScript) as embedded strings.
 
-**Release Binary:** `Primary_Ctrl_vx.xx.bin`  
-*(This single file contains the compiled output of both the .ino and .h files.)*
+**Release Binaries:** 
+- `Primary_Ctrl_vx.xx_Full.bin` - For new installs.  Overwrites flash and creates partitions before installation.  Any existing configurations (including WiFi credentials) will be lost.
+- `Primary_Ctrl_vx.xx_Update.bin` - For upgrading existing installations.  Configuration will be maintained.  Will not work on 'new' boards that do not have a prior copy of the firmware installed.
+
+*(The .bin files contain the compiled output of both the .ino and .h files.)*
 
 ---
 
@@ -49,8 +52,11 @@ The Display ESP32 handles the touch interface, the clock, alarms, and the audio 
 * **`html.h`**: The web interface for display-specific settings (like audio library management).
 * **`icons20pt7b.h`**: A specialized header file defining the custom font used for the icons shown on the touch panel.
 
-**Release Binary:** `Display_Ctrl_vx.xx.bin`  
-*(This single file contains the compiled output of all three source files.)*
+**Release Binaries:**
+- `Display_Ctrl_vx.xx_Full.bin` - For new installs.  Overwrites flash and creates partitions before installation.  Any existing configurations (including WiFi credentials) will be lost.
+- `Display_Ctrl_vx.xx_Update.bin` - For upgrading existing installations.  Configuration will be maintained.  Will not work on 'new' boards that do not have a prior copy of the firmware installed.
+
+*(The .bin files contain the compiled output of all three source files.)*
 
 ---
 

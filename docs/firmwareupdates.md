@@ -47,10 +47,12 @@ _Example of a Breaking Changes section in release notes:_<br>
 
 ### Which file do I need?
 If you are running the standard, unmodified firmware, you only need the `.bin` files under the release's assets:
-* **Primary Controller:** `Primary_Ctrl_vX.XX.bin`
-* **Display Controller:** `Display_Ctrl_vX.XX.bin`
+* **Primary Controller:** `Primary_Ctrl_vX.XX_Update.bin`
+* **Display Controller:** `Display_Ctrl_vX.XX_Update.bin`
 
 *(X.XX represents the version number)*
+
+Releases also contain **_Full** versions as well, but these are meant for **initial or new installs** only.  If you install a **_Full** version over an existing installation, all your settings (including WiFi credentials) will be overwritten and you will have to onboard and configure your system again.
 
 _You do not need the Source code files unless you are looking to modify the firmware_.
 
