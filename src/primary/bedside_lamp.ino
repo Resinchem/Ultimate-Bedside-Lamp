@@ -1,8 +1,8 @@
 /* =================================================================
  * Bedside Lamp: Ultimate bedside dual-lamp and clock
- * April, 2026
- * Version 0.37
- * Copyright ResinChemTech - released under the Apache 2.0 license
+ * July, 2026
+ * Version 0.38
+ * Copyright ResinChemTech - released under the GPL-3.0 license
  * ================================================================= */
 #include <WiFi.h>               //Core WiFi services
 #include <WiFiClient.h>         //Arduino ESP Core - creates a client that can connect to an IP address
@@ -21,7 +21,7 @@
 #include <PubSubClient.h>       //https://github.com/knolleary/pubsubclient  Provides MQTT functions (v2.8)
 #include "html.h"               //html code for the web settings pages
 
-#define VERSION "v0.37"
+#define VERSION "v0.38"
 #define APPNAME "BEDSIDE LAMP"
 #define WIFIMODE 2                                    // 0 = Only Soft Access Point, 1 = Only connect to local WiFi network with UN/PW, 2 = Both (both needed for onboarding)
 #define SERIAL_DEBUG 0                                // 0 = Disable (must be disabled if using RX/TX pins), 1 = enable
@@ -1088,6 +1088,13 @@ bool setupWifi() {
   baseIPAddress = WiFi.localIP().toString();
   WiFi.macAddress(macAddr);
   strMacAddr = WiFi.macAddress();
+  //Create unique client ID for MQTT(in case it is enabled along with another system)
+  String cleanMac = strMacAddr;
+  cleanMac.replace(":", "");
+  if (mqttClient.indexOf("_") == -1) {
+    mqttClient = mqttClient + "_" + cleanMac;
+  }
+  
 #if defined(SERIAL_DEBUG) && (SERIAL_DEBUG == 1)
   Serial.println("Connected to wifi... yay!");
   Serial.print("MAC Address: ");
@@ -1395,8 +1402,6 @@ void loadDiscoveryConfig() {
       currentDiscovery.diagnostics = true;
     }
   }
-
-
 }
 
 bool saveDiscoveryConfig() {
@@ -1464,35 +1469,35 @@ void publishDiscovery(bool enable) {
     const char* category;     
   };
 
-const DiscoveryEntity list[] = {
-    {"bulb", "light", "bulbstate", "Light Bulb", ""}, 
-    {"led", "light", "ledstate", "LED Strip", ""},    
-    {"disp", "number", "dispbrightness", "Display Brightness", ""},
-    {"disp", "switch", "autodim", "Auto-Dimming", "config"},
-    {"disp", "text", "clockcolor", "Clock Color", "config"},
-    {"touch", "binary_sensor", "touch1state", "Touch 1 State", ""},
-    {"touch", "select", "touch1func", "Touch 1 Main Function", "config"}, 
-    {"touch", "select", "touch1funca", "Touch 1 Alarm Function", "config"}, 
-    {"touch", "binary_sensor", "touch2state", "Touch 2 State", ""},
-    {"touch", "select", "touch2func", "Touch 2 Main Function", "config"}, 
-    {"touch", "select", "touch2funca", "Touch 2 Alarm Function", "config"}, 
-    {"alarms", "number", "alarmvolume", "Alarm Volume", "config"},
-    {"alarms", "switch", "gentlewake", "Gentle Wake", "config"},
-    {"alarms", "number", "alarmtrack", "Alarm Track", "config"},
-    {"alarms", "number", "snoozetime", "Snooze Duration", "config"},
-    {"alarms", "button", "alarm_stop", "Stop Alarm", ""},
-    {"alarms", "button", "alarm_snooze", "Snooze Alarm", ""},
-    {"alarms", "button", "playalarm", "Play Alarm Sound", ""},
-    {"diag", "sensor", "ip_primary", "IP Addr Primary", "diagnostic"},
-    {"diag", "sensor", "ip_display", "IP Addr Display", "diagnostic"},
-    {"diag", "sensor", "ip_bulb", "IP Addr Light Bulb", "diagnostic"},
-    {"diag", "sensor", "mac_primary", "MAC Addr Primary", "diagnostic"},
-    {"diag", "sensor", "mac_display", "MAC Addr Display", "diagnostic"},
-    {"diag", "sensor", "fw_primary", "Firmware Ver Primary", "diagnostic"},
-    {"diag", "sensor", "fw_display", "Firmware Ver Display", "diagnostic"},
-    {"diag", "button", "rb_primary", "Restart Primary Controller", "diagnostic"},
-    {"diag", "button", "rb_display", "Restart Display Controller", "diagnostic"}
-  };
+  const DiscoveryEntity list[] = {
+      {"bulb", "light", "bulbstate", "Light Bulb", ""}, 
+      {"led", "light", "ledstate", "LED Strip", ""},    
+      {"disp", "number", "dispbrightness", "Display Brightness", ""},
+      {"disp", "switch", "autodim", "Auto-Dimming", "config"},
+      {"disp", "text", "clockcolor", "Clock Color", "config"},
+      {"touch", "binary_sensor", "touch1state", "Touch 1 State", ""},
+      {"touch", "select", "touch1func", "Touch 1 Main Function", "config"}, 
+      {"touch", "select", "touch1funca", "Touch 1 Alarm Function", "config"}, 
+      {"touch", "binary_sensor", "touch2state", "Touch 2 State", ""},
+      {"touch", "select", "touch2func", "Touch 2 Main Function", "config"}, 
+      {"touch", "select", "touch2funca", "Touch 2 Alarm Function", "config"}, 
+      {"alarms", "number", "alarmvolume", "Alarm Volume", "config"},
+      {"alarms", "switch", "gentlewake", "Gentle Wake", "config"},
+      {"alarms", "number", "alarmtrack", "Alarm Track", "config"},
+      {"alarms", "number", "snoozetime", "Snooze Duration", "config"},
+      {"alarms", "button", "alarm_stop", "Stop Alarm", ""},
+      {"alarms", "button", "alarm_snooze", "Snooze Alarm", ""},
+      {"alarms", "button", "playalarm", "Play Alarm Sound", ""},
+      {"diag", "sensor", "ip_primary", "IP Addr Primary", "diagnostic"},
+      {"diag", "sensor", "ip_display", "IP Addr Display", "diagnostic"},
+      {"diag", "sensor", "ip_bulb", "IP Addr Light Bulb", "diagnostic"},
+      {"diag", "sensor", "mac_primary", "MAC Addr Primary", "diagnostic"},
+      {"diag", "sensor", "mac_display", "MAC Addr Display", "diagnostic"},
+      {"diag", "sensor", "fw_primary", "Firmware Ver Primary", "diagnostic"},
+      {"diag", "sensor", "fw_display", "Firmware Ver Display", "diagnostic"},
+      {"diag", "button", "rb_primary", "Restart Primary Controller", "diagnostic"},
+      {"diag", "button", "rb_display", "Restart Display Controller", "diagnostic"}
+    };
 
   String cleanMac = strMacAddr;
   cleanMac.replace(":", "");
@@ -1596,7 +1601,7 @@ const DiscoveryEntity list[] = {
       if (comp == "button") {
         doc.remove("stat_t");
         doc["pl_prs"] = "PRESS";
-        doc["dev_cla"] = "restart";
+        doc["dev_cla"] = "restart"; 
       }
     } else {
       doc["stat_t"] = "stat/" + mqttTopicPub + "/" + sfx;

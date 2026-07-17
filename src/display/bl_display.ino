@@ -1,8 +1,8 @@
 /* =================================================================
  * Bedside Lamp: CYD Touch Display
- * April, 2026
- * Version 0.52
- * Copyright ResinChemTech - released under the Apache 2.0 license
+ * July, 2026
+ * Version 0.53
+ * Copyright ResinChemTech - released under the GPL-3.0 license
  * ================================================================= */
 
 #include <WiFi.h>                 //Core WiFi services
@@ -32,7 +32,7 @@
 #include "html.h"                 //html code for the web settings pages
 #include "icons20pt7b.h"          //Custom icon font for top of display
  
-#define VERSION "v0.52"
+#define VERSION "v0.53"
 #define APPNAME "LAMP DISPLAY"
 #define WIFIMODE 2                // 0 = Only Soft Access Point, 1 = Only connect to local WiFi network with UN/PW, 2 = Both (both needed for onboarding)
 #define SERIAL_DEBUG 0            // 0 = Disable (must be disabled if using RX/TX pins), 1 = enable
@@ -1901,6 +1901,12 @@ bool setupWifi() {
   baseIPAddress = WiFi.localIP().toString();
   WiFi.macAddress(macAddr);
   strMacAddr = WiFi.macAddress();
+  //Create unique client ID for MQTT(in case it is enabled along with another system)
+  String cleanMac = strMacAddr;
+  cleanMac.replace(":", "");
+  if (mqttClient.indexOf("_") == -1) {
+    mqttClient = mqttClient + "_" + cleanMac;
+  }
 #if defined(SERIAL_DEBUG) && (SERIAL_DEBUG == 1)
   Serial.println("Connected to wifi... yay!");
   Serial.print("MAC Address: ");
@@ -2182,6 +2188,7 @@ bool processCommand(String key, String val) {
   } else if ((key == "settemperature") && ((weatherSource == 2) || (weatherSource ==3 ))) {
     //only process if weatherSource = MQTT (2) or API (3)
     externalTemperature = round(val.toFloat());
+    initSync = true;  //force display update - Issue#2
     if ((!isBooting) && (mqttConnected)) {
       updateMQTT("temperature");
     }
